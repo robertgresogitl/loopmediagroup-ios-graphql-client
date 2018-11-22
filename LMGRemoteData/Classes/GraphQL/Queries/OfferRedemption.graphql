@@ -1,0 +1,17 @@
+query OfferRedeemAction($id: ID!, $locationId: ID!) {
+  offer(offerId: $id) {
+    promoCode
+  }
+  offerState(offerId: $id) {
+    ...RedeemAction
+  }
+  offerStatus(offerId: $id, locationId: $locationId) {
+    ...OfferDetailStatus
+  }
+}
+
+mutation RedeemOffer($offerId: ID!, $locationId: ID!, $currentState: String!, $transitionIndex: Int!, $clientArgs: String!, $clientGeoPoint: [Float!]) {
+    transitionOfferState(offerId: $offerId, locationId: $locationId, currentState: $currentState, transitionIndex: $transitionIndex, clientArgs: $clientArgs, clientGeoPoint: $clientGeoPoint) {
+      ...RedeemAction
+    }
+}

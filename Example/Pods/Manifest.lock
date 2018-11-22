@@ -1,0 +1,38 @@
+PODS:
+  - Apollo (0.9.4):
+    - Apollo/Core (= 0.9.4)
+  - Apollo/Core (0.9.4)
+  - LMGDataAccess (1.0.0):
+    - LMGDomain
+  - LMGDomain (1.0.0)
+  - LMGNotificationBus (1.0.0):
+    - LMGDomain
+  - LMGRemoteData (1.0.0):
+    - Apollo (~> 0.9.1)
+    - LMGDataAccess
+    - LMGNotificationBus
+
+DEPENDENCIES:
+  - LMGRemoteData (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Apollo
+    - LMGDataAccess
+    - LMGDomain
+    - LMGNotificationBus
+
+EXTERNAL SOURCES:
+  LMGRemoteData:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Apollo: 450856adbdebcdf28c3c671f81732ac3f9944065
+  LMGDataAccess: def84faf0347723820d326bfac8b41af96dde8ec
+  LMGDomain: d3bed30cf7192658ac8028c14a10078aa12a46d7
+  LMGNotificationBus: c1b8cafc734bad02a1bef769fd025390f029f71d
+  LMGRemoteData: 948cc8cd06244a2371f76c35ef101041ea683e67
+
+PODFILE CHECKSUM: ad96e676ee533573b82838191407daf46c100e38
+
+COCOAPODS: 1.5.2

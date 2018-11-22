@@ -1,0 +1,157 @@
+fragment OfferListItem on Offer {
+    id
+    headline
+    subhead
+    flags
+    isBookmarked
+    schedules
+    heroImages {
+        url
+    }
+}
+
+fragment OfferDetails on Offer {
+    id
+    headline
+    subhead
+    details
+    legal
+    flags
+    promoCode
+    isBookmarked
+    business {
+        ...BusinessListItem
+    }
+    heroImages {
+        url
+    }
+}
+
+fragment RedeemAction on OfferState {
+    state
+    expiresIn
+    display
+    refreshInterval
+    meta {
+      actionTarget
+      actionType
+    }
+    transitions {
+      index
+      meta {
+        transitionButtonText
+      }
+      args {
+        name
+        required
+        type
+      }
+    }
+}
+
+fragment OfferDetailStatus on OfferStatus {
+    available
+    limits {
+      available
+      details {
+        perProfile {
+          total
+          used
+        }
+        perProfilePerWindow {
+          total
+          used
+          granularity
+        }
+        global {
+          total
+          used
+        }
+        globalPerWindow {
+          total
+          used
+          granularity
+        }
+      }
+    }
+    schedules {
+      usable {
+        available
+        schedules
+      }
+    }
+}
+
+fragment BusinessDetails on Business {
+    id
+    name
+    shortName
+    slogan
+    desc
+    url
+    phone
+    profileImages {
+        url
+    }
+    heroStandardImages {
+        url
+    }
+    offers {
+        ...OfferListItem
+    }
+    categories {
+        ...CategoryItem
+    }
+}
+
+fragment BusinessListItem on Business {
+    id
+    name
+    shortName
+    phone
+    url
+    profileImages {
+        url
+    }
+    categories {
+        ...CategoryItem
+    }
+}
+
+fragment CategoryItem on Category{
+    id
+    name
+    shortName
+    iconSmallImages {
+        url
+    }
+}
+
+fragment CollectionItem on Collection {
+    id
+    name
+    shortName
+    iconSmallImages {
+        url
+    }
+    heroStandardImages {
+        url
+    }
+}
+
+fragment LocationItem on Location {
+    id
+    name
+    address {
+      id
+      suite
+      building
+      streetAddress
+      street
+      postalcode
+      city
+      state
+      country
+      centre
+    }
+}

@@ -1,0 +1,16 @@
+query CollectionList($cursor: String, $tags: [String!], $geoArea: [[Float!]!]) {
+  collectionFeed(cursor: $cursor, tags: $tags, contextGeoArea: $geoArea) {
+    cursor {
+      next
+    }
+    collections {
+      ...CollectionItem
+    }
+  }
+}
+
+query CollectionDetail($id: ID!) {
+  collection(collectionId: $id) {
+    ...CollectionItem
+  }
+}

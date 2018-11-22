@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LMGRemoteData_Example' do
+  pod 'LMGRemoteData', :path => '../'
+
+  target 'LMGRemoteData_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

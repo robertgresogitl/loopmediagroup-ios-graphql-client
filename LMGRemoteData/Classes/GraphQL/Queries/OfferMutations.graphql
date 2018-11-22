@@ -1,0 +1,8 @@
+
+mutation BookmarkOffer($offerId: String!) {
+    createOfferBookmark(offerId: $offerId)
+}
+
+mutation UnbookmarkOffer($offerId: String!) {
+    deleteOfferBookmark(offerId: $offerId)
+}

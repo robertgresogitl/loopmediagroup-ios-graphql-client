@@ -1,0 +1,6 @@
+framework module LMGNotificationBus {
+  umbrella header "LMGNotificationBus.h"
+
+  export *
+  module * { export * }
+}

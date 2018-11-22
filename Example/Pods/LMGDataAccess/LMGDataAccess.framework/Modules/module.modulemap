@@ -1,0 +1,6 @@
+framework module LMGDataAccess {
+  umbrella header "LMGDataAccess.h"
+
+  export *
+  module * { export * }
+}

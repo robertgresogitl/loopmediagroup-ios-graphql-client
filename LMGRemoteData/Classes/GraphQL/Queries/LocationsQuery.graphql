@@ -1,0 +1,13 @@
+query LocationsList($geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $cursor: String) {
+  locationFeed(contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, cursor: $cursor) {
+    cursor {
+      next
+    }
+    locations {
+      ...LocationItem
+      business {
+        ...BusinessListItem
+      }
+    }
+  }
+}

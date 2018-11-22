@@ -1,0 +1,12 @@
+mutation UpdateUserTraits($traits: String!) {
+    updateSessionTraits(traits: $traits) {
+        traits
+        warnings
+    }
+}
+
+query GetUserTraits {
+    getSessionTraits {
+        traits
+    }
+}

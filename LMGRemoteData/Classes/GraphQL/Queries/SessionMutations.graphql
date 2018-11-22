@@ -1,0 +1,33 @@
+mutation CreateSession {
+    createSession {
+        ...SessionFragment
+    }
+}
+
+mutation ExtendSession {
+    extendSession {
+        ...SessionFragment
+    }
+}
+
+mutation IdentifySession($userId: String!, $hmac: String) {
+    identifySession(externalId: $userId, externalIdSignature: $hmac) {
+        ...SessionFragment
+    }
+}
+
+fragment SessionFragment on Session {
+    token
+    content {
+      sessionId
+      integrationId
+      propertyId
+      updated
+      created
+    }
+    meta {
+      stats {
+        ingestionUrl
+      }
+    }
+}

@@ -1,0 +1,1746 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0004BC76E0610900DE1B0E4900A602CB /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A5B5FC25FA0C0ADEBF6F0905249B3A /* Promise.swift */; };
+		07855B2F995835621EF7BB20C654E5E9 /* Pods-LMGRemoteData_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307B8DADBD584C6D3C01E4C2BB242D8 /* Pods-LMGRemoteData_Tests-dummy.m */; };
+		13CB65C49358613E0DF69BCB04625F9E /* LMGRemoteData-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5433C2DCE7F264DD225B58B71A5B2FBE /* LMGRemoteData-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15D0CC7FA9D0268F8B80FD3049A90F51 /* GraphQLResultNormalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4551FC48CC6294A53F529A56027A7DE /* GraphQLResultNormalizer.swift */; };
+		19A560C969973C41085AFCD44323D01F /* LMGRDOfferRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59917D6B9235364F1CAE5F3781F3B0FD /* LMGRDOfferRemoteSource.swift */; };
+		1D902237B06C31C7DF5A1CBD689636DA /* Apollo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7024105B26BC20BB2B2FCC26513BEC5 /* Apollo.framework */; };
+		21C83A0E9DD781568BA03224497D6BD0 /* LMGRDBusinessRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B59AE4AFF80EA509C884CDF074A963 /* LMGRDBusinessRemoteSource.swift */; };
+		25C35C19E6700A79AE33060CB3E3F7FD /* GraphQLResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229033F4D51A033ED1180E9F3A5E89DE /* GraphQLResult.swift */; };
+		283EBA5BBD24EAF4A23702CA17E74A83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8D7DAEA980C9A414F97B079A493F68 /* Foundation.framework */; };
+		2AECF1F9F7B02E810F6175A7CA92B961 /* LMGRDLocationRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CB75E776DCA9F50E55A0B789298F63 /* LMGRDLocationRemoteSource.swift */; };
+		37D77530465DB4B2F784A03C8F0E2D40 /* NormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D7BC98D6D9DCDC5D9A6096BC4ACDDB /* NormalizedCache.swift */; };
+		3B136A9B18E8534EA9C5A400773C9507 /* AuthRequestsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11B868759489F8ABB172D2D49A00F7 /* AuthRequestsConfigurator.swift */; };
+		416DB54756CD138E2A523CB14234B3A7 /* RecordSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190922E31120610AC847764DA0A8D92F /* RecordSet.swift */; };
+		449F013BD4F28678E599E51E9A2650C7 /* BusinessesListQuery+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C337FA10898B3666F4709715296F6967 /* BusinessesListQuery+DataAccess.swift */; };
+		44CCE1A9DEE04A95BFFE7826DBACBE8A /* AuthGraphAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D5B0624136606B156E7E38C689F5A /* AuthGraphAPI.swift */; };
+		46E24355FB4C2C9114C22865FE149FFD /* OfferDetailsQuery+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB3676C17A8401AC60EB9DAD39D2709 /* OfferDetailsQuery+DataAccess.swift */; };
+		4B35DF3174B1D4DF72074E90621DF637 /* GraphQLResponseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5F6C3792CC86D81B0A8849EB53C922 /* GraphQLResponseGenerator.swift */; };
+		4FA8CF5F672D0ECF179689565C195A9B /* ApolloStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BB83987D59B3C3569EEE836F772FD7 /* ApolloStore.swift */; };
+		521481C9CDAD5B488C13A6DAB8F3BEC6 /* SessionMutations+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3B8EA35F333AD8A60D5ECA35110645 /* SessionMutations+DataAccess.swift */; };
+		5D006359E2C6835486DD8FACF11B82A2 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18147AB26F957F56D70C1DB7A2A8A0AC /* JSON.swift */; };
+		5DAF6AB1D2A39BCB091E2F16C1424EEA /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5BE4F5F508D108B8F4DE881BECCCD3 /* DataLoader.swift */; };
+		5EAED79252ED626B7C8B8708CA1F35B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8D7DAEA980C9A414F97B079A493F68 /* Foundation.framework */; };
+		60E52CFB7948DC04328CC8C01097F720 /* check-and-run-apollo-cli.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1311C4D3C128A2705F848D235601B58A /* check-and-run-apollo-cli.sh */; };
+		6197C08067E1DC1132129D9F30C5C2B6 /* Pods-LMGRemoteData_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 799CE9D735818DF1FEA915A22DD8061C /* Pods-LMGRemoteData_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		641B7B0AD740F90C0EB2B53E38834910 /* DefaultGraphAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B293D04426138B2A1CB681727EA501 /* DefaultGraphAPI.swift */; };
+		64E3EBB327CA548AEA07985E7672364B /* OfferRedeemActionQuery+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089B397D2E27604344B83141E04067A5 /* OfferRedeemActionQuery+DataAccess.swift */; };
+		676115229D8611F322AAE7EA302C1D6A /* CollectionsListQuery+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E48A1EE5E1DD19931E669BD93AFE5 /* CollectionsListQuery+DataAccess.swift */; };
+		686B3EC6DB18FB0F2E86A83576B0911A /* GraphQLInputValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699F0D3D30EF53292C4A6D0A9D7EFD7C /* GraphQLInputValue.swift */; };
+		6C5E64A08621C9C130345542617F602E /* UserQuery+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF487C21F7553A7597F0B0347B46A35 /* UserQuery+DataAccess.swift */; };
+		6CB3336EFEB548D95670FF492BF0E145 /* Apollo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 795F3C824EFA45A36A1E758B5B5204C5 /* Apollo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E131775B33BB3E92E1AC57D67A7A073 /* JSONStandardTypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AB297EC9FE6A423B27129E042309B /* JSONStandardTypeConversions.swift */; };
+		74675CCED31B203136B04F24EBB74583 /* Pods-LMGRemoteData_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 554CC3DE5F58EEF2E09E0C5DDE70B562 /* Pods-LMGRemoteData_Example-dummy.m */; };
+		797D227D1CA74752CAAE8A9FAA011322 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104421285197AF049176B0ED40628858 /* Utilities.swift */; };
+		7E26A16447E0731A067CBEAAC3F96C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8D7DAEA980C9A414F97B079A493F68 /* Foundation.framework */; };
+		80F9518D655D1C9BD8A40CED611138CC /* BusinessDetailsQuery+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994DFCF5AC52FCA01596292AB19BCEFF /* BusinessDetailsQuery+DataAccess.swift */; };
+		8372F4C85D9D6B859CA572D7673C3C7A /* Pods-LMGRemoteData_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D39F89BBB63CF1A436AED4949FF86CB /* Pods-LMGRemoteData_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		895CB08A1362D446E881B0DDC30E2412 /* GraphQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F2E8BF1AF3227FE68B838385C4335A /* GraphQLOperation.swift */; };
+		8BACBE1E81AAC6BD66D51C1B5E120AC3 /* check-and-run-apollo-codegen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5A2A6782377EDA9CEFA6A3D4CE31B312 /* check-and-run-apollo-codegen.sh */; };
+		8FF1CA9BEE9B1EB5E0CCA9446D3E2091 /* LMGRDCollectionRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224345C34FEE8087DD2A609A7DEB88BC /* LMGRDCollectionRemoteSource.swift */; };
+		9B38C5B809EBCA67913CEFAA591F118F /* LocationsListQuery+DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35712243240A74D5F0A995860A8FB5AE /* LocationsListQuery+DataAccess.swift */; };
+		9B48E87F8CEC7AA1E8099819A147803E /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EE3EF1DA64ECE1FB45B104F90D4455 /* Record.swift */; };
+		9C1AEE475F8564EF09D3D44745EE0C1D /* LMGRDUserSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F89583BAD87369DBD604BBBC74A72A0 /* LMGRDUserSource.swift */; };
+		9C8F44611C80403C7BC2772BC7EE0590 /* ResultOrPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCAFB51D8BB468C6D6F928DBFA017F2 /* ResultOrPromise.swift */; };
+		A188284680964C9C7F0150B59BA98F87 /* GraphQLResultAccumulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F80776BC3C8F202CCCD49A71B66061 /* GraphQLResultAccumulator.swift */; };
+		A460F66B3A35F667411FA0D95030D98C /* LMGDACoordinate+RemoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037C10BF6503A7D91998D616F871E4C /* LMGDACoordinate+RemoteData.swift */; };
+		A830A611E8E804EE9D0A158022327DE5 /* LMGRDSessionRemoteSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB124F1A34EF417FF1E62294CE06AC /* LMGRDSessionRemoteSource.swift */; };
+		AADF5DAB589339CF73C97818A4C682A9 /* Collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CD9D74925603F474592E9B56001CCB /* Collections.swift */; };
+		ADD128E97058F4416C94BDE39C5D4C58 /* GraphQLQueryWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF665D2A9D5B5A387A9CD2E0DA12CBEA /* GraphQLQueryWatcher.swift */; };
+		BA5218315078C14785221F90FBCCC048 /* GraphQLSelectionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3BC5F179A57078BF12187239EC5B22 /* GraphQLSelectionSet.swift */; };
+		BC848FAC052A3145B35A2E99486376F2 /* Locking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520707DF9F9E46766BC375BD3F09D95A /* Locking.swift */; };
+		C14BED56A7AEEE304551198C6D61BF42 /* AuthApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5697BEE7432C5757B1813949B53F4D1A /* AuthApolloClient.swift */; };
+		C1F6A0C23368BCDFF4AF1E0A158A8718 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BD82C0C2AEC18CF2830854F0BAE4A1 /* Result.swift */; };
+		C6F5065813A8BFEBF64658227F9F8166 /* HTTPNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEEBF5D5834601E086C1D5076168CAE /* HTTPNetworkTransport.swift */; };
+		C8E08E7BB1C58D1C2E43B6190688C206 /* GraphQLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934F68CF40E27947F633B4F266E576C /* GraphQLError.swift */; };
+		C9BAF90C56EC33FF0A90FED76F83A4A7 /* ApolloClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1561E46640B8E93FAAEF959829AFC89E /* ApolloClient.swift */; };
+		CAA4956528D91AE14683400CE6FF3EB7 /* InMemoryNormalizedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2909AFFDD8878999CB944773D661E2F2 /* InMemoryNormalizedCache.swift */; };
+		D0CE84E3361DE3772D7EE65572FA50A6 /* GraphQLExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64FCE9D1495BC876B0AAF47F38914E9 /* GraphQLExecutor.swift */; };
+		D230267CB3CD5F8D177431D3902261AB /* AuthHTTPNetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3198D24411216B453485772CEA745D6 /* AuthHTTPNetworkTransport.swift */; };
+		D26010D53A4A7D84B67E773227BD9984 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8D7DAEA980C9A414F97B079A493F68 /* Foundation.framework */; };
+		E939141615373756F4AFC95C43BDD586 /* NetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E442F779F290603488C49A31B331CEA /* NetworkTransport.swift */; };
+		EA2467D89BDF8B7AC04020922264CC5D /* GraphQLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDEE2B2EC4C7F1F336A9C9DF510457C /* GraphQLResponse.swift */; };
+		F1856DD2B9D9A6B34C939CE55CBB26FF /* LMGRemoteData-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E3E6B6D6DC2586886024CA8FF198E7 /* LMGRemoteData-dummy.m */; };
+		F5E955B34BEB08A0F301CF9F47DF1187 /* GraphQLSelectionSetMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32AD5DD80604CA7763BA38CA7C2E7A1D /* GraphQLSelectionSetMapper.swift */; };
+		F82BD91D3A9905663D3A3C64DF2D9C02 /* JSONSerializationFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13F9F0F33188CBB9F055E5139BF85D5 /* JSONSerializationFormat.swift */; };
+		F88AC6AD9DA5F9B364D34341C6E2056C /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71587A442CE48A5874433403C8A7A6A8 /* AsynchronousOperation.swift */; };
+		FC431F0BA9387905ACAB61C523E638C3 /* Apollo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D447609BBC9711A7622A0587186C606C /* Apollo-dummy.m */; };
+		FEDE0FF3927A01D521556DDD9FF04150 /* GraphQLDependencyTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8837CC21B7A9B4F873C6321648FF0B5 /* GraphQLDependencyTracker.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22C9903672B9BE0EDF627FDEC717A69D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86E6F100273E4E2D73815A058543EBBE;
+			remoteInfo = Apollo;
+		};
+		6CF3A06584D64705C13CB649EBE2F188 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86E6F100273E4E2D73815A058543EBBE;
+			remoteInfo = Apollo;
+		};
+		A230F1B9DBD86D84382F8A925058A44C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15A3C28C3572E5735750AD01202ED63C;
+			remoteInfo = "Pods-LMGRemoteData_Example";
+		};
+		B93FC7E0247D9D0CE0B28F84BE8C0939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D02D325064932A72EE3A6ADE43584523;
+			remoteInfo = LMGRemoteData;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0084A69C2CDDB7AA11A2482B5E03FD93 /* LMGBookmarkOffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBookmarkOffer.h; path = LMGDomain.framework/Headers/LMGBookmarkOffer.h; sourceTree = "<group>"; };
+		01C157CC8DD8D1601595B59FBFD7EBFD /* LMGRedemptionState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRedemptionState.h; path = LMGDomain.framework/Headers/LMGRedemptionState.h; sourceTree = "<group>"; };
+		0307B8DADBD584C6D3C01E4C2BB242D8 /* Pods-LMGRemoteData_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LMGRemoteData_Tests-dummy.m"; sourceTree = "<group>"; };
+		036FEB15E1B0D25A6AC9B549DB4D1CEB /* Pods-LMGRemoteData_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LMGRemoteData_Tests.modulemap"; sourceTree = "<group>"; };
+		07C91C80588B0A382D7EBC91723F050B /* LMGDADeviceLocationStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDADeviceLocationStore.h; path = LMGDataAccess.framework/Headers/LMGDADeviceLocationStore.h; sourceTree = "<group>"; };
+		089B397D2E27604344B83141E04067A5 /* OfferRedeemActionQuery+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "OfferRedeemActionQuery+DataAccess.swift"; sourceTree = "<group>"; };
+		08D89A147D8F8B1D97E31681474EC0EA /* LMGRemoteData.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LMGRemoteData.xcconfig; sourceTree = "<group>"; };
+		0943B24280D199E16A97086298B02F7C /* NSSet+Monads.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSSet+Monads.h"; path = "LMGDomain.framework/Headers/NSSet+Monads.h"; sourceTree = "<group>"; };
+		0A5BFB46D0116C98E57CAAC479306B82 /* LMGSocialMedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSocialMedia.h; path = LMGDomain.framework/Headers/LMGSocialMedia.h; sourceTree = "<group>"; };
+		0E0839E4455F33F6B702A7367108791E /* Apollo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Apollo.xcconfig; sourceTree = "<group>"; };
+		0F89583BAD87369DBD604BBBC74A72A0 /* LMGRDUserSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LMGRDUserSource.swift; sourceTree = "<group>"; };
+		0FD0E21BA9025F841C331D8360F73A4F /* Pods-LMGRemoteData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LMGRemoteData_Example.release.xcconfig"; sourceTree = "<group>"; };
+		104421285197AF049176B0ED40628858 /* Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Sources/Apollo/Utilities.swift; sourceTree = "<group>"; };
+		1080F77271AABE9844E0A70C3E92708F /* LMGRequestParams+ContentFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGRequestParams+ContentFilter.h"; path = "LMGDomain.framework/Headers/LMGRequestParams+ContentFilter.h"; sourceTree = "<group>"; };
+		10BEF814AA9C8240837BD1B9C60F6EC1 /* LMGGetBusinessesWithParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetBusinessesWithParams.h; path = LMGDomain.framework/Headers/LMGGetBusinessesWithParams.h; sourceTree = "<group>"; };
+		11EE6904C6EE06346B7A58CE138626A0 /* Pods-LMGRemoteData_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LMGRemoteData_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		12543BB872123D7B8AC2F277147B82B1 /* LMGUseCaseStarted.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGUseCaseStarted.h; path = LMGDomain.framework/Headers/LMGUseCaseStarted.h; sourceTree = "<group>"; };
+		12C3B7F2D315C4EF45A03C7823A8B315 /* LMGRemoteData.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LMGRemoteData.modulemap; sourceTree = "<group>"; };
+		130077E45EC559BB25A982FD89699684 /* LMGDACollectionStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionStore.h; path = LMGDataAccess.framework/Headers/LMGDACollectionStore.h; sourceTree = "<group>"; };
+		1311C4D3C128A2705F848D235601B58A /* check-and-run-apollo-cli.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = "check-and-run-apollo-cli.sh"; path = "scripts/check-and-run-apollo-cli.sh"; sourceTree = "<group>"; };
+		1372BE5ADB436E35C80F4E035BD98D54 /* LMGUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGUser.h; path = LMGDomain.framework/Headers/LMGUser.h; sourceTree = "<group>"; };
+		14F6A72007FD62E4E85FEB2496B9A68C /* LMGUseCaseStarted+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGUseCaseStarted+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGUseCaseStarted+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		1561E46640B8E93FAAEF959829AFC89E /* ApolloClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApolloClient.swift; path = Sources/Apollo/ApolloClient.swift; sourceTree = "<group>"; };
+		160C6B590EE70550B9CC34D7B13CA48F /* LMGSessionIdentified+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSessionIdentified+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGSessionIdentified+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		18147AB26F957F56D70C1DB7A2A8A0AC /* JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = Sources/Apollo/JSON.swift; sourceTree = "<group>"; };
+		183AB297EC9FE6A423B27129E042309B /* JSONStandardTypeConversions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONStandardTypeConversions.swift; path = Sources/Apollo/JSONStandardTypeConversions.swift; sourceTree = "<group>"; };
+		190922E31120610AC847764DA0A8D92F /* RecordSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecordSet.swift; path = Sources/Apollo/RecordSet.swift; sourceTree = "<group>"; };
+		1A1CADC0467D618C5C2981B0C7743957 /* Pods_LMGRemoteData_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LMGRemoteData_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B1668347E04E13309A8552710AEE9B6 /* LMGOfferUnbookmarked.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferUnbookmarked.h; path = LMGDomain.framework/Headers/LMGOfferUnbookmarked.h; sourceTree = "<group>"; };
+		1B768350E168E00DCD7FE039BFA2DB9F /* NSNotifications+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotifications+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/NSNotifications+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		1BBBF0F1AD192BAAA9ED1D9A852E8B13 /* LMGCollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCollection.h; path = LMGDomain.framework/Headers/LMGCollection.h; sourceTree = "<group>"; };
+		1C08A490AAB649415B3A8B5C6884756F /* LMGGetSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetSession.h; path = LMGDomain.framework/Headers/LMGGetSession.h; sourceTree = "<group>"; };
+		1CB8B8C187206A2E03FCFE92593678B0 /* LMGRemoteData-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LMGRemoteData-prefix.pch"; sourceTree = "<group>"; };
+		1D1A457B7D8DE8922BBC8BC1480AB6D1 /* LMGDeviceLocationChanged+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGDeviceLocationChanged+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGDeviceLocationChanged+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		1E591C7A06A0F9276F0AB95C04C3E402 /* LMGSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSession.h; path = LMGDomain.framework/Headers/LMGSession.h; sourceTree = "<group>"; };
+		1E5D5B0624136606B156E7E38C689F5A /* AuthGraphAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthGraphAPI.swift; sourceTree = "<group>"; };
+		1EAE56B23B53B4069891A31519C36AE7 /* LMGSessionStarted.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSessionStarted.h; path = LMGDomain.framework/Headers/LMGSessionStarted.h; sourceTree = "<group>"; };
+		1FCF94C9C4AF92527E58FF73FAF6838B /* LMGNotificationBus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LMGNotificationBus.framework; sourceTree = "<group>"; };
+		20A421508101B7E73A3EDA3F0B615A06 /* LMGDASessionStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASessionStore.h; path = LMGDataAccess.framework/Headers/LMGDASessionStore.h; sourceTree = "<group>"; };
+		20C026FDAD9C198289A8722819870D14 /* LMGPlatformId.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGPlatformId.h; path = LMGDomain.framework/Headers/LMGPlatformId.h; sourceTree = "<group>"; };
+		2118ABBD1AE8EC474549BD61C91D06EC /* LMGDACollectionsListRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionsListRequestParams.h; path = LMGDataAccess.framework/Headers/LMGDACollectionsListRequestParams.h; sourceTree = "<group>"; };
+		224345C34FEE8087DD2A609A7DEB88BC /* LMGRDCollectionRemoteSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LMGRDCollectionRemoteSource.swift; sourceTree = "<group>"; };
+		229033F4D51A033ED1180E9F3A5E89DE /* GraphQLResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResult.swift; path = Sources/Apollo/GraphQLResult.swift; sourceTree = "<group>"; };
+		2305FF0082EEBCEEDAF614D408DD72FE /* LMGLocation+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGLocation+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGLocation+DataAccess.h"; sourceTree = "<group>"; };
+		2429350F4F88445FD3408F361E8D8C46 /* LMGDABusinessRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessRepository.h; path = LMGDataAccess.framework/Headers/LMGDABusinessRepository.h; sourceTree = "<group>"; };
+		24987DE392BEF6D27A49837F9A2F61C3 /* LMGDABusinessStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDABusinessStoreFactory.h; sourceTree = "<group>"; };
+		24C16D2D5D94BD5870D3027C7090EEE2 /* LMGBusiness.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusiness.h; path = LMGDomain.framework/Headers/LMGBusiness.h; sourceTree = "<group>"; };
+		250A1A0495F380AB5247F552A8573AAB /* LMGLocationCategory+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGLocationCategory+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGLocationCategory+DataAccess.h"; sourceTree = "<group>"; };
+		26D0598378DE5E3C99765C9D7C83581F /* LMGUseCaseFinished.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGUseCaseFinished.h; path = LMGDomain.framework/Headers/LMGUseCaseFinished.h; sourceTree = "<group>"; };
+		2764854B3DA20A6C8669F1FBFCB089F4 /* LMGCoordinate+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGCoordinate+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGCoordinate+DataAccess.h"; sourceTree = "<group>"; };
+		28119FF8A6E8BE34B1AE9F236DEB4134 /* LMGDAAddress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAAddress.h; path = LMGDataAccess.framework/Headers/LMGDAAddress.h; sourceTree = "<group>"; };
+		2909AFFDD8878999CB944773D661E2F2 /* InMemoryNormalizedCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InMemoryNormalizedCache.swift; path = Sources/Apollo/InMemoryNormalizedCache.swift; sourceTree = "<group>"; };
+		291F2B35DD6596CFB63C93A9535EFD0E /* LMGDACoordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACoordinate.h; path = LMGDataAccess.framework/Headers/LMGDACoordinate.h; sourceTree = "<group>"; };
+		2AF4F095A7CF94D66D46868CF8E56AA0 /* LMGRemoteData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LMGRemoteData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF76EB5BDF4B2367F63E66C9605C654 /* LMGStartSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGStartSession.h; path = LMGDomain.framework/Headers/LMGStartSession.h; sourceTree = "<group>"; };
+		2C6241D7E43D38FD34F427BCE37AC4AB /* LMGSessionRequiredUseCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSessionRequiredUseCase.h; path = LMGDomain.framework/Headers/LMGSessionRequiredUseCase.h; sourceTree = "<group>"; };
+		2F0C9DEAA9652B30C59DA4129788D779 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2F731068EE12E070E87A2F7095550EF5 /* LMGLocationsMapRequestParams+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGLocationsMapRequestParams+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGLocationsMapRequestParams+DataAccess.h"; sourceTree = "<group>"; };
+		30CC8A4B9C8E70BCC0FE6452F68A40C8 /* LMGDASessionRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASessionRepository.h; path = LMGDataAccess.framework/Headers/LMGDASessionRepository.h; sourceTree = "<group>"; };
+		31BCC16E6985C643100259C9E1B7D863 /* LMGBusinessShared+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGBusinessShared+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGBusinessShared+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		32AD5DD80604CA7763BA38CA7C2E7A1D /* GraphQLSelectionSetMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLSelectionSetMapper.swift; path = Sources/Apollo/GraphQLSelectionSetMapper.swift; sourceTree = "<group>"; };
+		32B7BE7374E9C1CACA42F21468733319 /* LMGDALocationRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocationRepository.h; path = LMGDataAccess.framework/Headers/LMGDALocationRepository.h; sourceTree = "<group>"; };
+		35712243240A74D5F0A995860A8FB5AE /* LocationsListQuery+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "LocationsListQuery+DataAccess.swift"; sourceTree = "<group>"; };
+		371601F449F88EE126531D0BDCB628EA /* LMGDAOffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAOffer.h; path = LMGDataAccess.framework/Headers/LMGDAOffer.h; sourceTree = "<group>"; };
+		37B293D04426138B2A1CB681727EA501 /* DefaultGraphAPI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultGraphAPI.swift; sourceTree = "<group>"; };
+		382678F2057F0329F9319B116D3790AC /* Pods-LMGRemoteData_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LMGRemoteData_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3839EAA602BED47747E5D554FF251917 /* LMGOfferShared.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferShared.h; path = LMGDomain.framework/Headers/LMGOfferShared.h; sourceTree = "<group>"; };
+		38B805FEACE12E56BBE484C3E40BB5F2 /* LMGDAUserStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAUserStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDAUserStoreFactory.h; sourceTree = "<group>"; };
+		3B1AB7664DDAFC33B3FE7274916AFCCC /* LMGUpdateSessionUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGUpdateSessionUser.h; path = LMGDomain.framework/Headers/LMGUpdateSessionUser.h; sourceTree = "<group>"; };
+		3E5BE4F5F508D108B8F4DE881BECCCD3 /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/Apollo/DataLoader.swift; sourceTree = "<group>"; };
+		3E5F6C3792CC86D81B0A8849EB53C922 /* GraphQLResponseGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResponseGenerator.swift; path = Sources/Apollo/GraphQLResponseGenerator.swift; sourceTree = "<group>"; };
+		41C63EFB4459C2A91AEC34C160FA06DB /* LMGUseCaseFinished+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGUseCaseFinished+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGUseCaseFinished+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		41D0D3A8F23E406D9A51324074902E61 /* LMGBusinessShown.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusinessShown.h; path = LMGDomain.framework/Headers/LMGBusinessShown.h; sourceTree = "<group>"; };
+		428A85D717F0991F85A84BEF343479F1 /* LMGDomain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LMGDomain.framework; sourceTree = "<group>"; };
+		45A81F039546F35886C33857AF14596F /* LMGGetDeviceLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetDeviceLocation.h; path = LMGDomain.framework/Headers/LMGGetDeviceLocation.h; sourceTree = "<group>"; };
+		468F31CA4EDAD418A3B4C4B5AC6D5CAA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46D515292780A78EFBF94EE756AA90AC /* Pods_LMGRemoteData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LMGRemoteData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49075EF55B5CE9B5BA3AB4EC2E73DA9C /* LMGDAOfferStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAOfferStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDAOfferStoreFactory.h; sourceTree = "<group>"; };
+		49C1F71374EBDDA5192DDF95DF668A8F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4A27F936F0CD81804DBBA6B99B5811DB /* LMGIdentifyUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGIdentifyUser.h; path = LMGDomain.framework/Headers/LMGIdentifyUser.h; sourceTree = "<group>"; };
+		4B427EE6A38EFEC80CB44F441B2AF176 /* LMGSessionError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSessionError.h; path = LMGDomain.framework/Headers/LMGSessionError.h; sourceTree = "<group>"; };
+		4B497FFFD39F83DCDC1A3858B6C3E9C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B591A30ED1CBE86DD7B1A05D68A6ACF /* LMGDAOfferRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAOfferRepository.h; path = LMGDataAccess.framework/Headers/LMGDAOfferRepository.h; sourceTree = "<group>"; };
+		4C2C64E9569DE69FB441A4FFB20C5238 /* LMGDAOfferLimits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAOfferLimits.h; path = LMGDataAccess.framework/Headers/LMGDAOfferLimits.h; sourceTree = "<group>"; };
+		4C58A2975F6F75F3F769BFA106D9797E /* LMGGetBusinessInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetBusinessInfo.h; path = LMGDomain.framework/Headers/LMGGetBusinessInfo.h; sourceTree = "<group>"; };
+		4D1FA3D2C59EEE6D23537877A8A28669 /* LMGDABusinessesListRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessesListRequestParams.h; path = LMGDataAccess.framework/Headers/LMGDABusinessesListRequestParams.h; sourceTree = "<group>"; };
+		4E49DE65A5255471889D3C498CEBDB0F /* Apollo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Apollo.modulemap; sourceTree = "<group>"; };
+		4F67B06D39A9D6F92C8F1DD67CED6386 /* LMGUser+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGUser+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGUser+DataAccess.h"; sourceTree = "<group>"; };
+		4F95888E8B6E9094EC8456F1663DB50E /* LMGDASearchTermsStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASearchTermsStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDASearchTermsStoreFactory.h; sourceTree = "<group>"; };
+		4FC651670313321AE0B3660F50FAD7D3 /* LMGDALocationsMapRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocationsMapRequestParams.h; path = LMGDataAccess.framework/Headers/LMGDALocationsMapRequestParams.h; sourceTree = "<group>"; };
+		51D58CCB78740DDD75FC4612AA4C36AB /* LMGUserBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGUserBuilder.h; path = LMGDomain.framework/Headers/LMGUserBuilder.h; sourceTree = "<group>"; };
+		520707DF9F9E46766BC375BD3F09D95A /* Locking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locking.swift; path = Sources/Apollo/Locking.swift; sourceTree = "<group>"; };
+		5267138FC11E1702A354B72658511811 /* LMGDALocationStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocationStore.h; path = LMGDataAccess.framework/Headers/LMGDALocationStore.h; sourceTree = "<group>"; };
+		52D7A0E6AFA345A2D300ECFA9C914FD8 /* LMGOfferShown+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferShown+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferShown+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		5433C2DCE7F264DD225B58B71A5B2FBE /* LMGRemoteData-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LMGRemoteData-umbrella.h"; sourceTree = "<group>"; };
+		546016E2D33DF85D058525BD119502E5 /* LMGGetOfferInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetOfferInfo.h; path = LMGDomain.framework/Headers/LMGGetOfferInfo.h; sourceTree = "<group>"; };
+		54983D0F2B9A20148DB23113753515D3 /* NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSNotificationConvertable.h; path = LMGNotificationBus.framework/Headers/NSNotificationConvertable.h; sourceTree = "<group>"; };
+		54BB83987D59B3C3569EEE836F772FD7 /* ApolloStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApolloStore.swift; path = Sources/Apollo/ApolloStore.swift; sourceTree = "<group>"; };
+		554CC3DE5F58EEF2E09E0C5DDE70B562 /* Pods-LMGRemoteData_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LMGRemoteData_Example-dummy.m"; sourceTree = "<group>"; };
+		5569DC3D1D946443913EE9DF73B5A4B1 /* LMGUrlPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGUrlPath.h; path = LMGDomain.framework/Headers/LMGUrlPath.h; sourceTree = "<group>"; };
+		5626056205D1DB92C7CEA134DCF2016D /* LMGObservable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGObservable.h; path = LMGDomain.framework/Headers/LMGObservable.h; sourceTree = "<group>"; };
+		5697BEE7432C5757B1813949B53F4D1A /* AuthApolloClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthApolloClient.swift; sourceTree = "<group>"; };
+		56D7BC98D6D9DCDC5D9A6096BC4ACDDB /* NormalizedCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NormalizedCache.swift; path = Sources/Apollo/NormalizedCache.swift; sourceTree = "<group>"; };
+		58E3E6B6D6DC2586886024CA8FF198E7 /* LMGRemoteData-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LMGRemoteData-dummy.m"; sourceTree = "<group>"; };
+		5934F68CF40E27947F633B4F266E576C /* GraphQLError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLError.swift; path = Sources/Apollo/GraphQLError.swift; sourceTree = "<group>"; };
+		59917D6B9235364F1CAE5F3781F3B0FD /* LMGRDOfferRemoteSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LMGRDOfferRemoteSource.swift; sourceTree = "<group>"; };
+		59FA68572354BE940C47D27972BA7CF1 /* LMGOfferStateChanged+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferStateChanged+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferStateChanged+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		5A2A6782377EDA9CEFA6A3D4CE31B312 /* check-and-run-apollo-codegen.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; name = "check-and-run-apollo-codegen.sh"; path = "scripts/check-and-run-apollo-codegen.sh"; sourceTree = "<group>"; };
+		5A5AD4BADB0BF8E8573E052CD74E3C8B /* LMGLocationRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGLocationRequestParams.h; path = LMGDomain.framework/Headers/LMGLocationRequestParams.h; sourceTree = "<group>"; };
+		5C11B868759489F8ABB172D2D49A00F7 /* AuthRequestsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthRequestsConfigurator.swift; sourceTree = "<group>"; };
+		5CD24E40C3A9143CF8691AEE679C31F6 /* LMGSearchTermsRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSearchTermsRepository.h; path = LMGDomain.framework/Headers/LMGSearchTermsRepository.h; sourceTree = "<group>"; };
+		6038DB9A3C647C61F8B7EDCDA298F8FA /* LMGBusinessesListRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusinessesListRequestParams.h; path = LMGDomain.framework/Headers/LMGBusinessesListRequestParams.h; sourceTree = "<group>"; };
+		60DE4F28FE91AA8081D9CD42AA7CDC58 /* LMGDeviceLocationRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDeviceLocationRepository.h; path = LMGDomain.framework/Headers/LMGDeviceLocationRepository.h; sourceTree = "<group>"; };
+		61767D6F016A9E31F30DA0D280E30533 /* Pods-LMGRemoteData_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LMGRemoteData_Example.modulemap"; sourceTree = "<group>"; };
+		617FF21964D0675818BBDC24A68344C9 /* LMGOffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOffer.h; path = LMGDomain.framework/Headers/LMGOffer.h; sourceTree = "<group>"; };
+		633598C655879E49E13D358999D21564 /* Pods-LMGRemoteData_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LMGRemoteData_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		634418B80308303AA11A6402340FE9B6 /* LMGRedemptionStateTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRedemptionStateTransition.h; path = LMGDomain.framework/Headers/LMGRedemptionStateTransition.h; sourceTree = "<group>"; };
+		639C9186C0821C78C9345E759DD70B4E /* LMGCollection+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGCollection+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGCollection+DataAccess.h"; sourceTree = "<group>"; };
+		63E028FD5EC235B02BE708FA7AEF70C2 /* LMGUserRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGUserRepository.h; path = LMGDomain.framework/Headers/LMGUserRepository.h; sourceTree = "<group>"; };
+		6513617DFFD52DD94298D38955D696FB /* LMGBusinessWebsiteVisited+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGBusinessWebsiteVisited+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGBusinessWebsiteVisited+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		659A4A19384831A8CA5940A71A17D10D /* LMGNotificationCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGNotificationCenter.h; path = LMGDomain.framework/Headers/LMGNotificationCenter.h; sourceTree = "<group>"; };
+		68DB19ABBA5DA8D2FAF1A9C41FDD9DA1 /* LMGSessionStarted+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSessionStarted+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGSessionStarted+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		699F0D3D30EF53292C4A6D0A9D7EFD7C /* GraphQLInputValue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLInputValue.swift; path = Sources/Apollo/GraphQLInputValue.swift; sourceTree = "<group>"; };
+		69FE2F4DA39CB44B96C7AF2200568C1C /* Pods-LMGRemoteData_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LMGRemoteData_Example-resources.sh"; sourceTree = "<group>"; };
+		6AFBDBBFD9A27B0E14D9F02FC21918F0 /* LMGOfferStateChanged.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferStateChanged.h; path = LMGDomain.framework/Headers/LMGOfferStateChanged.h; sourceTree = "<group>"; };
+		6B3BC5F179A57078BF12187239EC5B22 /* GraphQLSelectionSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLSelectionSet.swift; path = Sources/Apollo/GraphQLSelectionSet.swift; sourceTree = "<group>"; };
+		6CF14A19C4D095EB0E4AB4B720915B5A /* LMGGetUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetUser.h; path = LMGDomain.framework/Headers/LMGGetUser.h; sourceTree = "<group>"; };
+		6D39F89BBB63CF1A436AED4949FF86CB /* Pods-LMGRemoteData_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LMGRemoteData_Example-umbrella.h"; sourceTree = "<group>"; };
+		6E5F40B1B14443ADE250B66446B849F6 /* LMGContentFilterDidChange+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGContentFilterDidChange+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGContentFilterDidChange+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		6F5DB8FC35C5BB0E35721821BCA58FFB /* LMGDACollectionRemoteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionRemoteStore.h; path = LMGDataAccess.framework/Headers/LMGDACollectionRemoteStore.h; sourceTree = "<group>"; };
+		6F69CCB1F373139A167DDC525C2C67C6 /* LMGCoordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCoordinate.h; path = LMGDomain.framework/Headers/LMGCoordinate.h; sourceTree = "<group>"; };
+		70F67C4CB653774DAB0FF07CA9EDE5D3 /* LMGSession+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSession+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGSession+DataAccess.h"; sourceTree = "<group>"; };
+		71587A442CE48A5874433403C8A7A6A8 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsynchronousOperation.swift; path = Sources/Apollo/AsynchronousOperation.swift; sourceTree = "<group>"; };
+		72C05D0F1FF2FB736E06BEF3665ABAE6 /* LMGDASessionStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASessionStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDASessionStoreFactory.h; sourceTree = "<group>"; };
+		73CD9D74925603F474592E9B56001CCB /* Collections.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collections.swift; path = Sources/Apollo/Collections.swift; sourceTree = "<group>"; };
+		7743AAF4B592FFFDBCEBB60CCD724B30 /* LMGBusinessWebsiteVisited.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusinessWebsiteVisited.h; path = LMGDomain.framework/Headers/LMGBusinessWebsiteVisited.h; sourceTree = "<group>"; };
+		77D0DCB99C673CD64AA6E7AF4681535E /* LMGBaseUseCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBaseUseCase.h; path = LMGDomain.framework/Headers/LMGBaseUseCase.h; sourceTree = "<group>"; };
+		786AA5F7DD3719AB61396CA89C3C5FF4 /* LMGBusinessRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusinessRepository.h; path = LMGDomain.framework/Headers/LMGBusinessRepository.h; sourceTree = "<group>"; };
+		78A5B5FC25FA0C0ADEBF6F0905249B3A /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Apollo/Promise.swift; sourceTree = "<group>"; };
+		795F3C824EFA45A36A1E758B5B5204C5 /* Apollo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Apollo-umbrella.h"; sourceTree = "<group>"; };
+		796E48A1EE5E1DD19931E669BD93AFE5 /* CollectionsListQuery+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CollectionsListQuery+DataAccess.swift"; sourceTree = "<group>"; };
+		799CE9D735818DF1FEA915A22DD8061C /* Pods-LMGRemoteData_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LMGRemoteData_Tests-umbrella.h"; sourceTree = "<group>"; };
+		7AD9F234823BFA08CAC2DE99B7147309 /* LMGSessionRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSessionRepository.h; path = LMGDomain.framework/Headers/LMGSessionRepository.h; sourceTree = "<group>"; };
+		7CA4A2A6978682BDA996241F51434B22 /* LMGDataRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDataRequestParams.h; path = LMGDomain.framework/Headers/LMGDataRequestParams.h; sourceTree = "<group>"; };
+		7CBC9C2421A75E3B00BDA351 /* OffersQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OffersQuery.graphql; sourceTree = "<group>"; };
+		7CBC9C2521A75E3B00BDA351 /* SessionMutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SessionMutations.graphql; sourceTree = "<group>"; };
+		7CBC9C2621A75E3B00BDA351 /* BusinessesQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BusinessesQuery.graphql; sourceTree = "<group>"; };
+		7CBC9C2721A75E3B00BDA351 /* UserQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserQuery.graphql; sourceTree = "<group>"; };
+		7CBC9C2821A75E3B00BDA351 /* OfferMutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OfferMutations.graphql; sourceTree = "<group>"; };
+		7CBC9C2921A75E3B00BDA351 /* OfferRedemption.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OfferRedemption.graphql; sourceTree = "<group>"; };
+		7CBC9C2A21A75E3B00BDA351 /* LocationsQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocationsQuery.graphql; sourceTree = "<group>"; };
+		7CBC9C2B21A75E3B00BDA351 /* Fragments.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fragments.graphql; sourceTree = "<group>"; };
+		7CBC9C2C21A75E3B00BDA351 /* CollectionsQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CollectionsQuery.graphql; sourceTree = "<group>"; };
+		7DC7A326C86E53AD31DD832F4BDB828A /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E442F779F290603488C49A31B331CEA /* NetworkTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkTransport.swift; path = Sources/Apollo/NetworkTransport.swift; sourceTree = "<group>"; };
+		7FCB80400C330E501A1F19366751408B /* LMGSchedule+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSchedule+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGSchedule+DataAccess.h"; sourceTree = "<group>"; };
+		80E580255FD947F9D9F20A27D88787E6 /* LMGDADeviceLocationStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDADeviceLocationStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDADeviceLocationStoreFactory.h; sourceTree = "<group>"; };
+		82BD8C00AE3931C597632B9328F4A5F6 /* LMGDARedemptionState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDARedemptionState.h; path = LMGDataAccess.framework/Headers/LMGDARedemptionState.h; sourceTree = "<group>"; };
+		82CAF2BB7BCCD17E87C2F1237A48081E /* LMGDAOfferStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAOfferStore.h; path = LMGDataAccess.framework/Headers/LMGDAOfferStore.h; sourceTree = "<group>"; };
+		832DBA635B524F88BEBE4A8F449A973E /* LMGDALocationStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocationStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDALocationStoreFactory.h; sourceTree = "<group>"; };
+		83EE3EF1DA64ECE1FB45B104F90D4455 /* Record.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Record.swift; path = Sources/Apollo/Record.swift; sourceTree = "<group>"; };
+		86574FEACE5D6D35A4332888D874FF26 /* LMGDALocationCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocationCategory.h; path = LMGDataAccess.framework/Headers/LMGDALocationCategory.h; sourceTree = "<group>"; };
+		869BBF6DBDBDE3BB0584A0241CCF4534 /* LMGOfferShared+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferShared+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferShared+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		88170D140B5B8B2BE5D52FB7DD3718D1 /* LMGOfferRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferRepository.h; path = LMGDomain.framework/Headers/LMGOfferRepository.h; sourceTree = "<group>"; };
+		88AB124F1A34EF417FF1E62294CE06AC /* LMGRDSessionRemoteSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LMGRDSessionRemoteSource.swift; sourceTree = "<group>"; };
+		88ED7B56B7F170E045BCF0CDA223F0A6 /* LMGDAOfferLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAOfferLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDAOfferLocalStore.h; sourceTree = "<group>"; };
+		8AC491CAF60CC173C0BAB11BEF71AFCA /* LMGResetSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGResetSession.h; path = LMGDomain.framework/Headers/LMGResetSession.h; sourceTree = "<group>"; };
+		8B0FEB9FDFDE4FC4BC2316F92A3791C9 /* LMGRedemptionTransitionArgument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRedemptionTransitionArgument.h; path = LMGDomain.framework/Headers/LMGRedemptionTransitionArgument.h; sourceTree = "<group>"; };
+		8BF563B6187640F911D412154570EC70 /* LMGDADeviceLocationSensorStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDADeviceLocationSensorStore.h; path = LMGDataAccess.framework/Headers/LMGDADeviceLocationSensorStore.h; sourceTree = "<group>"; };
+		8C6CE483D5FE65EB67C909E2589EF155 /* LMGCollectionViewed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCollectionViewed.h; path = LMGDomain.framework/Headers/LMGCollectionViewed.h; sourceTree = "<group>"; };
+		8EEEBF5D5834601E086C1D5076168CAE /* HTTPNetworkTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPNetworkTransport.swift; path = Sources/Apollo/HTTPNetworkTransport.swift; sourceTree = "<group>"; };
+		8F25595E48E59DDA44EDB8DBC2F1EC67 /* LMGDetailsRequestParams+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGDetailsRequestParams+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGDetailsRequestParams+DataAccess.h"; sourceTree = "<group>"; };
+		8FCAFB51D8BB468C6D6F928DBFA017F2 /* ResultOrPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultOrPromise.swift; path = Sources/Apollo/ResultOrPromise.swift; sourceTree = "<group>"; };
+		9039010AFA33EDC507082E2626736F0B /* LMGCollectionsListRequestParams+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGCollectionsListRequestParams+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGCollectionsListRequestParams+DataAccess.h"; sourceTree = "<group>"; };
+		91164AC5F0E5541C2C1B5EFBCB355713 /* LMGBusiness+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGBusiness+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGBusiness+DataAccess.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93F100AD0AE9C9CECD7CD35DCFD64C0E /* LMGNotifications.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGNotifications.h; path = LMGDomain.framework/Headers/LMGNotifications.h; sourceTree = "<group>"; };
+		95D7EA42D685E80368200848082F0DFA /* LMGSearchTermsRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSearchTermsRequestParams.h; path = LMGDomain.framework/Headers/LMGSearchTermsRequestParams.h; sourceTree = "<group>"; };
+		974003FB35D0FB8F3F255C6976FC5CD9 /* LMGSDKVersionDeprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSDKVersionDeprecated.h; path = LMGDomain.framework/Headers/LMGSDKVersionDeprecated.h; sourceTree = "<group>"; };
+		97AFC5D9FE00338B18AE6BAAF37FA95D /* LMGContentFilterDidChange.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGContentFilterDidChange.h; path = LMGDomain.framework/Headers/LMGContentFilterDidChange.h; sourceTree = "<group>"; };
+		9801249244673DACD360240CFEEBE5E6 /* LMGDABusiness.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusiness.h; path = LMGDataAccess.framework/Headers/LMGDABusiness.h; sourceTree = "<group>"; };
+		983B897877D858DA9B9F533A47460D3C /* LMGRedemptionStateTransition+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGRedemptionStateTransition+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGRedemptionStateTransition+DataAccess.h"; sourceTree = "<group>"; };
+		983EFF9587A214AF2C429AD764A964A2 /* LMGDASessionRemoteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASessionRemoteStore.h; path = LMGDataAccess.framework/Headers/LMGDASessionRemoteStore.h; sourceTree = "<group>"; };
+		9875B64188CD29891BAA1502CBD8245E /* LMGBusinessViewed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusinessViewed.h; path = LMGDomain.framework/Headers/LMGBusinessViewed.h; sourceTree = "<group>"; };
+		994DFCF5AC52FCA01596292AB19BCEFF /* BusinessDetailsQuery+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BusinessDetailsQuery+DataAccess.swift"; sourceTree = "<group>"; };
+		9A57842D5AE027861B95719EEDF57BE5 /* LMGAuthTokenExpired.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGAuthTokenExpired.h; path = LMGDomain.framework/Headers/LMGAuthTokenExpired.h; sourceTree = "<group>"; };
+		9B7E4ADE38ABAE89641E9F9B953015E0 /* LMGDADeviceLocationRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDADeviceLocationRepository.h; path = LMGDataAccess.framework/Headers/LMGDADeviceLocationRepository.h; sourceTree = "<group>"; };
+		9C608FB42B7430F386EF6688AD201A75 /* LMGDASocialMedia.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASocialMedia.h; path = LMGDataAccess.framework/Headers/LMGDASocialMedia.h; sourceTree = "<group>"; };
+		9C9E98FDD99802EB7ADB40CD03F853F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E23C0FFB1130ABDF6E4CB7E1CF48A85 /* LMGDataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDataAccess.h; path = LMGDataAccess.framework/Headers/LMGDataAccess.h; sourceTree = "<group>"; };
+		9EBD65F747AEB491A97FD63CAFC846D9 /* LMGGetLocationsMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetLocationsMap.h; path = LMGDomain.framework/Headers/LMGGetLocationsMap.h; sourceTree = "<group>"; };
+		9FA9B44368CBF0004D53DFEF70FAD9C7 /* NSArray+Monads.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Monads.h"; path = "LMGDomain.framework/Headers/NSArray+Monads.h"; sourceTree = "<group>"; };
+		A005D7232C09E066539C66A93E23CD30 /* LMGBusinessViewed+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGBusinessViewed+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGBusinessViewed+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		A03B6FC42FB24247EBD7EE2069D2432A /* LMGCollectionRequestParams+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGCollectionRequestParams+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGCollectionRequestParams+DataAccess.h"; sourceTree = "<group>"; };
+		A10BEBD88AAB5654C27DDBB05C8BA744 /* LMGGetCollectionInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetCollectionInfo.h; path = LMGDomain.framework/Headers/LMGGetCollectionInfo.h; sourceTree = "<group>"; };
+		A173BAC2E36F9DE4933993C1056C2204 /* LMGBusinessesListRequestParams+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGBusinessesListRequestParams+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGBusinessesListRequestParams+DataAccess.h"; sourceTree = "<group>"; };
+		A1B624C69DC53469412433BA71722767 /* LMGDABusinessRemoteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessRemoteStore.h; path = LMGDataAccess.framework/Headers/LMGDABusinessRemoteStore.h; sourceTree = "<group>"; };
+		A3B2C522E7903FAF8A5010DF7F2923A3 /* LMGRedemptionTransitionArgument+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGRedemptionTransitionArgument+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGRedemptionTransitionArgument+DataAccess.h"; sourceTree = "<group>"; };
+		A4551FC48CC6294A53F529A56027A7DE /* GraphQLResultNormalizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResultNormalizer.swift; path = Sources/Apollo/GraphQLResultNormalizer.swift; sourceTree = "<group>"; };
+		A635AB46BF4D2315113D8B4451C835AE /* LMGOffer+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOffer+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGOffer+DataAccess.h"; sourceTree = "<group>"; };
+		A64FCE9D1495BC876B0AAF47F38914E9 /* GraphQLExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLExecutor.swift; path = Sources/Apollo/GraphQLExecutor.swift; sourceTree = "<group>"; };
+		A7024105B26BC20BB2B2FCC26513BEC5 /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70DFF01E7B995561F47D0CD2B2EE0FE /* LMGCollectionsListed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCollectionsListed.h; path = LMGDomain.framework/Headers/LMGCollectionsListed.h; sourceTree = "<group>"; };
+		A74060333EB084080174AE38B4A61A59 /* LMGDARedemptionTransitionArgument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDARedemptionTransitionArgument.h; path = LMGDataAccess.framework/Headers/LMGDARedemptionTransitionArgument.h; sourceTree = "<group>"; };
+		A762E177853A42A932E7AD76D2247748 /* LMGDomain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDomain.h; path = LMGDomain.framework/Headers/LMGDomain.h; sourceTree = "<group>"; };
+		A9979DF5C7882130F88EAB424E11B5DB /* LMGSessionError+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSessionError+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGSessionError+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		AA99316A17F87539BCE8012D3607DC7A /* LMGDACollectionStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDACollectionStoreFactory.h; sourceTree = "<group>"; };
+		AD6E322E47859734DD1EF785BB44E50B /* LMGBusinessCalled+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGBusinessCalled+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGBusinessCalled+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		ADD12D394187B0D3DF66E4DAB6C6E3AF /* LMGLocationsRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGLocationsRepository.h; path = LMGDomain.framework/Headers/LMGLocationsRepository.h; sourceTree = "<group>"; };
+		ADE675212210251995D96D3C742C2607 /* LMGDACollectionRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionRequestParams.h; path = LMGDataAccess.framework/Headers/LMGDACollectionRequestParams.h; sourceTree = "<group>"; };
+		AE16740D634375A01108D4106AC19A09 /* LMGSDKInitialized+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSDKInitialized+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGSDKInitialized+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		AE880F8D0403F612E993AA3878FD93D4 /* Pods-LMGRemoteData_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LMGRemoteData_Tests-resources.sh"; sourceTree = "<group>"; };
+		AF66A4A13F03953D4EFB19E5C0BC6428 /* LMGAddress+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGAddress+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGAddress+DataAccess.h"; sourceTree = "<group>"; };
+		AFFEB1B7928C8EF1C50B68E894CD8880 /* Pods-LMGRemoteData_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LMGRemoteData_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B07F99F1C1C52D6EF289AB59DF70183E /* LMGLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGLocation.h; path = LMGDomain.framework/Headers/LMGLocation.h; sourceTree = "<group>"; };
+		B0B59AE4AFF80EA509C884CDF074A963 /* LMGRDBusinessRemoteSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LMGRDBusinessRemoteSource.swift; sourceTree = "<group>"; };
+		B13F9F0F33188CBB9F055E5139BF85D5 /* JSONSerializationFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONSerializationFormat.swift; path = Sources/Apollo/JSONSerializationFormat.swift; sourceTree = "<group>"; };
+		B1DAEC038CB1D58FAB0E89FF986FA99F /* LMGDAUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAUser.h; path = LMGDataAccess.framework/Headers/LMGDAUser.h; sourceTree = "<group>"; };
+		B2C983B2C80CF5D41BD1352A7E3F7AA2 /* LMGNotificationBus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGNotificationBus.h; path = LMGNotificationBus.framework/Headers/LMGNotificationBus.h; sourceTree = "<group>"; };
+		B3198D24411216B453485772CEA745D6 /* AuthHTTPNetworkTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthHTTPNetworkTransport.swift; sourceTree = "<group>"; };
+		B3DD7552223296556932D9EAE0FFD7FF /* LMGDASession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASession.h; path = LMGDataAccess.framework/Headers/LMGDASession.h; sourceTree = "<group>"; };
+		B3EA8E7A28609C99FC61D8E7CEFD5891 /* Pods-LMGRemoteData_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LMGRemoteData_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B510A095F100FE3CC14F54A019E3BCC3 /* LMGDARedemptionStateTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDARedemptionStateTransition.h; path = LMGDataAccess.framework/Headers/LMGDARedemptionStateTransition.h; sourceTree = "<group>"; };
+		B53F65EB9AD155B90801F1C06BC7FBCC /* LMGDAUserStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAUserStore.h; path = LMGDataAccess.framework/Headers/LMGDAUserStore.h; sourceTree = "<group>"; };
+		B5759B104656141DB08F2DDFE6EAB2FC /* LMGOfferStateChangeError+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferStateChangeError+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferStateChangeError+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		B6ECA60986E2A44ADCDFE2F04D4F51BE /* LMGOfferViewed.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferViewed.h; path = LMGDomain.framework/Headers/LMGOfferViewed.h; sourceTree = "<group>"; };
+		B6EF4D66522B2F3CB2048367A92C0AE4 /* Pods-LMGRemoteData_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LMGRemoteData_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		B73A9AC6994DC141BAF5C9EA8B077FC1 /* NSNotificationCenter+LMGNotificationCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+LMGNotificationCenter.h"; path = "LMGNotificationBus.framework/Headers/NSNotificationCenter+LMGNotificationCenter.h"; sourceTree = "<group>"; };
+		B74847433C625C38DD42016E1EFFD667 /* LMGDADeviceLocationLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDADeviceLocationLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDADeviceLocationLocalStore.h; sourceTree = "<group>"; };
+		B7AFA6ED9916FC7C1A8FF431CD514A87 /* LMGDataAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LMGDataAccess.framework; sourceTree = "<group>"; };
+		BB8D7DAEA980C9A414F97B079A493F68 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BE6C605009A15BAADD6A37A18656CEB0 /* LMGDACollectionLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDACollectionLocalStore.h; sourceTree = "<group>"; };
+		BEB3676C17A8401AC60EB9DAD39D2709 /* OfferDetailsQuery+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "OfferDetailsQuery+DataAccess.swift"; sourceTree = "<group>"; };
+		BF0D7EC24845C542F6CAC7113AEE3318 /* Apollo-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Apollo-prefix.pch"; sourceTree = "<group>"; };
+		BF2F8716D83A28B76B995538DB8FB004 /* LMGGetRedeemAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetRedeemAction.h; path = LMGDomain.framework/Headers/LMGGetRedeemAction.h; sourceTree = "<group>"; };
+		BF864BF19A6A9901C94910C8AB63F377 /* LMGDASessionLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASessionLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDASessionLocalStore.h; sourceTree = "<group>"; };
+		C2468860BD8CCB0642FB4B7D5E30B885 /* LMGDACollection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollection.h; path = LMGDataAccess.framework/Headers/LMGDACollection.h; sourceTree = "<group>"; };
+		C25D670A2944D976C92064686A6B7798 /* LMGOfferLimits.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferLimits.h; path = LMGDomain.framework/Headers/LMGOfferLimits.h; sourceTree = "<group>"; };
+		C278EE4F77D1BF1467B53DEF48BCD167 /* LMGSDKInitialized.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSDKInitialized.h; path = LMGDomain.framework/Headers/LMGSDKInitialized.h; sourceTree = "<group>"; };
+		C337FA10898B3666F4709715296F6967 /* BusinessesListQuery+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "BusinessesListQuery+DataAccess.swift"; sourceTree = "<group>"; };
+		C4B3EDBBF3767E42E8AB845ECDB423A6 /* LMGDAUserRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAUserRepository.h; path = LMGDataAccess.framework/Headers/LMGDAUserRepository.h; sourceTree = "<group>"; };
+		C4DF6591BD0A9FE1F9B95C80AC459C29 /* LMGOfferLimits+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferLimits+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGOfferLimits+DataAccess.h"; sourceTree = "<group>"; };
+		C4FDFEF6273EAB272403DDB037E570D9 /* LMGCollectionViewed+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGCollectionViewed+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGCollectionViewed+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		C5997C528B5B44E3D8ADFF1043458F28 /* LMGDADetailsRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDADetailsRequestParams.h; path = LMGDataAccess.framework/Headers/LMGDADetailsRequestParams.h; sourceTree = "<group>"; };
+		C5FF20B8995E46CE8C0E9ABB92CE9AAD /* LMGNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGNotification.h; path = LMGDomain.framework/Headers/LMGNotification.h; sourceTree = "<group>"; };
+		C8BBA97DE08F5F0E9B9777590123FDE5 /* LMGCollectionRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCollectionRequestParams.h; path = LMGDomain.framework/Headers/LMGCollectionRequestParams.h; sourceTree = "<group>"; };
+		C8F44E8D941FE176AF2EED85556D53A4 /* LMGDALocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocation.h; path = LMGDataAccess.framework/Headers/LMGDALocation.h; sourceTree = "<group>"; };
+		C9012E797EC596C42375CC141DFC5FA8 /* LMGRedemptionState+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGRedemptionState+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGRedemptionState+DataAccess.h"; sourceTree = "<group>"; };
+		C956BAED84700E60124BFE7EF1075C98 /* NSString+SaveableParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+SaveableParams.h"; path = "LMGDataAccess.framework/Headers/NSString+SaveableParams.h"; sourceTree = "<group>"; };
+		C9CE17B5CD929AAACD01404E72E7AF90 /* LMGDASaveableParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASaveableParams.h; path = LMGDataAccess.framework/Headers/LMGDASaveableParams.h; sourceTree = "<group>"; };
+		CA815CCE23717A90E8EBCF2EC988C840 /* LMGRemoteData.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = LMGRemoteData.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CA9C7DB4B2477FD826DDE34B0D91F77A /* LMGOfferShown.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferShown.h; path = LMGDomain.framework/Headers/LMGOfferShown.h; sourceTree = "<group>"; };
+		CD49C3A0E4AF68CEC4E65BA8C7798A31 /* LMGBusinessCalled.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusinessCalled.h; path = LMGDomain.framework/Headers/LMGBusinessCalled.h; sourceTree = "<group>"; };
+		CE9D8D36C0708B4A1956B1EE5F90C936 /* LMGOfferStateChangeError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferStateChangeError.h; path = LMGDomain.framework/Headers/LMGOfferStateChangeError.h; sourceTree = "<group>"; };
+		CEF487C21F7553A7597F0B0347B46A35 /* UserQuery+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UserQuery+DataAccess.swift"; sourceTree = "<group>"; };
+		CF59B3B4A6C27C0F6E1859853AD6FDE8 /* LMGDAPlatformId.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAPlatformId.h; path = LMGDataAccess.framework/Headers/LMGDAPlatformId.h; sourceTree = "<group>"; };
+		CFF7EF664378038F1EB4247C8CD11D82 /* LMGGetCollectionBusinesses.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetCollectionBusinesses.h; path = LMGDomain.framework/Headers/LMGGetCollectionBusinesses.h; sourceTree = "<group>"; };
+		D1BF3B013253781E9B58E95D57E46457 /* LMGDABusinessLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDABusinessLocalStore.h; sourceTree = "<group>"; };
+		D26760395281F98E859E3B652796F831 /* LMGDAUserRemoteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAUserRemoteStore.h; path = LMGDataAccess.framework/Headers/LMGDAUserRemoteStore.h; sourceTree = "<group>"; };
+		D38F83202A02B48B706F27833BB829B8 /* LMGDACollectionRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionRepository.h; path = LMGDataAccess.framework/Headers/LMGDACollectionRepository.h; sourceTree = "<group>"; };
+		D418C6C4E8777EEEA7F0DA1FCD60BAC0 /* LMGDeviceLocationChanged.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDeviceLocationChanged.h; path = LMGDomain.framework/Headers/LMGDeviceLocationChanged.h; sourceTree = "<group>"; };
+		D447609BBC9711A7622A0587186C606C /* Apollo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Apollo-dummy.m"; sourceTree = "<group>"; };
+		D4CB75E776DCA9F50E55A0B789298F63 /* LMGRDLocationRemoteSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LMGRDLocationRemoteSource.swift; sourceTree = "<group>"; };
+		D7CDA144C3AD9E41871432F8688C0F05 /* LMGDAPagedResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAPagedResult.h; path = LMGDataAccess.framework/Headers/LMGDAPagedResult.h; sourceTree = "<group>"; };
+		D7CE56C5227D96BC07CE06C3DF25EAF0 /* LMGDALocationLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocationLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDALocationLocalStore.h; sourceTree = "<group>"; };
+		D81879CBED138936C31717C989567E33 /* LMGCollectionRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCollectionRepository.h; path = LMGDomain.framework/Headers/LMGCollectionRepository.h; sourceTree = "<group>"; };
+		D9B16ECCE981F72D308D259D5BFF787C /* Pods-LMGRemoteData_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LMGRemoteData_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		DBE6AA45AAE76B203343EE25739AD9AD /* LMGDASchedule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASchedule.h; path = LMGDataAccess.framework/Headers/LMGDASchedule.h; sourceTree = "<group>"; };
+		DC15BAA19199CABECB254E5DE7DEA1EE /* LMGBusinessShown+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGBusinessShown+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGBusinessShown+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		DC3186C345BB8D4A3806CCDD006D72CE /* LMGSessionIdentified.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSessionIdentified.h; path = LMGDomain.framework/Headers/LMGSessionIdentified.h; sourceTree = "<group>"; };
+		DC49CD23A84F9C66186D1E7994CCF0EA /* LMGSchedule.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSchedule.h; path = LMGDomain.framework/Headers/LMGSchedule.h; sourceTree = "<group>"; };
+		DDEFEE55184497B96D83C2E9E84312E3 /* LMGLocationCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGLocationCategory.h; path = LMGDomain.framework/Headers/LMGLocationCategory.h; sourceTree = "<group>"; };
+		DEB02B375657AB5C247C91CAF9BCF7C8 /* LMGAddSearchTerm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGAddSearchTerm.h; path = LMGDomain.framework/Headers/LMGAddSearchTerm.h; sourceTree = "<group>"; };
+		DEDEE2B2EC4C7F1F336A9C9DF510457C /* GraphQLResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResponse.swift; path = Sources/Apollo/GraphQLResponse.swift; sourceTree = "<group>"; };
+		E00C0E5D0677F1E2EC250BEA6D96804F /* Pods-LMGRemoteData_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LMGRemoteData_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E037C10BF6503A7D91998D616F871E4C /* LMGDACoordinate+RemoteData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "LMGDACoordinate+RemoteData.swift"; sourceTree = "<group>"; };
+		E0A1DA500D3D0632D78CF8AF88FF2F83 /* LMGPagedResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGPagedResult.h; path = LMGDomain.framework/Headers/LMGPagedResult.h; sourceTree = "<group>"; };
+		E0E33458A756816F2C71F49D527169FF /* LMGRestartSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRestartSession.h; path = LMGDomain.framework/Headers/LMGRestartSession.h; sourceTree = "<group>"; };
+		E171BAAF892B63FA13589B05F219CD26 /* NSError+Domain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+Domain.h"; path = "LMGDomain.framework/Headers/NSError+Domain.h"; sourceTree = "<group>"; };
+		E291A4477EB6C856A91C115052074DC4 /* LMGDetailsRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDetailsRequestParams.h; path = LMGDomain.framework/Headers/LMGDetailsRequestParams.h; sourceTree = "<group>"; };
+		E31BE8F3993B1F49828F7ABCCC6AAF16 /* LMGAddress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGAddress.h; path = LMGDomain.framework/Headers/LMGAddress.h; sourceTree = "<group>"; };
+		E3BD82C0C2AEC18CF2830854F0BAE4A1 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Apollo/Result.swift; sourceTree = "<group>"; };
+		E6523E48950E8E47D71A2D4DEDAB4374 /* LMGDASearchTermsRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASearchTermsRepository.h; path = LMGDataAccess.framework/Headers/LMGDASearchTermsRepository.h; sourceTree = "<group>"; };
+		E6FA84F8CA9D7039285D5286F3682973 /* LMGRenewSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRenewSession.h; path = LMGDomain.framework/Headers/LMGRenewSession.h; sourceTree = "<group>"; };
+		E7236D7C2C4D51D373A3E4DA85659FE1 /* LMGDALocationRemoteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDALocationRemoteStore.h; path = LMGDataAccess.framework/Headers/LMGDALocationRemoteStore.h; sourceTree = "<group>"; };
+		E739264F584F452260E61EC7BF12DF07 /* LMGOfferUnbookmarked+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferUnbookmarked+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferUnbookmarked+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		E794FD74A50F241D1433FF4006540582 /* LMGGetSearchTerms.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetSearchTerms.h; path = LMGDomain.framework/Headers/LMGGetSearchTerms.h; sourceTree = "<group>"; };
+		E7F80776BC3C8F202CCCD49A71B66061 /* GraphQLResultAccumulator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResultAccumulator.swift; path = Sources/Apollo/GraphQLResultAccumulator.swift; sourceTree = "<group>"; };
+		E8D11CCB10E1074EC4E1830EE934426C /* LMGGetCollectionsList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetCollectionsList.h; path = LMGDomain.framework/Headers/LMGGetCollectionsList.h; sourceTree = "<group>"; };
+		E8F2E8BF1AF3227FE68B838385C4335A /* GraphQLOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLOperation.swift; path = Sources/Apollo/GraphQLOperation.swift; sourceTree = "<group>"; };
+		EAC5BA123CC75B7B6E9CAAFF46300719 /* LMGDAUserBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAUserBuilder.h; path = LMGDataAccess.framework/Headers/LMGDAUserBuilder.h; sourceTree = "<group>"; };
+		ECE858660222128CF40E896DF78B9BBC /* LMGDAOfferRemoteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAOfferRemoteStore.h; path = LMGDataAccess.framework/Headers/LMGDAOfferRemoteStore.h; sourceTree = "<group>"; };
+		EE8AD00050445C89104EA44B46112784 /* LMGPagedResult+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGPagedResult+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGPagedResult+DataAccess.h"; sourceTree = "<group>"; };
+		EEA51D191149300F0524F8CE8AF74B9F /* LMGTransitionRedemptionState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGTransitionRedemptionState.h; path = LMGDomain.framework/Headers/LMGTransitionRedemptionState.h; sourceTree = "<group>"; };
+		EEDBD5DCAA465E37F165CD54C5ECB930 /* LMGDASearchTermsStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASearchTermsStore.h; path = LMGDataAccess.framework/Headers/LMGDASearchTermsStore.h; sourceTree = "<group>"; };
+		EF4A6DAEE96547F7C6A307F03C866FFA /* LMGOfferViewed+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferViewed+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferViewed+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		F06C6F061A12C7296020FCE0A1A6155D /* LMGOfferBookmarked+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferBookmarked+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferBookmarked+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		F0FE22079379D8218615AC2B3E5F794B /* NSString+EmptyCheck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+EmptyCheck.h"; path = "LMGDomain.framework/Headers/NSString+EmptyCheck.h"; sourceTree = "<group>"; };
+		F1C71588D859D1C1904A5AEFC02A3BAB /* Pods-LMGRemoteData_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LMGRemoteData_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F2DF7E080EFCDA0029EFEE0F883DDBEF /* LMGCollectionsListed+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGCollectionsListed+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGCollectionsListed+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		F4B41DAF82A3C2A34640371EABEC5848 /* LMGContentFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGContentFilter.h; path = LMGDomain.framework/Headers/LMGContentFilter.h; sourceTree = "<group>"; };
+		F572C962E93685E3D6B00FCB6995FD14 /* LMGSessionUseCaseFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSessionUseCaseFactory.h; path = LMGDomain.framework/Headers/LMGSessionUseCaseFactory.h; sourceTree = "<group>"; };
+		F632CA75A64392B146DC1F6A282383EC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F69A75C2816E711A48C2FEDB9DB45339 /* LMGSocialMedia+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSocialMedia+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGSocialMedia+DataAccess.h"; sourceTree = "<group>"; };
+		F70786DA612FA8477CAE6B4A627F0EC2 /* LMGDASearchTermsLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASearchTermsLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDASearchTermsLocalStore.h; sourceTree = "<group>"; };
+		F751F6F7B7A4BCB18DD9CA9F4193E01A /* LMGRedemptionTransitionRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRedemptionTransitionRequestParams.h; path = LMGDomain.framework/Headers/LMGRedemptionTransitionRequestParams.h; sourceTree = "<group>"; };
+		F8837CC21B7A9B4F873C6321648FF0B5 /* GraphQLDependencyTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLDependencyTracker.swift; path = Sources/Apollo/GraphQLDependencyTracker.swift; sourceTree = "<group>"; };
+		F8D7C170D107A6DD3FB5E97295468065 /* LMGCollectionsListRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCollectionsListRequestParams.h; path = LMGDomain.framework/Headers/LMGCollectionsListRequestParams.h; sourceTree = "<group>"; };
+		FB015178893B72B2F7181BFB0504847A /* LMGDABusinessStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessStore.h; path = LMGDataAccess.framework/Headers/LMGDABusinessStore.h; sourceTree = "<group>"; };
+		FD3B8EA35F333AD8A60D5ECA35110645 /* SessionMutations+DataAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "SessionMutations+DataAccess.swift"; sourceTree = "<group>"; };
+		FE0D46C8B0FA11D39E1CF1C2FC5D7D90 /* LMGBusinessShared.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusinessShared.h; path = LMGDomain.framework/Headers/LMGBusinessShared.h; sourceTree = "<group>"; };
+		FE944288C82E816D376F1ED821657039 /* LMGSDKVersionDeprecated+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSDKVersionDeprecated+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGSDKVersionDeprecated+NSNotificationConvertable.h"; sourceTree = "<group>"; };
+		FE9FE4E58822255692E40751920BAA33 /* VarLet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VarLet.h; path = LMGDomain.framework/Headers/VarLet.h; sourceTree = "<group>"; };
+		FF171DA20B95B98FA10CE3C822075FCB /* LMGOfferBookmarked.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferBookmarked.h; path = LMGDomain.framework/Headers/LMGOfferBookmarked.h; sourceTree = "<group>"; };
+		FF665D2A9D5B5A387A9CD2E0DA12CBEA /* GraphQLQueryWatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLQueryWatcher.swift; path = Sources/Apollo/GraphQLQueryWatcher.swift; sourceTree = "<group>"; };
+		FFE7ECB1BBCC5DF09FCDAB68B20EEB5F /* LMGLocationsMapRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGLocationsMapRequestParams.h; path = LMGDomain.framework/Headers/LMGLocationsMapRequestParams.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6192186A49E3054052CEDCA6FC51CC5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283EBA5BBD24EAF4A23702CA17E74A83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67A94779316BAA271D425551FE770E76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D902237B06C31C7DF5A1CBD689636DA /* Apollo.framework in Frameworks */,
+				D26010D53A4A7D84B67E773227BD9984 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFEEA9DC0B26A21B89E9EDADA1B87F87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EAED79252ED626B7C8B8708CA1F35B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEB209FF924E94F6A731609E2AB30444 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E26A16447E0731A067CBEAAC3F96C25 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		006412AE997151BAE284E3FAD3BDBDBB /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				5697BEE7432C5757B1813949B53F4D1A /* AuthApolloClient.swift */,
+				1E5D5B0624136606B156E7E38C689F5A /* AuthGraphAPI.swift */,
+				B3198D24411216B453485772CEA745D6 /* AuthHTTPNetworkTransport.swift */,
+				5C11B868759489F8ABB172D2D49A00F7 /* AuthRequestsConfigurator.swift */,
+				37B293D04426138B2A1CB681727EA501 /* DefaultGraphAPI.swift */,
+				1DCCE4D09FE195D2D306D6816DACEAF9 /* DataAccess Glue */,
+				7CBC9C2321A75E3B00BDA351 /* Queries */,
+			);
+			name = GraphQL;
+			path = LMGRemoteData/Classes/GraphQL;
+			sourceTree = "<group>";
+		};
+		012A8F04BE8CB8F7245A392D46E7AC3B /* Apollo */ = {
+			isa = PBXGroup;
+			children = (
+				BEC4AF953C0C711B58950A7E02D4C915 /* Core */,
+				9D06D8FAF83037A3FF0017EF17F9F774 /* Support Files */,
+			);
+			path = Apollo;
+			sourceTree = "<group>";
+		};
+		17D8D27729EA02FC8BA7D3E8A043B2FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7AFA6ED9916FC7C1A8FF431CD514A87 /* LMGDataAccess.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DCCE4D09FE195D2D306D6816DACEAF9 /* DataAccess Glue */ = {
+			isa = PBXGroup;
+			children = (
+				994DFCF5AC52FCA01596292AB19BCEFF /* BusinessDetailsQuery+DataAccess.swift */,
+				C337FA10898B3666F4709715296F6967 /* BusinessesListQuery+DataAccess.swift */,
+				796E48A1EE5E1DD19931E669BD93AFE5 /* CollectionsListQuery+DataAccess.swift */,
+				E037C10BF6503A7D91998D616F871E4C /* LMGDACoordinate+RemoteData.swift */,
+				35712243240A74D5F0A995860A8FB5AE /* LocationsListQuery+DataAccess.swift */,
+				BEB3676C17A8401AC60EB9DAD39D2709 /* OfferDetailsQuery+DataAccess.swift */,
+				089B397D2E27604344B83141E04067A5 /* OfferRedeemActionQuery+DataAccess.swift */,
+				FD3B8EA35F333AD8A60D5ECA35110645 /* SessionMutations+DataAccess.swift */,
+				CEF487C21F7553A7597F0B0347B46A35 /* UserQuery+DataAccess.swift */,
+			);
+			path = "DataAccess Glue";
+			sourceTree = "<group>";
+		};
+		2B2BFDA4B10C89126FCC42F1058919AB /* LMGNotificationBus */ = {
+			isa = PBXGroup;
+			children = (
+				AD6E322E47859734DD1EF785BB44E50B /* LMGBusinessCalled+NSNotificationConvertable.h */,
+				31BCC16E6985C643100259C9E1B7D863 /* LMGBusinessShared+NSNotificationConvertable.h */,
+				DC15BAA19199CABECB254E5DE7DEA1EE /* LMGBusinessShown+NSNotificationConvertable.h */,
+				A005D7232C09E066539C66A93E23CD30 /* LMGBusinessViewed+NSNotificationConvertable.h */,
+				6513617DFFD52DD94298D38955D696FB /* LMGBusinessWebsiteVisited+NSNotificationConvertable.h */,
+				F2DF7E080EFCDA0029EFEE0F883DDBEF /* LMGCollectionsListed+NSNotificationConvertable.h */,
+				C4FDFEF6273EAB272403DDB037E570D9 /* LMGCollectionViewed+NSNotificationConvertable.h */,
+				6E5F40B1B14443ADE250B66446B849F6 /* LMGContentFilterDidChange+NSNotificationConvertable.h */,
+				1D1A457B7D8DE8922BBC8BC1480AB6D1 /* LMGDeviceLocationChanged+NSNotificationConvertable.h */,
+				B2C983B2C80CF5D41BD1352A7E3F7AA2 /* LMGNotificationBus.h */,
+				F06C6F061A12C7296020FCE0A1A6155D /* LMGOfferBookmarked+NSNotificationConvertable.h */,
+				869BBF6DBDBDE3BB0584A0241CCF4534 /* LMGOfferShared+NSNotificationConvertable.h */,
+				52D7A0E6AFA345A2D300ECFA9C914FD8 /* LMGOfferShown+NSNotificationConvertable.h */,
+				59FA68572354BE940C47D27972BA7CF1 /* LMGOfferStateChanged+NSNotificationConvertable.h */,
+				B5759B104656141DB08F2DDFE6EAB2FC /* LMGOfferStateChangeError+NSNotificationConvertable.h */,
+				E739264F584F452260E61EC7BF12DF07 /* LMGOfferUnbookmarked+NSNotificationConvertable.h */,
+				EF4A6DAEE96547F7C6A307F03C866FFA /* LMGOfferViewed+NSNotificationConvertable.h */,
+				AE16740D634375A01108D4106AC19A09 /* LMGSDKInitialized+NSNotificationConvertable.h */,
+				FE944288C82E816D376F1ED821657039 /* LMGSDKVersionDeprecated+NSNotificationConvertable.h */,
+				A9979DF5C7882130F88EAB424E11B5DB /* LMGSessionError+NSNotificationConvertable.h */,
+				160C6B590EE70550B9CC34D7B13CA48F /* LMGSessionIdentified+NSNotificationConvertable.h */,
+				68DB19ABBA5DA8D2FAF1A9C41FDD9DA1 /* LMGSessionStarted+NSNotificationConvertable.h */,
+				41C63EFB4459C2A91AEC34C160FA06DB /* LMGUseCaseFinished+NSNotificationConvertable.h */,
+				14F6A72007FD62E4E85FEB2496B9A68C /* LMGUseCaseStarted+NSNotificationConvertable.h */,
+				B73A9AC6994DC141BAF5C9EA8B077FC1 /* NSNotificationCenter+LMGNotificationCenter.h */,
+				54983D0F2B9A20148DB23113753515D3 /* NSNotificationConvertable.h */,
+				1B768350E168E00DCD7FE039BFA2DB9F /* NSNotifications+NSNotificationConvertable.h */,
+				B956FEFADB2BB4A6D78735E25AB4C08F /* Frameworks */,
+			);
+			path = LMGNotificationBus;
+			sourceTree = "<group>";
+		};
+		3C94253D7EC3A21F32C4B47CCBCC7461 /* Offer */ = {
+			isa = PBXGroup;
+			children = (
+				59917D6B9235364F1CAE5F3781F3B0FD /* LMGRDOfferRemoteSource.swift */,
+			);
+			name = Offer;
+			path = LMGRemoteData/Classes/Offer;
+			sourceTree = "<group>";
+		};
+		467336D726AFF4C68B17C237903CE74E /* LMGRemoteData */ = {
+			isa = PBXGroup;
+			children = (
+				F6FB25D5C4E6F2133A6BC011EB3FBF75 /* Business */,
+				A077E2903225AB690997059879381154 /* Collection */,
+				006412AE997151BAE284E3FAD3BDBDBB /* GraphQL */,
+				C5D902B0A6169C112E815AC589D19801 /* Location */,
+				3C94253D7EC3A21F32C4B47CCBCC7461 /* Offer */,
+				5EB1105562AF53BF58331F771F253675 /* Pod */,
+				FB2D45716BAC106B70C93DCE87B6611F /* Session */,
+				A25C66598AE0DD398C37068C8CCBF806 /* Support Files */,
+				ECBF10677EB03B2B8BDC1AFEAE7F18F8 /* User */,
+			);
+			name = LMGRemoteData;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		54378398B5E5F202890C243D79270A69 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				843CAA358B417D99B9611ED389930109 /* Pods-LMGRemoteData_Example */,
+				9CCE76CA0F8E91413474A780DB3F9EEB /* Pods-LMGRemoteData_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5E92D1C65E0B1B977D221BB3B9AB3F5D /* LMGDomain */ = {
+			isa = PBXGroup;
+			children = (
+				E31BE8F3993B1F49828F7ABCCC6AAF16 /* LMGAddress.h */,
+				DEB02B375657AB5C247C91CAF9BCF7C8 /* LMGAddSearchTerm.h */,
+				9A57842D5AE027861B95719EEDF57BE5 /* LMGAuthTokenExpired.h */,
+				77D0DCB99C673CD64AA6E7AF4681535E /* LMGBaseUseCase.h */,
+				0084A69C2CDDB7AA11A2482B5E03FD93 /* LMGBookmarkOffer.h */,
+				24C16D2D5D94BD5870D3027C7090EEE2 /* LMGBusiness.h */,
+				CD49C3A0E4AF68CEC4E65BA8C7798A31 /* LMGBusinessCalled.h */,
+				6038DB9A3C647C61F8B7EDCDA298F8FA /* LMGBusinessesListRequestParams.h */,
+				786AA5F7DD3719AB61396CA89C3C5FF4 /* LMGBusinessRepository.h */,
+				FE0D46C8B0FA11D39E1CF1C2FC5D7D90 /* LMGBusinessShared.h */,
+				41D0D3A8F23E406D9A51324074902E61 /* LMGBusinessShown.h */,
+				9875B64188CD29891BAA1502CBD8245E /* LMGBusinessViewed.h */,
+				7743AAF4B592FFFDBCEBB60CCD724B30 /* LMGBusinessWebsiteVisited.h */,
+				1BBBF0F1AD192BAAA9ED1D9A852E8B13 /* LMGCollection.h */,
+				D81879CBED138936C31717C989567E33 /* LMGCollectionRepository.h */,
+				C8BBA97DE08F5F0E9B9777590123FDE5 /* LMGCollectionRequestParams.h */,
+				A70DFF01E7B995561F47D0CD2B2EE0FE /* LMGCollectionsListed.h */,
+				F8D7C170D107A6DD3FB5E97295468065 /* LMGCollectionsListRequestParams.h */,
+				8C6CE483D5FE65EB67C909E2589EF155 /* LMGCollectionViewed.h */,
+				F4B41DAF82A3C2A34640371EABEC5848 /* LMGContentFilter.h */,
+				97AFC5D9FE00338B18AE6BAAF37FA95D /* LMGContentFilterDidChange.h */,
+				6F69CCB1F373139A167DDC525C2C67C6 /* LMGCoordinate.h */,
+				7CA4A2A6978682BDA996241F51434B22 /* LMGDataRequestParams.h */,
+				E291A4477EB6C856A91C115052074DC4 /* LMGDetailsRequestParams.h */,
+				D418C6C4E8777EEEA7F0DA1FCD60BAC0 /* LMGDeviceLocationChanged.h */,
+				60DE4F28FE91AA8081D9CD42AA7CDC58 /* LMGDeviceLocationRepository.h */,
+				A762E177853A42A932E7AD76D2247748 /* LMGDomain.h */,
+				10BEF814AA9C8240837BD1B9C60F6EC1 /* LMGGetBusinessesWithParams.h */,
+				4C58A2975F6F75F3F769BFA106D9797E /* LMGGetBusinessInfo.h */,
+				CFF7EF664378038F1EB4247C8CD11D82 /* LMGGetCollectionBusinesses.h */,
+				A10BEBD88AAB5654C27DDBB05C8BA744 /* LMGGetCollectionInfo.h */,
+				E8D11CCB10E1074EC4E1830EE934426C /* LMGGetCollectionsList.h */,
+				45A81F039546F35886C33857AF14596F /* LMGGetDeviceLocation.h */,
+				9EBD65F747AEB491A97FD63CAFC846D9 /* LMGGetLocationsMap.h */,
+				546016E2D33DF85D058525BD119502E5 /* LMGGetOfferInfo.h */,
+				BF2F8716D83A28B76B995538DB8FB004 /* LMGGetRedeemAction.h */,
+				E794FD74A50F241D1433FF4006540582 /* LMGGetSearchTerms.h */,
+				1C08A490AAB649415B3A8B5C6884756F /* LMGGetSession.h */,
+				6CF14A19C4D095EB0E4AB4B720915B5A /* LMGGetUser.h */,
+				4A27F936F0CD81804DBBA6B99B5811DB /* LMGIdentifyUser.h */,
+				B07F99F1C1C52D6EF289AB59DF70183E /* LMGLocation.h */,
+				DDEFEE55184497B96D83C2E9E84312E3 /* LMGLocationCategory.h */,
+				5A5AD4BADB0BF8E8573E052CD74E3C8B /* LMGLocationRequestParams.h */,
+				FFE7ECB1BBCC5DF09FCDAB68B20EEB5F /* LMGLocationsMapRequestParams.h */,
+				ADD12D394187B0D3DF66E4DAB6C6E3AF /* LMGLocationsRepository.h */,
+				C5FF20B8995E46CE8C0E9ABB92CE9AAD /* LMGNotification.h */,
+				659A4A19384831A8CA5940A71A17D10D /* LMGNotificationCenter.h */,
+				93F100AD0AE9C9CECD7CD35DCFD64C0E /* LMGNotifications.h */,
+				5626056205D1DB92C7CEA134DCF2016D /* LMGObservable.h */,
+				617FF21964D0675818BBDC24A68344C9 /* LMGOffer.h */,
+				FF171DA20B95B98FA10CE3C822075FCB /* LMGOfferBookmarked.h */,
+				C25D670A2944D976C92064686A6B7798 /* LMGOfferLimits.h */,
+				88170D140B5B8B2BE5D52FB7DD3718D1 /* LMGOfferRepository.h */,
+				3839EAA602BED47747E5D554FF251917 /* LMGOfferShared.h */,
+				CA9C7DB4B2477FD826DDE34B0D91F77A /* LMGOfferShown.h */,
+				6AFBDBBFD9A27B0E14D9F02FC21918F0 /* LMGOfferStateChanged.h */,
+				CE9D8D36C0708B4A1956B1EE5F90C936 /* LMGOfferStateChangeError.h */,
+				1B1668347E04E13309A8552710AEE9B6 /* LMGOfferUnbookmarked.h */,
+				B6ECA60986E2A44ADCDFE2F04D4F51BE /* LMGOfferViewed.h */,
+				E0A1DA500D3D0632D78CF8AF88FF2F83 /* LMGPagedResult.h */,
+				20C026FDAD9C198289A8722819870D14 /* LMGPlatformId.h */,
+				01C157CC8DD8D1601595B59FBFD7EBFD /* LMGRedemptionState.h */,
+				634418B80308303AA11A6402340FE9B6 /* LMGRedemptionStateTransition.h */,
+				8B0FEB9FDFDE4FC4BC2316F92A3791C9 /* LMGRedemptionTransitionArgument.h */,
+				F751F6F7B7A4BCB18DD9CA9F4193E01A /* LMGRedemptionTransitionRequestParams.h */,
+				E6FA84F8CA9D7039285D5286F3682973 /* LMGRenewSession.h */,
+				1080F77271AABE9844E0A70C3E92708F /* LMGRequestParams+ContentFilter.h */,
+				8AC491CAF60CC173C0BAB11BEF71AFCA /* LMGResetSession.h */,
+				E0E33458A756816F2C71F49D527169FF /* LMGRestartSession.h */,
+				DC49CD23A84F9C66186D1E7994CCF0EA /* LMGSchedule.h */,
+				C278EE4F77D1BF1467B53DEF48BCD167 /* LMGSDKInitialized.h */,
+				974003FB35D0FB8F3F255C6976FC5CD9 /* LMGSDKVersionDeprecated.h */,
+				5CD24E40C3A9143CF8691AEE679C31F6 /* LMGSearchTermsRepository.h */,
+				95D7EA42D685E80368200848082F0DFA /* LMGSearchTermsRequestParams.h */,
+				1E591C7A06A0F9276F0AB95C04C3E402 /* LMGSession.h */,
+				4B427EE6A38EFEC80CB44F441B2AF176 /* LMGSessionError.h */,
+				DC3186C345BB8D4A3806CCDD006D72CE /* LMGSessionIdentified.h */,
+				7AD9F234823BFA08CAC2DE99B7147309 /* LMGSessionRepository.h */,
+				2C6241D7E43D38FD34F427BCE37AC4AB /* LMGSessionRequiredUseCase.h */,
+				1EAE56B23B53B4069891A31519C36AE7 /* LMGSessionStarted.h */,
+				F572C962E93685E3D6B00FCB6995FD14 /* LMGSessionUseCaseFactory.h */,
+				0A5BFB46D0116C98E57CAAC479306B82 /* LMGSocialMedia.h */,
+				2AF76EB5BDF4B2367F63E66C9605C654 /* LMGStartSession.h */,
+				EEA51D191149300F0524F8CE8AF74B9F /* LMGTransitionRedemptionState.h */,
+				3B1AB7664DDAFC33B3FE7274916AFCCC /* LMGUpdateSessionUser.h */,
+				5569DC3D1D946443913EE9DF73B5A4B1 /* LMGUrlPath.h */,
+				26D0598378DE5E3C99765C9D7C83581F /* LMGUseCaseFinished.h */,
+				12543BB872123D7B8AC2F277147B82B1 /* LMGUseCaseStarted.h */,
+				1372BE5ADB436E35C80F4E035BD98D54 /* LMGUser.h */,
+				51D58CCB78740DDD75FC4612AA4C36AB /* LMGUserBuilder.h */,
+				63E028FD5EC235B02BE708FA7AEF70C2 /* LMGUserRepository.h */,
+				9FA9B44368CBF0004D53DFEF70FAD9C7 /* NSArray+Monads.h */,
+				E171BAAF892B63FA13589B05F219CD26 /* NSError+Domain.h */,
+				0943B24280D199E16A97086298B02F7C /* NSSet+Monads.h */,
+				F0FE22079379D8218615AC2B3E5F794B /* NSString+EmptyCheck.h */,
+				FE9FE4E58822255692E40751920BAA33 /* VarLet.h */,
+				958B1CC442F81E955D6A10395951F635 /* Frameworks */,
+			);
+			path = LMGDomain;
+			sourceTree = "<group>";
+		};
+		5EB1105562AF53BF58331F771F253675 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				49C1F71374EBDDA5192DDF95DF668A8F /* LICENSE */,
+				CA815CCE23717A90E8EBCF2EC988C840 /* LMGRemoteData.podspec */,
+				2F0C9DEAA9652B30C59DA4129788D779 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		74B7C7C201D9916C95EA81C3C632AC57 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1311C4D3C128A2705F848D235601B58A /* check-and-run-apollo-cli.sh */,
+				5A2A6782377EDA9CEFA6A3D4CE31B312 /* check-and-run-apollo-codegen.sh */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7CBC9C2321A75E3B00BDA351 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				7CBC9C2421A75E3B00BDA351 /* OffersQuery.graphql */,
+				7CBC9C2521A75E3B00BDA351 /* SessionMutations.graphql */,
+				7CBC9C2621A75E3B00BDA351 /* BusinessesQuery.graphql */,
+				7CBC9C2721A75E3B00BDA351 /* UserQuery.graphql */,
+				7CBC9C2821A75E3B00BDA351 /* OfferMutations.graphql */,
+				7CBC9C2921A75E3B00BDA351 /* OfferRedemption.graphql */,
+				7CBC9C2A21A75E3B00BDA351 /* LocationsQuery.graphql */,
+				7CBC9C2B21A75E3B00BDA351 /* Fragments.graphql */,
+				7CBC9C2C21A75E3B00BDA351 /* CollectionsQuery.graphql */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BD7F1F1169CF80D8092C2A13C60FC7AB /* Development Pods */,
+				C0F7BA9360DA183EA81C42586DECC95A /* Frameworks */,
+				DC1ED971C3A376F951880D601E31F137 /* Pods */,
+				BD9F032A2D555AD8011B177C0415FDA9 /* Products */,
+				54378398B5E5F202890C243D79270A69 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		843CAA358B417D99B9611ED389930109 /* Pods-LMGRemoteData_Example */ = {
+			isa = PBXGroup;
+			children = (
+				4B497FFFD39F83DCDC1A3858B6C3E9C3 /* Info.plist */,
+				61767D6F016A9E31F30DA0D280E30533 /* Pods-LMGRemoteData_Example.modulemap */,
+				11EE6904C6EE06346B7A58CE138626A0 /* Pods-LMGRemoteData_Example-acknowledgements.markdown */,
+				B6EF4D66522B2F3CB2048367A92C0AE4 /* Pods-LMGRemoteData_Example-acknowledgements.plist */,
+				554CC3DE5F58EEF2E09E0C5DDE70B562 /* Pods-LMGRemoteData_Example-dummy.m */,
+				382678F2057F0329F9319B116D3790AC /* Pods-LMGRemoteData_Example-frameworks.sh */,
+				69FE2F4DA39CB44B96C7AF2200568C1C /* Pods-LMGRemoteData_Example-resources.sh */,
+				6D39F89BBB63CF1A436AED4949FF86CB /* Pods-LMGRemoteData_Example-umbrella.h */,
+				633598C655879E49E13D358999D21564 /* Pods-LMGRemoteData_Example.debug.xcconfig */,
+				0FD0E21BA9025F841C331D8360F73A4F /* Pods-LMGRemoteData_Example.release.xcconfig */,
+			);
+			name = "Pods-LMGRemoteData_Example";
+			path = "Target Support Files/Pods-LMGRemoteData_Example";
+			sourceTree = "<group>";
+		};
+		958B1CC442F81E955D6A10395951F635 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				428A85D717F0991F85A84BEF343479F1 /* LMGDomain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CCE76CA0F8E91413474A780DB3F9EEB /* Pods-LMGRemoteData_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F632CA75A64392B146DC1F6A282383EC /* Info.plist */,
+				036FEB15E1B0D25A6AC9B549DB4D1CEB /* Pods-LMGRemoteData_Tests.modulemap */,
+				F1C71588D859D1C1904A5AEFC02A3BAB /* Pods-LMGRemoteData_Tests-acknowledgements.markdown */,
+				AFFEB1B7928C8EF1C50B68E894CD8880 /* Pods-LMGRemoteData_Tests-acknowledgements.plist */,
+				0307B8DADBD584C6D3C01E4C2BB242D8 /* Pods-LMGRemoteData_Tests-dummy.m */,
+				D9B16ECCE981F72D308D259D5BFF787C /* Pods-LMGRemoteData_Tests-frameworks.sh */,
+				AE880F8D0403F612E993AA3878FD93D4 /* Pods-LMGRemoteData_Tests-resources.sh */,
+				799CE9D735818DF1FEA915A22DD8061C /* Pods-LMGRemoteData_Tests-umbrella.h */,
+				B3EA8E7A28609C99FC61D8E7CEFD5891 /* Pods-LMGRemoteData_Tests.debug.xcconfig */,
+				E00C0E5D0677F1E2EC250BEA6D96804F /* Pods-LMGRemoteData_Tests.release.xcconfig */,
+			);
+			name = "Pods-LMGRemoteData_Tests";
+			path = "Target Support Files/Pods-LMGRemoteData_Tests";
+			sourceTree = "<group>";
+		};
+		9D06D8FAF83037A3FF0017EF17F9F774 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E49DE65A5255471889D3C498CEBDB0F /* Apollo.modulemap */,
+				0E0839E4455F33F6B702A7367108791E /* Apollo.xcconfig */,
+				D447609BBC9711A7622A0587186C606C /* Apollo-dummy.m */,
+				BF0D7EC24845C542F6CAC7113AEE3318 /* Apollo-prefix.pch */,
+				795F3C824EFA45A36A1E758B5B5204C5 /* Apollo-umbrella.h */,
+				468F31CA4EDAD418A3B4C4B5AC6D5CAA /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Apollo";
+			sourceTree = "<group>";
+		};
+		A077E2903225AB690997059879381154 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				224345C34FEE8087DD2A609A7DEB88BC /* LMGRDCollectionRemoteSource.swift */,
+			);
+			name = Collection;
+			path = LMGRemoteData/Classes/Collection;
+			sourceTree = "<group>";
+		};
+		A25C66598AE0DD398C37068C8CCBF806 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C9E98FDD99802EB7ADB40CD03F853F9 /* Info.plist */,
+				12C3B7F2D315C4EF45A03C7823A8B315 /* LMGRemoteData.modulemap */,
+				08D89A147D8F8B1D97E31681474EC0EA /* LMGRemoteData.xcconfig */,
+				58E3E6B6D6DC2586886024CA8FF198E7 /* LMGRemoteData-dummy.m */,
+				1CB8B8C187206A2E03FCFE92593678B0 /* LMGRemoteData-prefix.pch */,
+				5433C2DCE7F264DD225B58B71A5B2FBE /* LMGRemoteData-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LMGRemoteData";
+			sourceTree = "<group>";
+		};
+		B956FEFADB2BB4A6D78735E25AB4C08F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FCF94C9C4AF92527E58FF73FAF6838B /* LMGNotificationBus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD78F44AC35DC44CED48DFA960D14A15 /* LMGDataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				AF66A4A13F03953D4EFB19E5C0BC6428 /* LMGAddress+DataAccess.h */,
+				91164AC5F0E5541C2C1B5EFBCB355713 /* LMGBusiness+DataAccess.h */,
+				A173BAC2E36F9DE4933993C1056C2204 /* LMGBusinessesListRequestParams+DataAccess.h */,
+				639C9186C0821C78C9345E759DD70B4E /* LMGCollection+DataAccess.h */,
+				A03B6FC42FB24247EBD7EE2069D2432A /* LMGCollectionRequestParams+DataAccess.h */,
+				9039010AFA33EDC507082E2626736F0B /* LMGCollectionsListRequestParams+DataAccess.h */,
+				2764854B3DA20A6C8669F1FBFCB089F4 /* LMGCoordinate+DataAccess.h */,
+				28119FF8A6E8BE34B1AE9F236DEB4134 /* LMGDAAddress.h */,
+				9801249244673DACD360240CFEEBE5E6 /* LMGDABusiness.h */,
+				4D1FA3D2C59EEE6D23537877A8A28669 /* LMGDABusinessesListRequestParams.h */,
+				D1BF3B013253781E9B58E95D57E46457 /* LMGDABusinessLocalStore.h */,
+				A1B624C69DC53469412433BA71722767 /* LMGDABusinessRemoteStore.h */,
+				2429350F4F88445FD3408F361E8D8C46 /* LMGDABusinessRepository.h */,
+				FB015178893B72B2F7181BFB0504847A /* LMGDABusinessStore.h */,
+				24987DE392BEF6D27A49837F9A2F61C3 /* LMGDABusinessStoreFactory.h */,
+				C2468860BD8CCB0642FB4B7D5E30B885 /* LMGDACollection.h */,
+				BE6C605009A15BAADD6A37A18656CEB0 /* LMGDACollectionLocalStore.h */,
+				6F5DB8FC35C5BB0E35721821BCA58FFB /* LMGDACollectionRemoteStore.h */,
+				D38F83202A02B48B706F27833BB829B8 /* LMGDACollectionRepository.h */,
+				ADE675212210251995D96D3C742C2607 /* LMGDACollectionRequestParams.h */,
+				2118ABBD1AE8EC474549BD61C91D06EC /* LMGDACollectionsListRequestParams.h */,
+				130077E45EC559BB25A982FD89699684 /* LMGDACollectionStore.h */,
+				AA99316A17F87539BCE8012D3607DC7A /* LMGDACollectionStoreFactory.h */,
+				291F2B35DD6596CFB63C93A9535EFD0E /* LMGDACoordinate.h */,
+				C5997C528B5B44E3D8ADFF1043458F28 /* LMGDADetailsRequestParams.h */,
+				B74847433C625C38DD42016E1EFFD667 /* LMGDADeviceLocationLocalStore.h */,
+				9B7E4ADE38ABAE89641E9F9B953015E0 /* LMGDADeviceLocationRepository.h */,
+				8BF563B6187640F911D412154570EC70 /* LMGDADeviceLocationSensorStore.h */,
+				07C91C80588B0A382D7EBC91723F050B /* LMGDADeviceLocationStore.h */,
+				80E580255FD947F9D9F20A27D88787E6 /* LMGDADeviceLocationStoreFactory.h */,
+				C8F44E8D941FE176AF2EED85556D53A4 /* LMGDALocation.h */,
+				86574FEACE5D6D35A4332888D874FF26 /* LMGDALocationCategory.h */,
+				D7CE56C5227D96BC07CE06C3DF25EAF0 /* LMGDALocationLocalStore.h */,
+				E7236D7C2C4D51D373A3E4DA85659FE1 /* LMGDALocationRemoteStore.h */,
+				32B7BE7374E9C1CACA42F21468733319 /* LMGDALocationRepository.h */,
+				4FC651670313321AE0B3660F50FAD7D3 /* LMGDALocationsMapRequestParams.h */,
+				5267138FC11E1702A354B72658511811 /* LMGDALocationStore.h */,
+				832DBA635B524F88BEBE4A8F449A973E /* LMGDALocationStoreFactory.h */,
+				371601F449F88EE126531D0BDCB628EA /* LMGDAOffer.h */,
+				4C2C64E9569DE69FB441A4FFB20C5238 /* LMGDAOfferLimits.h */,
+				88ED7B56B7F170E045BCF0CDA223F0A6 /* LMGDAOfferLocalStore.h */,
+				ECE858660222128CF40E896DF78B9BBC /* LMGDAOfferRemoteStore.h */,
+				4B591A30ED1CBE86DD7B1A05D68A6ACF /* LMGDAOfferRepository.h */,
+				82CAF2BB7BCCD17E87C2F1237A48081E /* LMGDAOfferStore.h */,
+				49075EF55B5CE9B5BA3AB4EC2E73DA9C /* LMGDAOfferStoreFactory.h */,
+				D7CDA144C3AD9E41871432F8688C0F05 /* LMGDAPagedResult.h */,
+				CF59B3B4A6C27C0F6E1859853AD6FDE8 /* LMGDAPlatformId.h */,
+				82BD8C00AE3931C597632B9328F4A5F6 /* LMGDARedemptionState.h */,
+				B510A095F100FE3CC14F54A019E3BCC3 /* LMGDARedemptionStateTransition.h */,
+				A74060333EB084080174AE38B4A61A59 /* LMGDARedemptionTransitionArgument.h */,
+				C9CE17B5CD929AAACD01404E72E7AF90 /* LMGDASaveableParams.h */,
+				DBE6AA45AAE76B203343EE25739AD9AD /* LMGDASchedule.h */,
+				F70786DA612FA8477CAE6B4A627F0EC2 /* LMGDASearchTermsLocalStore.h */,
+				E6523E48950E8E47D71A2D4DEDAB4374 /* LMGDASearchTermsRepository.h */,
+				EEDBD5DCAA465E37F165CD54C5ECB930 /* LMGDASearchTermsStore.h */,
+				4F95888E8B6E9094EC8456F1663DB50E /* LMGDASearchTermsStoreFactory.h */,
+				B3DD7552223296556932D9EAE0FFD7FF /* LMGDASession.h */,
+				BF864BF19A6A9901C94910C8AB63F377 /* LMGDASessionLocalStore.h */,
+				983EFF9587A214AF2C429AD764A964A2 /* LMGDASessionRemoteStore.h */,
+				30CC8A4B9C8E70BCC0FE6452F68A40C8 /* LMGDASessionRepository.h */,
+				20A421508101B7E73A3EDA3F0B615A06 /* LMGDASessionStore.h */,
+				72C05D0F1FF2FB736E06BEF3665ABAE6 /* LMGDASessionStoreFactory.h */,
+				9C608FB42B7430F386EF6688AD201A75 /* LMGDASocialMedia.h */,
+				9E23C0FFB1130ABDF6E4CB7E1CF48A85 /* LMGDataAccess.h */,
+				B1DAEC038CB1D58FAB0E89FF986FA99F /* LMGDAUser.h */,
+				EAC5BA123CC75B7B6E9CAAFF46300719 /* LMGDAUserBuilder.h */,
+				D26760395281F98E859E3B652796F831 /* LMGDAUserRemoteStore.h */,
+				C4B3EDBBF3767E42E8AB845ECDB423A6 /* LMGDAUserRepository.h */,
+				B53F65EB9AD155B90801F1C06BC7FBCC /* LMGDAUserStore.h */,
+				38B805FEACE12E56BBE484C3E40BB5F2 /* LMGDAUserStoreFactory.h */,
+				8F25595E48E59DDA44EDB8DBC2F1EC67 /* LMGDetailsRequestParams+DataAccess.h */,
+				2305FF0082EEBCEEDAF614D408DD72FE /* LMGLocation+DataAccess.h */,
+				250A1A0495F380AB5247F552A8573AAB /* LMGLocationCategory+DataAccess.h */,
+				2F731068EE12E070E87A2F7095550EF5 /* LMGLocationsMapRequestParams+DataAccess.h */,
+				A635AB46BF4D2315113D8B4451C835AE /* LMGOffer+DataAccess.h */,
+				C4DF6591BD0A9FE1F9B95C80AC459C29 /* LMGOfferLimits+DataAccess.h */,
+				EE8AD00050445C89104EA44B46112784 /* LMGPagedResult+DataAccess.h */,
+				C9012E797EC596C42375CC141DFC5FA8 /* LMGRedemptionState+DataAccess.h */,
+				983B897877D858DA9B9F533A47460D3C /* LMGRedemptionStateTransition+DataAccess.h */,
+				A3B2C522E7903FAF8A5010DF7F2923A3 /* LMGRedemptionTransitionArgument+DataAccess.h */,
+				7FCB80400C330E501A1F19366751408B /* LMGSchedule+DataAccess.h */,
+				70F67C4CB653774DAB0FF07CA9EDE5D3 /* LMGSession+DataAccess.h */,
+				F69A75C2816E711A48C2FEDB9DB45339 /* LMGSocialMedia+DataAccess.h */,
+				4F67B06D39A9D6F92C8F1DD67CED6386 /* LMGUser+DataAccess.h */,
+				C956BAED84700E60124BFE7EF1075C98 /* NSString+SaveableParams.h */,
+				17D8D27729EA02FC8BA7D3E8A043B2FA /* Frameworks */,
+			);
+			path = LMGDataAccess;
+			sourceTree = "<group>";
+		};
+		BD7F1F1169CF80D8092C2A13C60FC7AB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				467336D726AFF4C68B17C237903CE74E /* LMGRemoteData */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BD9F032A2D555AD8011B177C0415FDA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7DC7A326C86E53AD31DD832F4BDB828A /* Apollo.framework */,
+				2AF4F095A7CF94D66D46868CF8E56AA0 /* LMGRemoteData.framework */,
+				46D515292780A78EFBF94EE756AA90AC /* Pods_LMGRemoteData_Example.framework */,
+				1A1CADC0467D618C5C2981B0C7743957 /* Pods_LMGRemoteData_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEC4AF953C0C711B58950A7E02D4C915 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1561E46640B8E93FAAEF959829AFC89E /* ApolloClient.swift */,
+				54BB83987D59B3C3569EEE836F772FD7 /* ApolloStore.swift */,
+				71587A442CE48A5874433403C8A7A6A8 /* AsynchronousOperation.swift */,
+				73CD9D74925603F474592E9B56001CCB /* Collections.swift */,
+				3E5BE4F5F508D108B8F4DE881BECCCD3 /* DataLoader.swift */,
+				F8837CC21B7A9B4F873C6321648FF0B5 /* GraphQLDependencyTracker.swift */,
+				5934F68CF40E27947F633B4F266E576C /* GraphQLError.swift */,
+				A64FCE9D1495BC876B0AAF47F38914E9 /* GraphQLExecutor.swift */,
+				699F0D3D30EF53292C4A6D0A9D7EFD7C /* GraphQLInputValue.swift */,
+				E8F2E8BF1AF3227FE68B838385C4335A /* GraphQLOperation.swift */,
+				FF665D2A9D5B5A387A9CD2E0DA12CBEA /* GraphQLQueryWatcher.swift */,
+				DEDEE2B2EC4C7F1F336A9C9DF510457C /* GraphQLResponse.swift */,
+				3E5F6C3792CC86D81B0A8849EB53C922 /* GraphQLResponseGenerator.swift */,
+				229033F4D51A033ED1180E9F3A5E89DE /* GraphQLResult.swift */,
+				E7F80776BC3C8F202CCCD49A71B66061 /* GraphQLResultAccumulator.swift */,
+				A4551FC48CC6294A53F529A56027A7DE /* GraphQLResultNormalizer.swift */,
+				6B3BC5F179A57078BF12187239EC5B22 /* GraphQLSelectionSet.swift */,
+				32AD5DD80604CA7763BA38CA7C2E7A1D /* GraphQLSelectionSetMapper.swift */,
+				8EEEBF5D5834601E086C1D5076168CAE /* HTTPNetworkTransport.swift */,
+				2909AFFDD8878999CB944773D661E2F2 /* InMemoryNormalizedCache.swift */,
+				18147AB26F957F56D70C1DB7A2A8A0AC /* JSON.swift */,
+				B13F9F0F33188CBB9F055E5139BF85D5 /* JSONSerializationFormat.swift */,
+				183AB297EC9FE6A423B27129E042309B /* JSONStandardTypeConversions.swift */,
+				520707DF9F9E46766BC375BD3F09D95A /* Locking.swift */,
+				7E442F779F290603488C49A31B331CEA /* NetworkTransport.swift */,
+				56D7BC98D6D9DCDC5D9A6096BC4ACDDB /* NormalizedCache.swift */,
+				78A5B5FC25FA0C0ADEBF6F0905249B3A /* Promise.swift */,
+				83EE3EF1DA64ECE1FB45B104F90D4455 /* Record.swift */,
+				190922E31120610AC847764DA0A8D92F /* RecordSet.swift */,
+				E3BD82C0C2AEC18CF2830854F0BAE4A1 /* Result.swift */,
+				8FCAFB51D8BB468C6D6F928DBFA017F2 /* ResultOrPromise.swift */,
+				104421285197AF049176B0ED40628858 /* Utilities.swift */,
+				74B7C7C201D9916C95EA81C3C632AC57 /* Resources */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		C0F7BA9360DA183EA81C42586DECC95A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7024105B26BC20BB2B2FCC26513BEC5 /* Apollo.framework */,
+				D8F3A9EAD09122706A1BCBB977EC90D4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5D902B0A6169C112E815AC589D19801 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				D4CB75E776DCA9F50E55A0B789298F63 /* LMGRDLocationRemoteSource.swift */,
+			);
+			name = Location;
+			path = LMGRemoteData/Classes/Location;
+			sourceTree = "<group>";
+		};
+		D8F3A9EAD09122706A1BCBB977EC90D4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BB8D7DAEA980C9A414F97B079A493F68 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DC1ED971C3A376F951880D601E31F137 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				012A8F04BE8CB8F7245A392D46E7AC3B /* Apollo */,
+				BD78F44AC35DC44CED48DFA960D14A15 /* LMGDataAccess */,
+				5E92D1C65E0B1B977D221BB3B9AB3F5D /* LMGDomain */,
+				2B2BFDA4B10C89126FCC42F1058919AB /* LMGNotificationBus */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECBF10677EB03B2B8BDC1AFEAE7F18F8 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0F89583BAD87369DBD604BBBC74A72A0 /* LMGRDUserSource.swift */,
+			);
+			name = User;
+			path = LMGRemoteData/Classes/User;
+			sourceTree = "<group>";
+		};
+		F6FB25D5C4E6F2133A6BC011EB3FBF75 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				B0B59AE4AFF80EA509C884CDF074A963 /* LMGRDBusinessRemoteSource.swift */,
+			);
+			name = Business;
+			path = LMGRemoteData/Classes/Business;
+			sourceTree = "<group>";
+		};
+		FB2D45716BAC106B70C93DCE87B6611F /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				88AB124F1A34EF417FF1E62294CE06AC /* LMGRDSessionRemoteSource.swift */,
+			);
+			name = Session;
+			path = LMGRemoteData/Classes/Session;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1F88E396AD8301AB2B30651575382C83 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8372F4C85D9D6B859CA572D7673C3C7A /* Pods-LMGRemoteData_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9009E1D2F912811F3710254645EC24D8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CB3336EFEB548D95670FF492BF0E145 /* Apollo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A865FC6A4BC02FB93C946045C475B4A7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13CB65C49358613E0DF69BCB04625F9E /* LMGRemoteData-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE5101CABB0EC15E12E88BE6980BB1D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6197C08067E1DC1132129D9F30C5C2B6 /* Pods-LMGRemoteData_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		15A3C28C3572E5735750AD01202ED63C /* Pods-LMGRemoteData_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D6A10E6911521F1EC0C83380C2CCDFC /* Build configuration list for PBXNativeTarget "Pods-LMGRemoteData_Example" */;
+			buildPhases = (
+				44B34AB7986FA85BD173187702268EF5 /* Sources */,
+				6192186A49E3054052CEDCA6FC51CC5D /* Frameworks */,
+				1F88E396AD8301AB2B30651575382C83 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				259F4999A409888AB564D824219F49E2 /* PBXTargetDependency */,
+				6D223E5966257287B4FB121BB0EE4EC3 /* PBXTargetDependency */,
+			);
+			name = "Pods-LMGRemoteData_Example";
+			productName = "Pods-LMGRemoteData_Example";
+			productReference = 46D515292780A78EFBF94EE756AA90AC /* Pods_LMGRemoteData_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		21ECD2A5A27879F74E321C16EADAAF2F /* Pods-LMGRemoteData_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62582C72B89C7FC28BCD2D1F17AD0D5D /* Build configuration list for PBXNativeTarget "Pods-LMGRemoteData_Tests" */;
+			buildPhases = (
+				16B2078F762556ADE63E6E7BA73293DE /* Sources */,
+				FEB209FF924E94F6A731609E2AB30444 /* Frameworks */,
+				AAE5101CABB0EC15E12E88BE6980BB1D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A97F3F28BA00103CD7204234F1FF5E71 /* PBXTargetDependency */,
+			);
+			name = "Pods-LMGRemoteData_Tests";
+			productName = "Pods-LMGRemoteData_Tests";
+			productReference = 1A1CADC0467D618C5C2981B0C7743957 /* Pods_LMGRemoteData_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		86E6F100273E4E2D73815A058543EBBE /* Apollo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32A6F60F58C53BEDE9E047B3CDD044B3 /* Build configuration list for PBXNativeTarget "Apollo" */;
+			buildPhases = (
+				9AE94010E224340494E8E376B9C27B23 /* Sources */,
+				CFEEA9DC0B26A21B89E9EDADA1B87F87 /* Frameworks */,
+				E06C7B8FABDAE4C38F77701777C7B338 /* Resources */,
+				9009E1D2F912811F3710254645EC24D8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Apollo;
+			productName = Apollo;
+			productReference = 7DC7A326C86E53AD31DD832F4BDB828A /* Apollo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D02D325064932A72EE3A6ADE43584523 /* LMGRemoteData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6555D3B9CC7411F5E39831EFC30C9FE3 /* Build configuration list for PBXNativeTarget "LMGRemoteData" */;
+			buildPhases = (
+				7909BD6C72CA01DF2FACEE172AC865F1 /* Sources */,
+				67A94779316BAA271D425551FE770E76 /* Frameworks */,
+				A865FC6A4BC02FB93C946045C475B4A7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				694700637DBAF7703A3919F1FD2B2438 /* PBXTargetDependency */,
+			);
+			name = LMGRemoteData;
+			productName = LMGRemoteData;
+			productReference = 2AF4F095A7CF94D66D46868CF8E56AA0 /* LMGRemoteData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = BD9F032A2D555AD8011B177C0415FDA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86E6F100273E4E2D73815A058543EBBE /* Apollo */,
+				D02D325064932A72EE3A6ADE43584523 /* LMGRemoteData */,
+				15A3C28C3572E5735750AD01202ED63C /* Pods-LMGRemoteData_Example */,
+				21ECD2A5A27879F74E321C16EADAAF2F /* Pods-LMGRemoteData_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E06C7B8FABDAE4C38F77701777C7B338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60E52CFB7948DC04328CC8C01097F720 /* check-and-run-apollo-cli.sh in Resources */,
+				8BACBE1E81AAC6BD66D51C1B5E120AC3 /* check-and-run-apollo-codegen.sh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16B2078F762556ADE63E6E7BA73293DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07855B2F995835621EF7BB20C654E5E9 /* Pods-LMGRemoteData_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		44B34AB7986FA85BD173187702268EF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74675CCED31B203136B04F24EBB74583 /* Pods-LMGRemoteData_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7909BD6C72CA01DF2FACEE172AC865F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C14BED56A7AEEE304551198C6D61BF42 /* AuthApolloClient.swift in Sources */,
+				44CCE1A9DEE04A95BFFE7826DBACBE8A /* AuthGraphAPI.swift in Sources */,
+				D230267CB3CD5F8D177431D3902261AB /* AuthHTTPNetworkTransport.swift in Sources */,
+				3B136A9B18E8534EA9C5A400773C9507 /* AuthRequestsConfigurator.swift in Sources */,
+				80F9518D655D1C9BD8A40CED611138CC /* BusinessDetailsQuery+DataAccess.swift in Sources */,
+				449F013BD4F28678E599E51E9A2650C7 /* BusinessesListQuery+DataAccess.swift in Sources */,
+				676115229D8611F322AAE7EA302C1D6A /* CollectionsListQuery+DataAccess.swift in Sources */,
+				641B7B0AD740F90C0EB2B53E38834910 /* DefaultGraphAPI.swift in Sources */,
+				A460F66B3A35F667411FA0D95030D98C /* LMGDACoordinate+RemoteData.swift in Sources */,
+				21C83A0E9DD781568BA03224497D6BD0 /* LMGRDBusinessRemoteSource.swift in Sources */,
+				8FF1CA9BEE9B1EB5E0CCA9446D3E2091 /* LMGRDCollectionRemoteSource.swift in Sources */,
+				2AECF1F9F7B02E810F6175A7CA92B961 /* LMGRDLocationRemoteSource.swift in Sources */,
+				19A560C969973C41085AFCD44323D01F /* LMGRDOfferRemoteSource.swift in Sources */,
+				A830A611E8E804EE9D0A158022327DE5 /* LMGRDSessionRemoteSource.swift in Sources */,
+				9C1AEE475F8564EF09D3D44745EE0C1D /* LMGRDUserSource.swift in Sources */,
+				F1856DD2B9D9A6B34C939CE55CBB26FF /* LMGRemoteData-dummy.m in Sources */,
+				9B38C5B809EBCA67913CEFAA591F118F /* LocationsListQuery+DataAccess.swift in Sources */,
+				46E24355FB4C2C9114C22865FE149FFD /* OfferDetailsQuery+DataAccess.swift in Sources */,
+				64E3EBB327CA548AEA07985E7672364B /* OfferRedeemActionQuery+DataAccess.swift in Sources */,
+				521481C9CDAD5B488C13A6DAB8F3BEC6 /* SessionMutations+DataAccess.swift in Sources */,
+				6C5E64A08621C9C130345542617F602E /* UserQuery+DataAccess.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AE94010E224340494E8E376B9C27B23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC431F0BA9387905ACAB61C523E638C3 /* Apollo-dummy.m in Sources */,
+				C9BAF90C56EC33FF0A90FED76F83A4A7 /* ApolloClient.swift in Sources */,
+				4FA8CF5F672D0ECF179689565C195A9B /* ApolloStore.swift in Sources */,
+				F88AC6AD9DA5F9B364D34341C6E2056C /* AsynchronousOperation.swift in Sources */,
+				AADF5DAB589339CF73C97818A4C682A9 /* Collections.swift in Sources */,
+				5DAF6AB1D2A39BCB091E2F16C1424EEA /* DataLoader.swift in Sources */,
+				FEDE0FF3927A01D521556DDD9FF04150 /* GraphQLDependencyTracker.swift in Sources */,
+				C8E08E7BB1C58D1C2E43B6190688C206 /* GraphQLError.swift in Sources */,
+				D0CE84E3361DE3772D7EE65572FA50A6 /* GraphQLExecutor.swift in Sources */,
+				686B3EC6DB18FB0F2E86A83576B0911A /* GraphQLInputValue.swift in Sources */,
+				895CB08A1362D446E881B0DDC30E2412 /* GraphQLOperation.swift in Sources */,
+				ADD128E97058F4416C94BDE39C5D4C58 /* GraphQLQueryWatcher.swift in Sources */,
+				EA2467D89BDF8B7AC04020922264CC5D /* GraphQLResponse.swift in Sources */,
+				4B35DF3174B1D4DF72074E90621DF637 /* GraphQLResponseGenerator.swift in Sources */,
+				25C35C19E6700A79AE33060CB3E3F7FD /* GraphQLResult.swift in Sources */,
+				A188284680964C9C7F0150B59BA98F87 /* GraphQLResultAccumulator.swift in Sources */,
+				15D0CC7FA9D0268F8B80FD3049A90F51 /* GraphQLResultNormalizer.swift in Sources */,
+				BA5218315078C14785221F90FBCCC048 /* GraphQLSelectionSet.swift in Sources */,
+				F5E955B34BEB08A0F301CF9F47DF1187 /* GraphQLSelectionSetMapper.swift in Sources */,
+				C6F5065813A8BFEBF64658227F9F8166 /* HTTPNetworkTransport.swift in Sources */,
+				CAA4956528D91AE14683400CE6FF3EB7 /* InMemoryNormalizedCache.swift in Sources */,
+				5D006359E2C6835486DD8FACF11B82A2 /* JSON.swift in Sources */,
+				F82BD91D3A9905663D3A3C64DF2D9C02 /* JSONSerializationFormat.swift in Sources */,
+				6E131775B33BB3E92E1AC57D67A7A073 /* JSONStandardTypeConversions.swift in Sources */,
+				BC848FAC052A3145B35A2E99486376F2 /* Locking.swift in Sources */,
+				E939141615373756F4AFC95C43BDD586 /* NetworkTransport.swift in Sources */,
+				37D77530465DB4B2F784A03C8F0E2D40 /* NormalizedCache.swift in Sources */,
+				0004BC76E0610900DE1B0E4900A602CB /* Promise.swift in Sources */,
+				9B48E87F8CEC7AA1E8099819A147803E /* Record.swift in Sources */,
+				416DB54756CD138E2A523CB14234B3A7 /* RecordSet.swift in Sources */,
+				C1F6A0C23368BCDFF4AF1E0A158A8718 /* Result.swift in Sources */,
+				9C8F44611C80403C7BC2772BC7EE0590 /* ResultOrPromise.swift in Sources */,
+				797D227D1CA74752CAAE8A9FAA011322 /* Utilities.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		259F4999A409888AB564D824219F49E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Apollo;
+			target = 86E6F100273E4E2D73815A058543EBBE /* Apollo */;
+			targetProxy = 6CF3A06584D64705C13CB649EBE2F188 /* PBXContainerItemProxy */;
+		};
+		694700637DBAF7703A3919F1FD2B2438 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Apollo;
+			target = 86E6F100273E4E2D73815A058543EBBE /* Apollo */;
+			targetProxy = 22C9903672B9BE0EDF627FDEC717A69D /* PBXContainerItemProxy */;
+		};
+		6D223E5966257287B4FB121BB0EE4EC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LMGRemoteData;
+			target = D02D325064932A72EE3A6ADE43584523 /* LMGRemoteData */;
+			targetProxy = B93FC7E0247D9D0CE0B28F84BE8C0939 /* PBXContainerItemProxy */;
+		};
+		A97F3F28BA00103CD7204234F1FF5E71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-LMGRemoteData_Example";
+			target = 15A3C28C3572E5735750AD01202ED63C /* Pods-LMGRemoteData_Example */;
+			targetProxy = A230F1B9DBD86D84382F8A925058A44C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		11C6EB94007DB300D4945A99B135A2B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08D89A147D8F8B1D97E31681474EC0EA /* LMGRemoteData.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LMGRemoteData/LMGRemoteData-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LMGRemoteData/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LMGRemoteData/LMGRemoteData.modulemap";
+				PRODUCT_MODULE_NAME = LMGRemoteData;
+				PRODUCT_NAME = LMGRemoteData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		36D66ADF0F18614A77BAC81313865084 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3EA8E7A28609C99FC61D8E7CEFD5891 /* Pods-LMGRemoteData_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LMGRemoteData_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LMGRemoteData_Tests/Pods-LMGRemoteData_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		37782E1C6841D9CC406788EB7930FD06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 633598C655879E49E13D358999D21564 /* Pods-LMGRemoteData_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LMGRemoteData_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		68BAB9140A9405DCCDA58E2BEE41E059 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FD0E21BA9025F841C331D8360F73A4F /* Pods-LMGRemoteData_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LMGRemoteData_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9609606526220A00178E990065CBB330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08D89A147D8F8B1D97E31681474EC0EA /* LMGRemoteData.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LMGRemoteData/LMGRemoteData-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LMGRemoteData/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LMGRemoteData/LMGRemoteData.modulemap";
+				PRODUCT_MODULE_NAME = LMGRemoteData;
+				PRODUCT_NAME = LMGRemoteData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		966AE2140A617C057C5F1D190D32FB0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E0839E4455F33F6B702A7367108791E /* Apollo.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Apollo/Apollo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Apollo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Apollo/Apollo.modulemap";
+				PRODUCT_MODULE_NAME = Apollo;
+				PRODUCT_NAME = Apollo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		C9B3D46FA019E42113A399DA50F525F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E0839E4455F33F6B702A7367108791E /* Apollo.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Apollo/Apollo-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Apollo/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Apollo/Apollo.modulemap";
+				PRODUCT_MODULE_NAME = Apollo;
+				PRODUCT_NAME = Apollo;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EEBEA7FE4DC7E6B9E9949512027F2049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00C0E5D0677F1E2EC250BEA6D96804F /* Pods-LMGRemoteData_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LMGRemoteData_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LMGRemoteData_Tests/Pods-LMGRemoteData_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
+				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32A6F60F58C53BEDE9E047B3CDD044B3 /* Build configuration list for PBXNativeTarget "Apollo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				966AE2140A617C057C5F1D190D32FB0D /* Debug */,
+				C9B3D46FA019E42113A399DA50F525F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62582C72B89C7FC28BCD2D1F17AD0D5D /* Build configuration list for PBXNativeTarget "Pods-LMGRemoteData_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36D66ADF0F18614A77BAC81313865084 /* Debug */,
+				EEBEA7FE4DC7E6B9E9949512027F2049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6555D3B9CC7411F5E39831EFC30C9FE3 /* Build configuration list for PBXNativeTarget "LMGRemoteData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11C6EB94007DB300D4945A99B135A2B7 /* Debug */,
+				9609606526220A00178E990065CBB330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D6A10E6911521F1EC0C83380C2CCDFC /* Build configuration list for PBXNativeTarget "Pods-LMGRemoteData_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37782E1C6841D9CC406788EB7930FD06 /* Debug */,
+				68BAB9140A9405DCCDA58E2BEE41E059 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

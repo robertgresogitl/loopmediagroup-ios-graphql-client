@@ -1,0 +1,44 @@
+query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!]) {
+  business(businessId: $id) {
+    ...BusinessDetails
+    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {
+      ...LocationItem
+    }
+  }
+}
+
+query BusinessesList($cursor: String, $q: String, $bookmarked: Boolean, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!]) {
+  businessFeed(cursor: $cursor, q: $q, bookmarkedOffersOnly: $bookmarked, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {
+    cursor {
+      next
+    }
+    businesses {
+      ...BusinessListItem
+      locations {
+        ...LocationItem
+      }
+      offers {
+        ...OfferListItem
+      }
+    }
+  }
+}
+
+query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!]) {
+  collection(collectionId: $id) {
+    businessFeed(cursor: $cursor, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {
+      cursor {
+        next
+      }
+      businesses {
+        ...BusinessListItem
+        locations {
+            ...LocationItem
+        }
+        offers {
+            ...OfferListItem
+        }
+      }
+    }
+  }
+}

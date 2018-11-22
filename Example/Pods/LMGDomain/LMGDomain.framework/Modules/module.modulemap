@@ -1,0 +1,6 @@
+framework module LMGDomain {
+  umbrella header "LMGDomain.h"
+
+  export *
+  module * { export * }
+}
