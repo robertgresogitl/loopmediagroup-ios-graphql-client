@@ -17,7 +17,7 @@ Implements the remote data objects for the LMG iOS SDK.
   s.homepage         = 'https://github.com/loopmediagroup/loopmediagroup-ios-graphql-client'
   s.license          = { :type => 'Copyright', :file => 'LICENSE' }
   s.author           = { 'Loop Media Group' => 'dev@loopmediagroup.com' }
-  s.source           = { :git => 'git@github.com:loopmediagroup/loopmediagroup-ios-graphql-client.git', :tag => String(s.version) }
+  s.source           = { :git => 'https://github.com/loopmediagroup/loopmediagroup-ios-graphql-client.git', :tag => String(s.version) }
 
   s.ios.deployment_target = '9.0'
   s.swift_version = '4.2'
