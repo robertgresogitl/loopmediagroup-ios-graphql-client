@@ -155,13 +155,12 @@ public class AuthApolloClient {
 extension AuthApolloClient {
     
     static let shared: AuthApolloClient = {
-        let url = URL(string: "https://public-graph.lmg-dev.ca/graph/default")!
+        let url = URL(string: "https://public-graph.loopmediagroup.com/graph/default")!
         return makeApolloClient(url: url)
     }()
 
     static let auth: AuthApolloClient = {
-        let url = URL(string: "https://public-graph.lmg-dev.ca/graph/auth")!
-     
+        let url = URL(string: "https://public-graph.loopmediagroup.com/graph/auth")!     
       NotificationCenter.lmg().addObserver(forLMGName: .LMGDeviceLocationChangedNotificationName) { note in
             guard let locationChangeNote = note as? LMGDeviceLocationChanged else { return }
             AuthApolloClient.deviceCoordinate = locationChangeNote.coordinate?.toDataAccess()
