@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LMGNotificationBus'
-  s.version          = '1.0.0'
+  s.version          = '1.0.3'
   s.summary          = 'Notification Bus layer for the LMG iOS SDK'
   s.description      = <<-DESC
 Implements the notification bus for the LMG iOS SDK.
@@ -20,14 +20,13 @@ Implements the notification bus for the LMG iOS SDK.
   s.source           = { :http => 'https://github.com/loopmediagroup/loopmediagroup-ios/releases/download/NotificationBus-v'+String(s.version)+'/LMGNotificationBus.zip' }
 
   s.ios.deployment_target = '9.0'
-  s.source_files = 'LMGNotificationBus.framework/Headers/*.{h}'
-  s.preserve_paths = 'LMGNotificationBus.framework'
-  s.vendored_frameworks = 'LMGNotificationBus.framework'
+  s.source_files = 'LMGNotificationBus/**/*.{h,m,mm}'
 
   s.dependency 'LMGDomain'
   
   # These are automatically exported in the umbrella.h
   s.public_header_files = [
-    'LMGNotificationBus.framework/Headers/*.{h}'
+    'LMGNotificationBus/**/*.{h}'
   ]
+  
 end

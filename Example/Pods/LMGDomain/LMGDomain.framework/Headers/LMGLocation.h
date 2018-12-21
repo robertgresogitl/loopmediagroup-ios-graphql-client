@@ -23,6 +23,7 @@
 @property (nonnull, nonatomic, copy, readonly) NSString *name;
 @property (nonnull, nonatomic, copy, readonly) NSArray<LMGSocialMedia *> *socialMedia;
 @property (nonnull, nonatomic, copy, readonly) NSArray<LMGLocationCategory *> *categories;
+@property (nullable, nonatomic, copy, readonly) NSNumber *distance;
 @property (nullable, nonatomic, copy, readonly) NSString *phoneNumber;
 @property (nullable, nonatomic, copy, readonly) LMGUrlPath *urlPath;
 @property (nullable, nonatomic, copy, readonly) LMGBusiness *business;
@@ -39,6 +40,7 @@
 @property (nullable, nonatomic, copy, readonly) NSString *name;
 @property (nonnull, nonatomic, copy) NSArray<LMGSocialMedia *> *socialMedia;
 @property (nonnull, nonatomic, copy) NSArray<LMGLocationCategory *> *categories;
+@property (nullable, nonatomic, copy) NSNumber *distance;
 @property (nullable, nonatomic, copy) NSString *phoneNumber;
 @property (nullable, nonatomic, copy) LMGUrlPath *urlPath;
 @property (nullable, nonatomic, copy) LMGBusiness *business;

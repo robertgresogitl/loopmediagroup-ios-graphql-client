@@ -1,0 +1,39 @@
+macos-executor: &macos-executor
+  macos:
+    xcode: "10.1.0"
+  working_directory: ~/work
+  shell: /bin/bash --login -eo pipefail
+
+restore-gems: &restore-gems
+  key: v1-gem-cache-{{ checksum "Gemfile.lock" }}
+
+save-gems: &save-gems
+  key: v1-gem-cache-{{ checksum "Gemfile.lock" }}
+  paths:
+      - vendor/bundle
+
+install-rubygems: &install-rubygems
+  name: Install GEM dependencies
+  command: bundle install --path vendor/bundle
+
+version: 2
+jobs:
+  run-deploy:
+    <<: *macos-executor
+    steps:
+      - checkout
+      - restore_cache: *restore-gems
+      - run: *install-rubygems
+      - save_cache: *save-gems
+      - run:
+          name: Run Release script
+          command: ./release-script.sh
+
+workflows:
+  version: 2
+  build-test-deploy:
+    jobs:
+      - run-deploy:
+          filters:
+            branches:
+              only: master

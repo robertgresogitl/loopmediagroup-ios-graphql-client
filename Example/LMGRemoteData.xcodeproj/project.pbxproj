@@ -15,11 +15,11 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7CBC9C0A21A75AA800BDA351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		7CBC9C0B21A75AA800BDA351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		7CBC9C0D21A75AA800BDA351 /* Pods_LMGRemoteData_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B89A0B386ACD7E2A994E6A /* Pods_LMGRemoteData_Example.framework */; };
 		7CBC9C0F21A75AA800BDA351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		7CBC9C1021A75AA800BDA351 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		7CBC9C1121A75AA800BDA351 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		AC60CDC0D62E2C4AF30EDC2A /* Pods_LMGRemoteData_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B89A0B386ACD7E2A994E6A /* Pods_LMGRemoteData_Example.framework */; };
+		AEE7E1232AE181C54B7C90AA /* Pods_LMGRemoteData_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B89A0B386ACD7E2A994E6A /* Pods_LMGRemoteData_Example.framework */; };
 		CE2F24078394673F9481FB5F /* Pods_LMGRemoteData_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B1DBC1C7DA83843EE54CA9 /* Pods_LMGRemoteData_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,8 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0632C58E9CDE9D03464AB372 /* Pods-LMGRemoteData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMGRemoteData_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example.release.xcconfig"; sourceTree = "<group>"; };
 		22355AACE3F975D1F78B221B /* Pods-LMGRemoteData_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMGRemoteData_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LMGRemoteData_Tests/Pods-LMGRemoteData_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		54DB12839101DACB06B1B1A9 /* Pods-LMGRemoteData_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMGRemoteData_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example.release.xcconfig"; sourceTree = "<group>"; };
 		55B89A0B386ACD7E2A994E6A /* Pods_LMGRemoteData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LMGRemoteData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* LMGRemoteData_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMGRemoteData_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,11 +50,11 @@
 		623D55848229F56D09A18BF3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		65AC6CA1BA44DA4E74716AA8 /* Pods-LMGRemoteData_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMGRemoteData_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LMGRemoteData_Tests/Pods-LMGRemoteData_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		66F5CBD066C730595D0AC26F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		779CACCF2D2B0636DF069371 /* Pods-LMGRemoteData_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMGRemoteData_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		7CBC9C1621A75AA800BDA351 /* Generate Apollo API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Generate Apollo API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBC9C1721A75AA900BDA351 /* LMGRemoteData_Example copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "LMGRemoteData_Example copy-Info.plist"; path = "/Users/shadowrider/Work/loopmediagroup-ios-graphql-client/Example/LMGRemoteData_Example copy-Info.plist"; sourceTree = "<absolute>"; };
 		94B1DBC1C7DA83843EE54CA9 /* Pods_LMGRemoteData_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LMGRemoteData_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90D31348DF81BE5558D8D2B /* LMGRemoteData.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LMGRemoteData.podspec; path = ../LMGRemoteData.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBC9123EE19D4DE6B8FB93F9 /* Pods-LMGRemoteData_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LMGRemoteData_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC60CDC0D62E2C4AF30EDC2A /* Pods_LMGRemoteData_Example.framework in Frameworks */,
+				AEE7E1232AE181C54B7C90AA /* Pods_LMGRemoteData_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CBC9C0D21A75AA800BDA351 /* Pods_LMGRemoteData_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,10 +169,10 @@
 		EAF54C088C674DBE98639ABF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				779CACCF2D2B0636DF069371 /* Pods-LMGRemoteData_Example.debug.xcconfig */,
-				54DB12839101DACB06B1B1A9 /* Pods-LMGRemoteData_Example.release.xcconfig */,
 				65AC6CA1BA44DA4E74716AA8 /* Pods-LMGRemoteData_Tests.debug.xcconfig */,
 				22355AACE3F975D1F78B221B /* Pods-LMGRemoteData_Tests.release.xcconfig */,
+				BBC9123EE19D4DE6B8FB93F9 /* Pods-LMGRemoteData_Example.debug.xcconfig */,
+				0632C58E9CDE9D03464AB372 /* Pods-LMGRemoteData_Example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -223,11 +223,9 @@
 			buildConfigurationList = 7CBC9C1321A75AA800BDA351 /* Build configuration list for PBXNativeTarget "Generate Apollo API" */;
 			buildPhases = (
 				7CBC9C1821A75AB900BDA351 /* ShellScript */,
-				7CBC9C0821A75AA800BDA351 /* [CP] Check Pods Manifest.lock */,
 				7CBC9C0921A75AA800BDA351 /* Sources */,
 				7CBC9C0C21A75AA800BDA351 /* Frameworks */,
 				7CBC9C0E21A75AA800BDA351 /* Resources */,
-				7CBC9C1221A75AA800BDA351 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,50 +324,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7CBC9C0821A75AA800BDA351 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LMGRemoteData_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7CBC9C1221A75AA800BDA351 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
-				"${PODS_ROOT}/LMGDataAccess/LMGDataAccess.framework",
-				"${PODS_ROOT}/LMGDomain/LMGDomain.framework",
-				"${PODS_ROOT}/LMGNotificationBus/LMGNotificationBus.framework",
-				"${BUILT_PRODUCTS_DIR}/LMGRemoteData/LMGRemoteData.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LMGDataAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LMGDomain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LMGNotificationBus.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LMGRemoteData.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7CBC9C1821A75AB900BDA351 /* ShellScript */ = {
@@ -593,7 +547,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 779CACCF2D2B0636DF069371 /* Pods-LMGRemoteData_Example.debug.xcconfig */;
+			baseConfigurationReference = BBC9123EE19D4DE6B8FB93F9 /* Pods-LMGRemoteData_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LMGRemoteData/Info.plist;
@@ -608,7 +562,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54DB12839101DACB06B1B1A9 /* Pods-LMGRemoteData_Example.release.xcconfig */;
+			baseConfigurationReference = 0632C58E9CDE9D03464AB372 /* Pods-LMGRemoteData_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LMGRemoteData/Info.plist;
@@ -663,7 +617,6 @@
 		};
 		7CBC9C1421A75AA800BDA351 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 779CACCF2D2B0636DF069371 /* Pods-LMGRemoteData_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "LMGRemoteData_Example copy-Info.plist";
@@ -678,7 +631,6 @@
 		};
 		7CBC9C1521A75AA800BDA351 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54DB12839101DACB06B1B1A9 /* Pods-LMGRemoteData_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "LMGRemoteData_Example copy-Info.plist";
