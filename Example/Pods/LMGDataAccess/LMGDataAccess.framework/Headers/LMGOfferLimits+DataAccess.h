@@ -8,6 +8,9 @@
 @import LMGDomain;
 #import "LMGDAOfferLimits.h"
 
+LMGLimitDescription LMGDALimitDescToLMGLimitDesc(LMGDALimitDescription desc);
+LMGDALimitDescription LMGLimitDescToLMGDALimitDesc(LMGLimitDescription desc);
+
 @interface LMGOfferLimits (DataAccess)
 
 - (nonnull LMGDAOfferLimits *)toDataAccess;

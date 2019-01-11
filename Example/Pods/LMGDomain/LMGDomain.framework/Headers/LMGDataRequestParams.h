@@ -24,7 +24,7 @@
 
 @protocol LMGDataListRequestParams <LMGDataRequestParams>
 
-@property (nonatomic, readonly) NSInteger limit;
+@property (nonatomic, readonly) NSUInteger limit;
 @property (nullable, nonatomic, copy, readonly) NSArray<LMGCoordinate *> *contentArea;
 @property (nullable, nonatomic, copy, readonly) NSString *nextPage;
 

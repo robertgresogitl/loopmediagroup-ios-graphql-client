@@ -21,6 +21,7 @@ typedef void (^DARedemptionStateBuildBlock)(LMGDARedemptionStateBuilder  * _Nonn
 
 @property (nonnull, nonatomic, copy, readonly) NSArray<NSString *> * displayStatuses;
 @property (nonnull, nonatomic, copy, readonly) NSArray<LMGDARedemptionStateTransition *> *transitions;
+@property (nullable, nonatomic, copy, readonly) NSString *disabilityReason;
 @property (nullable, nonatomic, copy, readonly) NSString *status;
 @property (nullable, nonatomic, copy, readonly) NSString *action;
 @property (nullable, nonatomic, copy, readonly) NSString *actionTarget;
@@ -41,6 +42,7 @@ typedef void (^DARedemptionStateBuildBlock)(LMGDARedemptionStateBuilder  * _Nonn
 @property (nonatomic) NSString *status;
 @property (nonatomic) NSArray<NSString *> *displayStatuses;
 @property (nonatomic) NSString *action;
+@property (nonatomic) NSString *disabilityReason;
 @property (nonatomic) NSTimeInterval refreshInterval;
 @property (nonatomic) NSTimeInterval expiresIn;
 @property (nonatomic) BOOL usable;

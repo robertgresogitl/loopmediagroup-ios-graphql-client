@@ -12,6 +12,9 @@ extension LocationItem {
     
     func toDataAccess(business: LMGDABusiness?) -> LMGDALocation {
         let builder = LMGDALocationBuilder(id, address: address.toDataAccess(), name: name)
+        builder.distance = distance != nil ? NSNumber(value: distance!) : nil
+        builder.phoneNumber = phone
+        builder.urlPath = url
         builder.business = business
         return builder.build()
     }

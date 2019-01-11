@@ -28,3 +28,10 @@
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
 @end
+
+@interface NSError (LMGBookmarkOffer)
+
++ (nonnull NSError *)userNotIdentifiedWhileBookmarking;
+
+@end
+

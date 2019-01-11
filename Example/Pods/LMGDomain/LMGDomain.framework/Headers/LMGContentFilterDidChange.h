@@ -13,7 +13,7 @@
 
 @property (nonnull, nonatomic, readonly) LMGContentFilter *contentFilter;
 
-- (nonnull instancetype)initWithContentFilter:(nonnull LMGContentFilter *)contentFilter NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithContentFilter:(nullable LMGContentFilter *)contentFilter NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
 @end

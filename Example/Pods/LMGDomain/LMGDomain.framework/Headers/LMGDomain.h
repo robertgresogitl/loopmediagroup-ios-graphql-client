@@ -16,9 +16,6 @@ FOUNDATION_EXPORT const unsigned char LMGDomainVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <LMGDomain/PublicHeader.h>
 
-// Temp
-#import <LMGDomain/VarLet.h>
-
 // Common junk
 #import <LMGDomain/NSArray+Monads.h>
 #import <LMGDomain/NSError+Domain.h>

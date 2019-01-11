@@ -37,7 +37,7 @@ typedef void (^CollectionsListRequestParamsBuildBlock)(LMGCollectionsListRequest
 @property (nullable, nonatomic, copy) NSString *nextPage;
 @property (nonatomic) BOOL refresh;
 @property (nonatomic) BOOL useDeviceLocation;
-@property (nonatomic) NSInteger limit;
+@property (nonatomic) NSUInteger limit;
 
 - (nonnull instancetype)initWith:(nonnull LMGCollectionsListRequestParams *)params;
 - (nonnull LMGCollectionsListRequestParams *)build;

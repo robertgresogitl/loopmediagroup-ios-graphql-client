@@ -10,10 +10,9 @@
 
 @interface LMGDASchedule : NSObject <NSCopying>
 
-@property (nonnull, nonatomic, copy, readonly) NSString *humanReadable;
-@property (nonatomic, readonly) BOOL withinSchedule;
+@property (nonnull, nonatomic, copy, readonly) NSArray<NSString *> *humanReadable;
 
-- (nonnull instancetype)initWithSchedule:(nonnull NSString *)schedule withinSchedule:(BOOL)withinSchedule NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSchedule:(nonnull NSArray<NSString *> *)schedule NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
 @end

@@ -40,7 +40,7 @@ typedef void (^LMGBusinessesListRequestParamsBuildBlock)(LMGBusinessesListReques
 @property (nonatomic, getter=shouldRefresh) BOOL refresh;
 @property (nonatomic, getter=areOffersBookmarked) BOOL bookmarkedOffers;
 @property (nonatomic, getter=shouldUseDeviceLocation) BOOL useDeviceLocation;
-@property (nonatomic) NSInteger limit;
+@property (nonatomic) NSUInteger limit;
 
 - (nonnull instancetype)initWith:(nonnull LMGBusinessesListRequestParams *)params;
 - (nonnull LMGBusinessesListRequestParams *)build;

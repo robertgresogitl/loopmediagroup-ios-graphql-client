@@ -20,11 +20,15 @@ typedef NS_ENUM(NSUInteger, LMGRedemptionStatus) {
 
 typedef NS_ENUM(NSUInteger, LMGRedemptionDisabilityReason) {
     LMGRedemptionDisabilityReasonNone,
-    LMGRedemptionDisabilityReasonLocationPermission,
+    LMGRedemptionDisabilityReasonDisabled,
+    LMGRedemptionDisabilityReasonOfferUsed,
     LMGRedemptionDisabilityReasonSoldOut,
     LMGRedemptionDisabilityReasonSoldOutPerWindow,
-    LMGRedemptionDisabilityReasonOfferUsed,
+    LMGRedemptionDisabilityReasonSoldOutPerProfile,
+    LMGRedemptionDisabilityReasonSoldOutPerProfilePerWindow,
     LMGRedemptionDisabilityReasonSchedule,
+    LMGRedemptionDisabilityReasonNotVisible,
+    LMGRedemptionDisabilityReasonLocationPermission,
     LMGRedemptionDisabilityReasonNotSupported,
 };
 

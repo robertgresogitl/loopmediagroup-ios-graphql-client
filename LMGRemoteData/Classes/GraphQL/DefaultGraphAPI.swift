@@ -1057,7 +1057,7 @@ public final class UnbookmarkOfferMutation: GraphQLMutation {
 
 public final class OfferRedeemActionQuery: GraphQLQuery {
   public let operationDefinition =
-    "query OfferRedeemAction($id: ID!, $locationId: ID!) {\n  offer(offerId: $id) {\n    __typename\n    promoCode\n  }\n  offerState(offerId: $id) {\n    __typename\n    ...RedeemAction\n  }\n  offerStatus(offerId: $id, locationId: $locationId) {\n    __typename\n    ...OfferDetailStatus\n  }\n}"
+    "query OfferRedeemAction($id: ID!, $locationId: ID!) {\n  offer(offerId: $id) {\n    __typename\n    promoCode\n    schedules\n  }\n  offerState(offerId: $id) {\n    __typename\n    ...RedeemAction\n  }\n  offerStatus(offerId: $id, locationId: $locationId) {\n    __typename\n    ...OfferDetailStatus\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(RedeemAction.fragmentDefinition).appending(OfferDetailStatus.fragmentDefinition) }
 
@@ -1125,6 +1125,7 @@ public final class OfferRedeemActionQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("promoCode", type: .scalar(String.self)),
+        GraphQLField("schedules", type: .nonNull(.list(.nonNull(.scalar(String.self))))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -1133,8 +1134,8 @@ public final class OfferRedeemActionQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(promoCode: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Offer", "promoCode": promoCode])
+      public init(promoCode: String? = nil, schedules: [String]) {
+        self.init(unsafeResultMap: ["__typename": "Offer", "promoCode": promoCode, "schedules": schedules])
       }
 
       public var __typename: String {
@@ -1152,6 +1153,15 @@ public final class OfferRedeemActionQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "promoCode")
+        }
+      }
+
+      public var schedules: [String] {
+        get {
+          return resultMap["schedules"]! as! [String]
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "schedules")
         }
       }
     }
@@ -1260,7 +1270,7 @@ public final class OfferRedeemActionQuery: GraphQLQuery {
 
 public final class RedeemOfferMutation: GraphQLMutation {
   public let operationDefinition =
-    "mutation RedeemOffer($offerId: ID!, $locationId: ID!, $currentState: String!, $transitionIndex: Int!, $clientArgs: String!, $clientGeoPoint: [Float!]) {\n  transitionOfferState(offerId: $offerId, locationId: $locationId, currentState: $currentState, transitionIndex: $transitionIndex, clientArgs: $clientArgs, clientGeoPoint: $clientGeoPoint) {\n    __typename\n    ...RedeemAction\n  }\n}"
+    "mutation RedeemOffer($offerId: ID!, $locationId: ID!, $currentState: String!, $transitionIndex: Int!, $clientArgs: String!) {\n  transitionOfferState(offerId: $offerId, locationId: $locationId, currentState: $currentState, transitionIndex: $transitionIndex, clientArgs: $clientArgs) {\n    __typename\n    ...RedeemAction\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(RedeemAction.fragmentDefinition) }
 
@@ -1269,26 +1279,24 @@ public final class RedeemOfferMutation: GraphQLMutation {
   public var currentState: String
   public var transitionIndex: Int
   public var clientArgs: String
-  public var clientGeoPoint: [Double]?
 
-  public init(offerId: GraphQLID, locationId: GraphQLID, currentState: String, transitionIndex: Int, clientArgs: String, clientGeoPoint: [Double]?) {
+  public init(offerId: GraphQLID, locationId: GraphQLID, currentState: String, transitionIndex: Int, clientArgs: String) {
     self.offerId = offerId
     self.locationId = locationId
     self.currentState = currentState
     self.transitionIndex = transitionIndex
     self.clientArgs = clientArgs
-    self.clientGeoPoint = clientGeoPoint
   }
 
   public var variables: GraphQLMap? {
-    return ["offerId": offerId, "locationId": locationId, "currentState": currentState, "transitionIndex": transitionIndex, "clientArgs": clientArgs, "clientGeoPoint": clientGeoPoint]
+    return ["offerId": offerId, "locationId": locationId, "currentState": currentState, "transitionIndex": transitionIndex, "clientArgs": clientArgs]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Mutation"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("transitionOfferState", arguments: ["offerId": GraphQLVariable("offerId"), "locationId": GraphQLVariable("locationId"), "currentState": GraphQLVariable("currentState"), "transitionIndex": GraphQLVariable("transitionIndex"), "clientArgs": GraphQLVariable("clientArgs"), "clientGeoPoint": GraphQLVariable("clientGeoPoint")], type: .nonNull(.object(TransitionOfferState.selections))),
+      GraphQLField("transitionOfferState", arguments: ["offerId": GraphQLVariable("offerId"), "locationId": GraphQLVariable("locationId"), "currentState": GraphQLVariable("currentState"), "transitionIndex": GraphQLVariable("transitionIndex"), "clientArgs": GraphQLVariable("clientArgs")], type: .nonNull(.object(TransitionOfferState.selections))),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -2543,15 +2551,15 @@ public struct RedeemAction: GraphQLFragment {
 
 public struct OfferDetailStatus: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment OfferDetailStatus on OfferStatus {\n  __typename\n  available\n  limits {\n    __typename\n    available\n    details {\n      __typename\n      perProfile {\n        __typename\n        total\n        used\n      }\n      perProfilePerWindow {\n        __typename\n        total\n        used\n        granularity\n      }\n      global {\n        __typename\n        total\n        used\n      }\n      globalPerWindow {\n        __typename\n        total\n        used\n        granularity\n      }\n    }\n  }\n  schedules {\n    __typename\n    usable {\n      __typename\n      available\n      schedules\n    }\n  }\n}"
+    "fragment OfferDetailStatus on OfferStatus {\n  __typename\n  redeemable\n  reason\n  limitDetails {\n    __typename\n    perProfile {\n      __typename\n      total\n      used\n    }\n    perProfilePerWindow {\n      __typename\n      total\n      used\n      granularity\n      resetsIn\n    }\n    global {\n      __typename\n      total\n      used\n    }\n    globalPerWindow {\n      __typename\n      total\n      used\n      granularity\n      resetsIn\n    }\n  }\n}"
 
   public static let possibleTypes = ["OfferStatus"]
 
   public static let selections: [GraphQLSelection] = [
     GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-    GraphQLField("available", type: .nonNull(.scalar(Bool.self))),
-    GraphQLField("limits", type: .nonNull(.object(Limit.selections))),
-    GraphQLField("schedules", type: .nonNull(.object(Schedule.selections))),
+    GraphQLField("redeemable", type: .nonNull(.scalar(Bool.self))),
+    GraphQLField("reason", type: .scalar(String.self)),
+    GraphQLField("limitDetails", type: .object(LimitDetail.selections)),
   ]
 
   public private(set) var resultMap: ResultMap
@@ -2560,8 +2568,8 @@ public struct OfferDetailStatus: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(available: Bool, limits: Limit, schedules: Schedule) {
-    self.init(unsafeResultMap: ["__typename": "OfferStatus", "available": available, "limits": limits.resultMap, "schedules": schedules.resultMap])
+  public init(redeemable: Bool, reason: String? = nil, limitDetails: LimitDetail? = nil) {
+    self.init(unsafeResultMap: ["__typename": "OfferStatus", "redeemable": redeemable, "reason": reason, "limitDetails": limitDetails.flatMap { (value: LimitDetail) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -2574,42 +2582,44 @@ public struct OfferDetailStatus: GraphQLFragment {
   }
 
   /// True iff Offer is available for use.
-  public var available: Bool {
+  public var redeemable: Bool {
     get {
-      return resultMap["available"]! as! Bool
+      return resultMap["redeemable"]! as! Bool
     }
     set {
-      resultMap.updateValue(newValue, forKey: "available")
+      resultMap.updateValue(newValue, forKey: "redeemable")
+    }
+  }
+
+  /// Returned iff available == false. Returns prioritized reason offer is not available.
+  public var reason: String? {
+    get {
+      return resultMap["reason"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "reason")
     }
   }
 
   /// Usage limits and current usages.
-  public var limits: Limit {
+  public var limitDetails: LimitDetail? {
     get {
-      return Limit(unsafeResultMap: resultMap["limits"]! as! ResultMap)
+      return (resultMap["limitDetails"] as? ResultMap).flatMap { LimitDetail(unsafeResultMap: $0) }
     }
     set {
-      resultMap.updateValue(newValue.resultMap, forKey: "limits")
+      resultMap.updateValue(newValue?.resultMap, forKey: "limitDetails")
     }
   }
 
-  /// Schedules and their current availability.
-  public var schedules: Schedule {
-    get {
-      return Schedule(unsafeResultMap: resultMap["schedules"]! as! ResultMap)
-    }
-    set {
-      resultMap.updateValue(newValue.resultMap, forKey: "schedules")
-    }
-  }
-
-  public struct Limit: GraphQLSelectionSet {
-    public static let possibleTypes = ["OfferStatusLimits"]
+  public struct LimitDetail: GraphQLSelectionSet {
+    public static let possibleTypes = ["OfferStatusLimitDetails"]
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-      GraphQLField("available", type: .nonNull(.scalar(Bool.self))),
-      GraphQLField("details", type: .object(Detail.selections)),
+      GraphQLField("perProfile", type: .object(PerProfile.selections)),
+      GraphQLField("perProfilePerWindow", type: .object(PerProfilePerWindow.selections)),
+      GraphQLField("global", type: .object(Global.selections)),
+      GraphQLField("globalPerWindow", type: .object(GlobalPerWindow.selections)),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -2618,8 +2628,8 @@ public struct OfferDetailStatus: GraphQLFragment {
       self.resultMap = unsafeResultMap
     }
 
-    public init(available: Bool, details: Detail? = nil) {
-      self.init(unsafeResultMap: ["__typename": "OfferStatusLimits", "available": available, "details": details.flatMap { (value: Detail) -> ResultMap in value.resultMap }])
+    public init(perProfile: PerProfile? = nil, perProfilePerWindow: PerProfilePerWindow? = nil, global: Global? = nil, globalPerWindow: GlobalPerWindow? = nil) {
+      self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetails", "perProfile": perProfile.flatMap { (value: PerProfile) -> ResultMap in value.resultMap }, "perProfilePerWindow": perProfilePerWindow.flatMap { (value: PerProfilePerWindow) -> ResultMap in value.resultMap }, "global": global.flatMap { (value: Global) -> ResultMap in value.resultMap }, "globalPerWindow": globalPerWindow.flatMap { (value: GlobalPerWindow) -> ResultMap in value.resultMap }])
     }
 
     public var __typename: String {
@@ -2631,35 +2641,53 @@ public struct OfferDetailStatus: GraphQLFragment {
       }
     }
 
-    /// True iff no limit is reached.
-    public var available: Bool {
+    /// Per profile limit.
+    public var perProfile: PerProfile? {
       get {
-        return resultMap["available"]! as! Bool
+        return (resultMap["perProfile"] as? ResultMap).flatMap { PerProfile(unsafeResultMap: $0) }
       }
       set {
-        resultMap.updateValue(newValue, forKey: "available")
+        resultMap.updateValue(newValue?.resultMap, forKey: "perProfile")
       }
     }
 
-    /// Breakdown of limits.
-    public var details: Detail? {
+    /// Per profile limit per window.
+    public var perProfilePerWindow: PerProfilePerWindow? {
       get {
-        return (resultMap["details"] as? ResultMap).flatMap { Detail(unsafeResultMap: $0) }
+        return (resultMap["perProfilePerWindow"] as? ResultMap).flatMap { PerProfilePerWindow(unsafeResultMap: $0) }
       }
       set {
-        resultMap.updateValue(newValue?.resultMap, forKey: "details")
+        resultMap.updateValue(newValue?.resultMap, forKey: "perProfilePerWindow")
       }
     }
 
-    public struct Detail: GraphQLSelectionSet {
-      public static let possibleTypes = ["OfferStatusLimitsDetails"]
+    /// Global limit.
+    public var global: Global? {
+      get {
+        return (resultMap["global"] as? ResultMap).flatMap { Global(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "global")
+      }
+    }
+
+    /// Global limit per window.
+    public var globalPerWindow: GlobalPerWindow? {
+      get {
+        return (resultMap["globalPerWindow"] as? ResultMap).flatMap { GlobalPerWindow(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "globalPerWindow")
+      }
+    }
+
+    public struct PerProfile: GraphQLSelectionSet {
+      public static let possibleTypes = ["OfferStatusLimitDetailsUsage"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("perProfile", type: .object(PerProfile.selections)),
-        GraphQLField("perProfilePerWindow", type: .object(PerProfilePerWindow.selections)),
-        GraphQLField("global", type: .object(Global.selections)),
-        GraphQLField("globalPerWindow", type: .object(GlobalPerWindow.selections)),
+        GraphQLField("total", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("used", type: .nonNull(.scalar(Int.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -2668,8 +2696,8 @@ public struct OfferDetailStatus: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(perProfile: PerProfile? = nil, perProfilePerWindow: PerProfilePerWindow? = nil, global: Global? = nil, globalPerWindow: GlobalPerWindow? = nil) {
-        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitsDetails", "perProfile": perProfile.flatMap { (value: PerProfile) -> ResultMap in value.resultMap }, "perProfilePerWindow": perProfilePerWindow.flatMap { (value: PerProfilePerWindow) -> ResultMap in value.resultMap }, "global": global.flatMap { (value: Global) -> ResultMap in value.resultMap }, "globalPerWindow": globalPerWindow.flatMap { (value: GlobalPerWindow) -> ResultMap in value.resultMap }])
+      public init(total: Int, used: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsage", "total": total, "used": used])
       }
 
       public var __typename: String {
@@ -2681,310 +2709,36 @@ public struct OfferDetailStatus: GraphQLFragment {
         }
       }
 
-      /// Per profile limit.
-      public var perProfile: PerProfile? {
+      /// Max allowed uses.
+      public var total: Int {
         get {
-          return (resultMap["perProfile"] as? ResultMap).flatMap { PerProfile(unsafeResultMap: $0) }
+          return resultMap["total"]! as! Int
         }
         set {
-          resultMap.updateValue(newValue?.resultMap, forKey: "perProfile")
+          resultMap.updateValue(newValue, forKey: "total")
         }
       }
 
-      /// Per profile limit per window.
-      public var perProfilePerWindow: PerProfilePerWindow? {
+      /// Current uses.
+      public var used: Int {
         get {
-          return (resultMap["perProfilePerWindow"] as? ResultMap).flatMap { PerProfilePerWindow(unsafeResultMap: $0) }
+          return resultMap["used"]! as! Int
         }
         set {
-          resultMap.updateValue(newValue?.resultMap, forKey: "perProfilePerWindow")
-        }
-      }
-
-      /// Global limit.
-      public var global: Global? {
-        get {
-          return (resultMap["global"] as? ResultMap).flatMap { Global(unsafeResultMap: $0) }
-        }
-        set {
-          resultMap.updateValue(newValue?.resultMap, forKey: "global")
-        }
-      }
-
-      /// Global limit per window.
-      public var globalPerWindow: GlobalPerWindow? {
-        get {
-          return (resultMap["globalPerWindow"] as? ResultMap).flatMap { GlobalPerWindow(unsafeResultMap: $0) }
-        }
-        set {
-          resultMap.updateValue(newValue?.resultMap, forKey: "globalPerWindow")
-        }
-      }
-
-      public struct PerProfile: GraphQLSelectionSet {
-        public static let possibleTypes = ["OfferStatusLimitsUsage"]
-
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("total", type: .nonNull(.scalar(Int.self))),
-          GraphQLField("used", type: .nonNull(.scalar(Int.self))),
-        ]
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(total: Int, used: Int) {
-          self.init(unsafeResultMap: ["__typename": "OfferStatusLimitsUsage", "total": total, "used": used])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        /// Max allowed uses.
-        public var total: Int {
-          get {
-            return resultMap["total"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "total")
-          }
-        }
-
-        /// Current uses.
-        public var used: Int {
-          get {
-            return resultMap["used"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "used")
-          }
-        }
-      }
-
-      public struct PerProfilePerWindow: GraphQLSelectionSet {
-        public static let possibleTypes = ["OfferStatusLimitsUsagePerWindow"]
-
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("total", type: .nonNull(.scalar(Int.self))),
-          GraphQLField("used", type: .nonNull(.scalar(Int.self))),
-          GraphQLField("granularity", type: .nonNull(.scalar(String.self))),
-        ]
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(total: Int, used: Int, granularity: String) {
-          self.init(unsafeResultMap: ["__typename": "OfferStatusLimitsUsagePerWindow", "total": total, "used": used, "granularity": granularity])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        /// Max allowed uses.
-        public var total: Int {
-          get {
-            return resultMap["total"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "total")
-          }
-        }
-
-        /// Current uses.
-        public var used: Int {
-          get {
-            return resultMap["used"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "used")
-          }
-        }
-
-        /// Granularity for reset window.
-        public var granularity: String {
-          get {
-            return resultMap["granularity"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "granularity")
-          }
-        }
-      }
-
-      public struct Global: GraphQLSelectionSet {
-        public static let possibleTypes = ["OfferStatusLimitsUsage"]
-
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("total", type: .nonNull(.scalar(Int.self))),
-          GraphQLField("used", type: .nonNull(.scalar(Int.self))),
-        ]
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(total: Int, used: Int) {
-          self.init(unsafeResultMap: ["__typename": "OfferStatusLimitsUsage", "total": total, "used": used])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        /// Max allowed uses.
-        public var total: Int {
-          get {
-            return resultMap["total"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "total")
-          }
-        }
-
-        /// Current uses.
-        public var used: Int {
-          get {
-            return resultMap["used"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "used")
-          }
-        }
-      }
-
-      public struct GlobalPerWindow: GraphQLSelectionSet {
-        public static let possibleTypes = ["OfferStatusLimitsUsagePerWindow"]
-
-        public static let selections: [GraphQLSelection] = [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("total", type: .nonNull(.scalar(Int.self))),
-          GraphQLField("used", type: .nonNull(.scalar(Int.self))),
-          GraphQLField("granularity", type: .nonNull(.scalar(String.self))),
-        ]
-
-        public private(set) var resultMap: ResultMap
-
-        public init(unsafeResultMap: ResultMap) {
-          self.resultMap = unsafeResultMap
-        }
-
-        public init(total: Int, used: Int, granularity: String) {
-          self.init(unsafeResultMap: ["__typename": "OfferStatusLimitsUsagePerWindow", "total": total, "used": used, "granularity": granularity])
-        }
-
-        public var __typename: String {
-          get {
-            return resultMap["__typename"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "__typename")
-          }
-        }
-
-        /// Max allowed uses.
-        public var total: Int {
-          get {
-            return resultMap["total"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "total")
-          }
-        }
-
-        /// Current uses.
-        public var used: Int {
-          get {
-            return resultMap["used"]! as! Int
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "used")
-          }
-        }
-
-        /// Granularity for reset window.
-        public var granularity: String {
-          get {
-            return resultMap["granularity"]! as! String
-          }
-          set {
-            resultMap.updateValue(newValue, forKey: "granularity")
-          }
+          resultMap.updateValue(newValue, forKey: "used")
         }
       }
     }
-  }
 
-  public struct Schedule: GraphQLSelectionSet {
-    public static let possibleTypes = ["OfferStatusSchedules"]
-
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-      GraphQLField("usable", type: .nonNull(.object(Usable.selections))),
-    ]
-
-    public private(set) var resultMap: ResultMap
-
-    public init(unsafeResultMap: ResultMap) {
-      self.resultMap = unsafeResultMap
-    }
-
-    public init(usable: Usable) {
-      self.init(unsafeResultMap: ["__typename": "OfferStatusSchedules", "usable": usable.resultMap])
-    }
-
-    public var __typename: String {
-      get {
-        return resultMap["__typename"]! as! String
-      }
-      set {
-        resultMap.updateValue(newValue, forKey: "__typename")
-      }
-    }
-
-    /// Offer usability schedules.
-    public var usable: Usable {
-      get {
-        return Usable(unsafeResultMap: resultMap["usable"]! as! ResultMap)
-      }
-      set {
-        resultMap.updateValue(newValue.resultMap, forKey: "usable")
-      }
-    }
-
-    public struct Usable: GraphQLSelectionSet {
-      public static let possibleTypes = ["OfferStatusScheduleDetails"]
+    public struct PerProfilePerWindow: GraphQLSelectionSet {
+      public static let possibleTypes = ["OfferStatusLimitDetailsUsagePerWindow"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("available", type: .nonNull(.scalar(Bool.self))),
-        GraphQLField("schedules", type: .nonNull(.list(.nonNull(.scalar(String.self))))),
+        GraphQLField("total", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("used", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("granularity", type: .nonNull(.scalar(String.self))),
+        GraphQLField("resetsIn", type: .nonNull(.scalar(Int.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -2993,8 +2747,8 @@ public struct OfferDetailStatus: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(available: Bool, schedules: [String]) {
-        self.init(unsafeResultMap: ["__typename": "OfferStatusScheduleDetails", "available": available, "schedules": schedules])
+      public init(total: Int, used: Int, granularity: String, resetsIn: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsagePerWindow", "total": total, "used": used, "granularity": granularity, "resetsIn": resetsIn])
       }
 
       public var __typename: String {
@@ -3006,23 +2760,163 @@ public struct OfferDetailStatus: GraphQLFragment {
         }
       }
 
-      /// True iff at least one schedule is currently active.
-      public var available: Bool {
+      /// Max allowed uses.
+      public var total: Int {
         get {
-          return resultMap["available"]! as! Bool
+          return resultMap["total"]! as! Int
         }
         set {
-          resultMap.updateValue(newValue, forKey: "available")
+          resultMap.updateValue(newValue, forKey: "total")
         }
       }
 
-      /// List of human readable Offer schedules.
-      public var schedules: [String] {
+      /// Current uses.
+      public var used: Int {
         get {
-          return resultMap["schedules"]! as! [String]
+          return resultMap["used"]! as! Int
         }
         set {
-          resultMap.updateValue(newValue, forKey: "schedules")
+          resultMap.updateValue(newValue, forKey: "used")
+        }
+      }
+
+      /// Granularity for reset window.
+      public var granularity: String {
+        get {
+          return resultMap["granularity"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "granularity")
+        }
+      }
+
+      /// Time to reset in seconds.
+      public var resetsIn: Int {
+        get {
+          return resultMap["resetsIn"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "resetsIn")
+        }
+      }
+    }
+
+    public struct Global: GraphQLSelectionSet {
+      public static let possibleTypes = ["OfferStatusLimitDetailsUsage"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("total", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("used", type: .nonNull(.scalar(Int.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(total: Int, used: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsage", "total": total, "used": used])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// Max allowed uses.
+      public var total: Int {
+        get {
+          return resultMap["total"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "total")
+        }
+      }
+
+      /// Current uses.
+      public var used: Int {
+        get {
+          return resultMap["used"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "used")
+        }
+      }
+    }
+
+    public struct GlobalPerWindow: GraphQLSelectionSet {
+      public static let possibleTypes = ["OfferStatusLimitDetailsUsagePerWindow"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("total", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("used", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("granularity", type: .nonNull(.scalar(String.self))),
+        GraphQLField("resetsIn", type: .nonNull(.scalar(Int.self))),
+      ]
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(total: Int, used: Int, granularity: String, resetsIn: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsagePerWindow", "total": total, "used": used, "granularity": granularity, "resetsIn": resetsIn])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// Max allowed uses.
+      public var total: Int {
+        get {
+          return resultMap["total"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "total")
+        }
+      }
+
+      /// Current uses.
+      public var used: Int {
+        get {
+          return resultMap["used"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "used")
+        }
+      }
+
+      /// Granularity for reset window.
+      public var granularity: String {
+        get {
+          return resultMap["granularity"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "granularity")
+        }
+      }
+
+      /// Time to reset in seconds.
+      public var resetsIn: Int {
+        get {
+          return resultMap["resetsIn"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "resetsIn")
         }
       }
     }
@@ -3345,7 +3239,7 @@ public struct BusinessDetails: GraphQLFragment {
 
 public struct BusinessListItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment BusinessListItem on Business {\n  __typename\n  id\n  name\n  shortName\n  phone\n  url\n  profileImages {\n    __typename\n    url\n  }\n  categories {\n    __typename\n    ...CategoryItem\n  }\n}"
+    "fragment BusinessListItem on Business {\n  __typename\n  id\n  name\n  shortName\n  phone\n  url\n  slogan\n  profileImages {\n    __typename\n    url\n  }\n  categories {\n    __typename\n    ...CategoryItem\n  }\n}"
 
   public static let possibleTypes = ["Business"]
 
@@ -3356,6 +3250,7 @@ public struct BusinessListItem: GraphQLFragment {
     GraphQLField("shortName", type: .nonNull(.scalar(String.self))),
     GraphQLField("phone", type: .scalar(String.self)),
     GraphQLField("url", type: .scalar(String.self)),
+    GraphQLField("slogan", type: .scalar(String.self)),
     GraphQLField("profileImages", type: .nonNull(.list(.nonNull(.object(ProfileImage.selections))))),
     GraphQLField("categories", type: .nonNull(.list(.nonNull(.object(Category.selections))))),
   ]
@@ -3366,8 +3261,8 @@ public struct BusinessListItem: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, name: String, shortName: String, phone: String? = nil, url: String? = nil, profileImages: [ProfileImage], categories: [Category]) {
-    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "shortName": shortName, "phone": phone, "url": url, "profileImages": profileImages.map { (value: ProfileImage) -> ResultMap in value.resultMap }, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
+  public init(id: GraphQLID, name: String, shortName: String, phone: String? = nil, url: String? = nil, slogan: String? = nil, profileImages: [ProfileImage], categories: [Category]) {
+    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "shortName": shortName, "phone": phone, "url": url, "slogan": slogan, "profileImages": profileImages.map { (value: ProfileImage) -> ResultMap in value.resultMap }, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -3421,6 +3316,15 @@ public struct BusinessListItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "url")
+    }
+  }
+
+  public var slogan: String? {
+    get {
+      return resultMap["slogan"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "slogan")
     }
   }
 
@@ -3793,7 +3697,7 @@ public struct CollectionItem: GraphQLFragment {
 
 public struct LocationItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment LocationItem on Location {\n  __typename\n  id\n  name\n  address {\n    __typename\n    id\n    suite\n    building\n    streetAddress\n    street\n    postalcode\n    city\n    state\n    country\n    centre\n  }\n}"
+    "fragment LocationItem on Location {\n  __typename\n  id\n  name\n  distance\n  phone\n  url\n  address {\n    __typename\n    id\n    suite\n    building\n    streetAddress\n    street\n    postalcode\n    city\n    state\n    country\n    centre\n  }\n}"
 
   public static let possibleTypes = ["Location"]
 
@@ -3801,6 +3705,9 @@ public struct LocationItem: GraphQLFragment {
     GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
     GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
     GraphQLField("name", type: .nonNull(.scalar(String.self))),
+    GraphQLField("distance", type: .scalar(Double.self)),
+    GraphQLField("phone", type: .scalar(String.self)),
+    GraphQLField("url", type: .scalar(String.self)),
     GraphQLField("address", type: .nonNull(.object(Address.selections))),
   ]
 
@@ -3810,8 +3717,8 @@ public struct LocationItem: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, name: String, address: Address) {
-    self.init(unsafeResultMap: ["__typename": "Location", "id": id, "name": name, "address": address.resultMap])
+  public init(id: GraphQLID, name: String, distance: Double? = nil, phone: String? = nil, url: String? = nil, address: Address) {
+    self.init(unsafeResultMap: ["__typename": "Location", "id": id, "name": name, "distance": distance, "phone": phone, "url": url, "address": address.resultMap])
   }
 
   public var __typename: String {
@@ -3838,6 +3745,33 @@ public struct LocationItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var distance: Double? {
+    get {
+      return resultMap["distance"] as? Double
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "distance")
+    }
+  }
+
+  public var phone: String? {
+    get {
+      return resultMap["phone"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "phone")
+    }
+  }
+
+  public var url: String? {
+    get {
+      return resultMap["url"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "url")
     }
   }
 

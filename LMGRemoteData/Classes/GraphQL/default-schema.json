@@ -1309,6 +1309,45 @@
                   "ofType": null
                 }
               }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
+              "name": "distance",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Float",
+                "ofType": null
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
+              "name": "url",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
+              "name": "phone",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             }
           ],
           "inputFields": null,
@@ -1889,7 +1928,7 @@
               "deprecationReason": null,
               "description": "Cursor representing previous page",
               "isDeprecated": false,
-              "name": "prev",
+              "name": "previous",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -2740,7 +2779,7 @@
               "deprecationReason": null,
               "description": "True iff Offer is available for use.",
               "isDeprecated": false,
-              "name": "available",
+              "name": "redeemable",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,
@@ -2755,46 +2794,25 @@
               "args": [
               ],
               "deprecationReason": null,
+              "description": "Returned iff available == false. Returns prioritized reason offer is not available.",
+              "isDeprecated": false,
+              "name": "reason",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
               "description": "Usage limits and current usages.",
               "isDeprecated": false,
-              "name": "limits",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "OfferStatusLimits",
-                  "ofType": null
-                }
-              }
-            },
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "Schedules and their current availability.",
-              "isDeprecated": false,
-              "name": "schedules",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "OfferStatusSchedules",
-                  "ofType": null
-                }
-              }
-            },
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "Meta information about Offer status.",
-              "isDeprecated": false,
-              "name": "meta",
+              "name": "limitDetails",
               "type": {
                 "kind": "OBJECT",
-                "name": "OfferStatusMeta",
+                "name": "OfferStatusLimitDetails",
                 "ofType": null
               }
             }
@@ -2814,54 +2832,12 @@
               "args": [
               ],
               "deprecationReason": null,
-              "description": "True iff no limit is reached.",
-              "isDeprecated": false,
-              "name": "available",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              }
-            },
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "Breakdown of limits.",
-              "isDeprecated": false,
-              "name": "details",
-              "type": {
-                "kind": "OBJECT",
-                "name": "OfferStatusLimitsDetails",
-                "ofType": null
-              }
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-          ],
-          "kind": "OBJECT",
-          "name": "OfferStatusLimits",
-          "possibleTypes": null
-        },
-        {
-          "description": "",
-          "enumValues": null,
-          "fields": [
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
               "description": "Per profile limit.",
               "isDeprecated": false,
               "name": "perProfile",
               "type": {
                 "kind": "OBJECT",
-                "name": "OfferStatusLimitsUsage",
+                "name": "OfferStatusLimitDetailsUsage",
                 "ofType": null
               }
             },
@@ -2874,7 +2850,7 @@
               "name": "perProfilePerWindow",
               "type": {
                 "kind": "OBJECT",
-                "name": "OfferStatusLimitsUsagePerWindow",
+                "name": "OfferStatusLimitDetailsUsagePerWindow",
                 "ofType": null
               }
             },
@@ -2887,7 +2863,7 @@
               "name": "global",
               "type": {
                 "kind": "OBJECT",
-                "name": "OfferStatusLimitsUsage",
+                "name": "OfferStatusLimitDetailsUsage",
                 "ofType": null
               }
             },
@@ -2900,7 +2876,7 @@
               "name": "globalPerWindow",
               "type": {
                 "kind": "OBJECT",
-                "name": "OfferStatusLimitsUsagePerWindow",
+                "name": "OfferStatusLimitDetailsUsagePerWindow",
                 "ofType": null
               }
             }
@@ -2909,7 +2885,7 @@
           "interfaces": [
           ],
           "kind": "OBJECT",
-          "name": "OfferStatusLimitsDetails",
+          "name": "OfferStatusLimitDetails",
           "possibleTypes": null
         },
         {
@@ -2955,7 +2931,7 @@
           "interfaces": [
           ],
           "kind": "OBJECT",
-          "name": "OfferStatusLimitsUsage",
+          "name": "OfferStatusLimitDetailsUsage",
           "possibleTypes": null
         },
         {
@@ -3035,132 +3011,7 @@
           "interfaces": [
           ],
           "kind": "OBJECT",
-          "name": "OfferStatusLimitsUsagePerWindow",
-          "possibleTypes": null
-        },
-        {
-          "description": "",
-          "enumValues": null,
-          "fields": [
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "Offer visibility schedules.",
-              "isDeprecated": false,
-              "name": "visible",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "OfferStatusScheduleDetails",
-                  "ofType": null
-                }
-              }
-            },
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "Offer usability schedules.",
-              "isDeprecated": false,
-              "name": "usable",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "OfferStatusScheduleDetails",
-                  "ofType": null
-                }
-              }
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-          ],
-          "kind": "OBJECT",
-          "name": "OfferStatusSchedules",
-          "possibleTypes": null
-        },
-        {
-          "description": "",
-          "enumValues": null,
-          "fields": [
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "True iff at least one schedule is currently active.",
-              "isDeprecated": false,
-              "name": "available",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              }
-            },
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "List of human readable Offer schedules.",
-              "isDeprecated": false,
-              "name": "schedules",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null
-                    }
-                  }
-                }
-              }
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-          ],
-          "kind": "OBJECT",
-          "name": "OfferStatusScheduleDetails",
-          "possibleTypes": null
-        },
-        {
-          "description": "",
-          "enumValues": null,
-          "fields": [
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "True iff Offer is enabled.",
-              "isDeprecated": false,
-              "name": "enabled",
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-          ],
-          "kind": "OBJECT",
-          "name": "OfferStatusMeta",
+          "name": "OfferStatusLimitDetailsUsagePerWindow",
           "possibleTypes": null
         },
         {
@@ -3298,24 +3149,6 @@
                       "kind": "SCALAR",
                       "name": "String",
                       "ofType": null
-                    }
-                  }
-                },
-                {
-                  "defaultValue": null,
-                  "description": "Client device location as [lon, lat].",
-                  "name": "clientGeoPoint",
-                  "type": {
-                    "kind": "LIST",
-                    "name": null,
-                    "ofType": {
-                      "kind": "NON_NULL",
-                      "name": null,
-                      "ofType": {
-                        "kind": "SCALAR",
-                        "name": "Float",
-                        "ofType": null
-                      }
                     }
                   }
                 }

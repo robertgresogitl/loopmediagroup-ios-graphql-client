@@ -21,7 +21,7 @@ typedef void (^DABusinessesListRequestParamsBuildBlock)(LMGDABusinessesListReque
 @property (nullable, nonatomic, readonly) LMGDACoordinate *originCoordinate;
 @property (nonatomic, readonly, getter=areOffersBookmarked) BOOL bookmarkedOffers;
 @property (nullable, nonatomic, readonly) NSString *nextPage;
-@property (nonatomic, readonly) NSInteger limit;
+@property (nonatomic, readonly) NSUInteger limit;
 
 - (nonnull instancetype)initWithBuilder:(nonnull LMGDABusinessesListRequestParamsBuilder *)builder NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
@@ -38,7 +38,7 @@ typedef void (^DABusinessesListRequestParamsBuildBlock)(LMGDABusinessesListReque
 @property (nullable, nonatomic) LMGDACoordinate *originCoordinate;
 @property (nonatomic, getter=areOffersBookmarked) BOOL bookmarkedOffers;
 @property (nullable, nonatomic) NSString *nextPage;
-@property (nonatomic) NSInteger limit;
+@property (nonatomic) NSUInteger limit;
 
 - (nonnull LMGDABusinessesListRequestParams *)build;
 

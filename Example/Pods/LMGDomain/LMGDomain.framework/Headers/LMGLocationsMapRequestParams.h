@@ -28,7 +28,7 @@ typedef void (^LocationsMapRequestParamsBuildBlock)(LMGLocationsMapRequestParams
 @property (nullable, nonatomic, copy) LMGCoordinate *originCoordinate;
 @property (nullable, nonatomic, copy) NSArray<LMGCoordinate *> *contentArea;
 @property (nullable, nonatomic, copy) NSString *nextPage;
-@property (nonatomic) NSInteger limit;
+@property (nonatomic) NSUInteger limit;
 
 - (nonnull instancetype)initWith:(nonnull LMGLocationsMapRequestParams *)params;
 - (nonnull LMGLocationsMapRequestParams *)build;

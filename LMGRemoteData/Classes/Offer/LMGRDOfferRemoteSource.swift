@@ -40,12 +40,13 @@ public final class LMGRDOfferRemoteSource: NSObject, LMGDAOfferRemoteSource {
         
         return redemptionState.copy {
             $0.promoCode = data.offer.promoCode
-            $0.schedule = LMGDASchedule(schedule: detailStatus.schedules.usable.schedules.first!, withinSchedule: detailStatus.schedules.usable.available)
-            if let limitsDetails = detailStatus.limits.details {
-                let perProfile = limitsDetails.perProfile != nil ? LMGDALimitDescription(used: limitsDetails.perProfile!.used, total: limitsDetails.perProfile!.total) : LMGDALimitDescriptionZero
-                let perProfilePerWindow = limitsDetails.perProfilePerWindow != nil ? LMGDALimitDescription(used: limitsDetails.perProfilePerWindow!.used, total: limitsDetails.perProfilePerWindow!.total) : LMGDALimitDescriptionZero
-                let global = limitsDetails.global != nil ? LMGDALimitDescription(used: limitsDetails.global!.used, total: limitsDetails.global!.total) : LMGDALimitDescriptionZero
-                let globalPerWindow = limitsDetails.globalPerWindow != nil ? LMGDALimitDescription(used: limitsDetails.globalPerWindow!.used, total: limitsDetails.globalPerWindow!.total) : LMGDALimitDescriptionZero
+            $0.schedule = LMGDASchedule(schedule: data.offer.schedules)
+            $0.disabilityReason = detailStatus.reason
+            if let limitsDetails = detailStatus.limitDetails {
+                let perProfile = limitsDetails.perProfile != nil ? LMGDALimitDescription(used: UInt(limitsDetails.perProfile!.used), total: UInt(limitsDetails.perProfile!.total)) : LMGDALimitDescriptionZero
+                let perProfilePerWindow = limitsDetails.perProfilePerWindow != nil ? LMGDALimitDescription(used: UInt(limitsDetails.perProfilePerWindow!.used), total: UInt(limitsDetails.perProfilePerWindow!.total)) : LMGDALimitDescriptionZero
+                let global = limitsDetails.global != nil ? LMGDALimitDescription(used: UInt(limitsDetails.global!.used), total: UInt(limitsDetails.global!.total)) : LMGDALimitDescriptionZero
+                let globalPerWindow = limitsDetails.globalPerWindow != nil ? LMGDALimitDescription(used: UInt(limitsDetails.globalPerWindow!.used), total: UInt(limitsDetails.globalPerWindow!.total)) : LMGDALimitDescriptionZero
                 if (!perProfile.isEqual(LMGDALimitDescriptionZero) ||
                     !perProfilePerWindow.isEqual(LMGDALimitDescriptionZero) ||
                     !global.isEqual(LMGDALimitDescriptionZero) ||
@@ -80,7 +81,7 @@ public final class LMGRDOfferRemoteSource: NSObject, LMGDAOfferRemoteSource {
             throw NSError.argsSerializationFailure()
         }
         
-        let data = try client.syncPerform(mutation: RedeemOfferMutation(offerId: offerId, locationId: locationId, currentState: redemptionState, transitionIndex: transition.id, clientArgs: argsString, clientGeoPoint: coordinate != nil ? [coordinate!.longitude, coordinate!.latitude] : nil), queue: queue)
+        let data = try client.syncPerform(mutation: RedeemOfferMutation(offerId: offerId, locationId: locationId, currentState: redemptionState, transitionIndex: transition.id, clientArgs: argsString), queue: queue)
         return data.transitionOfferState.fragments.redeemAction.toDataAccess()
     }
 }

@@ -9,9 +9,12 @@
 
 typedef struct
 {
-   NSInteger used;
-   NSInteger total;
+   NSUInteger used;
+   NSUInteger total;
 } LMGDALimitDescription;
+
+bool LMGDALimitDescEqualToLMGDALimitDesc(LMGDALimitDescription desc1, LMGDALimitDescription desc2);
+NSUInteger LMGDALimitDescHash(LMGDALimitDescription desc);
 
 extern const LMGDALimitDescription LMGDALimitDescriptionZero;
 

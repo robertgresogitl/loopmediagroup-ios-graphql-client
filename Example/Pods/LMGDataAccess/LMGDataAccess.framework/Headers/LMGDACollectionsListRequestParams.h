@@ -21,7 +21,7 @@ typedef void (^DACollectionsListRequestParamsBuildBlock)(LMGDACollectionsListReq
 @property (nullable, nonatomic, copy, readonly) NSString *tag;
 @property (nullable, nonatomic, copy, readonly) NSArray<LMGDACoordinate *> *contentArea;
 @property (nullable, nonatomic, copy, readonly) NSString *nextPage;
-@property (nonatomic, readonly) NSInteger limit;
+@property (nonatomic, readonly) NSUInteger limit;
 
 - (nonnull instancetype)initWith:(nonnull LMGDACollectionsListRequestParamsBuilder *)builder NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
@@ -36,7 +36,7 @@ typedef void (^DACollectionsListRequestParamsBuildBlock)(LMGDACollectionsListReq
 @property (nullable, nonatomic, copy) NSString *tag;
 @property (nullable, nonatomic, copy) NSArray<LMGDACoordinate *> *contentArea;
 @property (nullable, nonatomic, copy) NSString *nextPage;
-@property (nonatomic) NSInteger limit;
+@property (nonatomic) NSUInteger limit;
 
 - (nonnull instancetype)initWith:(nonnull LMGDACollectionsListRequestParams *)params;
 - (nonnull LMGDACollectionsListRequestParams *)build;

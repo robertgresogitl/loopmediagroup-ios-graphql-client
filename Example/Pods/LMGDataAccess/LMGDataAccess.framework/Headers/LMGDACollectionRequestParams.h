@@ -24,7 +24,7 @@ typedef void (^DACollectionRequestParamsBuildBlock)(LMGDACollectionRequestParams
 @property (nullable, nonatomic, readonly) LMGDACoordinate *sortCoordinate;
 @property (nullable, nonatomic, readonly) LMGDACoordinate *originCoordinate;
 @property (nullable, nonatomic, readonly) NSString *nextPage;
-@property (nonatomic, readonly) NSInteger limit;
+@property (nonatomic, readonly) NSUInteger limit;
 
 - (nonnull instancetype)initWith:(nonnull LMGDACollectionRequestParamsBuilder *)builder NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
@@ -42,7 +42,7 @@ typedef void (^DACollectionRequestParamsBuildBlock)(LMGDACollectionRequestParams
 @property (nullable, nonatomic) LMGDACoordinate *sortCoordinate;
 @property (nullable, nonatomic) LMGDACoordinate *originCoordinate;
 @property (nullable, nonatomic) NSString *nextPage;
-@property (nonatomic) NSInteger limit;
+@property (nonatomic) NSUInteger limit;
 
 - (nonnull instancetype)initWithCollection:(nonnull LMGDAPlatformId *)collectionId NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWith:(nonnull LMGDACollectionRequestParams *)params;

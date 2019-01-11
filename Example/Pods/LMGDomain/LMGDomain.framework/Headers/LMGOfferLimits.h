@@ -9,9 +9,12 @@
 
 typedef struct
 {
-   NSInteger used;
-   NSInteger total;
+   NSUInteger used;
+   NSUInteger total;
 } LMGLimitDescription;
+
+bool LMGLimitDescEqualToLMGLimitDesc(LMGLimitDescription desc1, LMGLimitDescription desc2);
+NSUInteger LMGLimitDescHash(LMGLimitDescription desc);
 
 extern const LMGLimitDescription LMGLimitDescriptionZero;
 
@@ -24,9 +27,6 @@ extern const LMGLimitDescription LMGLimitDescriptionZero;
 
 @property (nullable, nonatomic, copy, readonly) NSString *profileWindow;
 @property (nullable, nonatomic, copy, readonly) NSString *globalWindow;
-
-@property (nonatomic, readonly) BOOL soldOut;
-@property (nonatomic, readonly) BOOL soldOutPerWindow;
 
 - (nonnull instancetype)initWithPerProfile:(LMGLimitDescription)perProfileLimits perProfilePerWindow:(LMGLimitDescription)perProfilePerWindowLimits global:(LMGLimitDescription)globalLimits globalPerWindow:(LMGLimitDescription)globalPerWindowLimits profileWindow:(nullable NSString *)profileWindow globalWindow:(nullable NSString *)globalWindow NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LMGNotificationBus'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'Notification Bus layer for the LMG iOS SDK'
   s.description      = <<-DESC
 Implements the notification bus for the LMG iOS SDK.
@@ -28,5 +28,5 @@ Implements the notification bus for the LMG iOS SDK.
   s.public_header_files = [
     'LMGNotificationBus/**/*.{h}'
   ]
-  
+  s.private_header_files = 'LMGNotificationBus/VarLet3.h'
 end

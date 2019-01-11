@@ -50,34 +50,28 @@ fragment RedeemAction on OfferState {
 }
 
 fragment OfferDetailStatus on OfferStatus {
-    available
-    limits {
-      available
-      details {
-        perProfile {
-          total
-          used
-        }
-        perProfilePerWindow {
-          total
-          used
-          granularity
-        }
-        global {
-          total
-          used
-        }
-        globalPerWindow {
-          total
-          used
-          granularity
-        }
+    redeemable
+    reason
+    limitDetails {
+      perProfile {
+        total
+        used
       }
-    }
-    schedules {
-      usable {
-        available
-        schedules
+      perProfilePerWindow {
+        total
+        used
+        granularity
+        resetsIn
+      }
+      global {
+        total
+        used
+      }
+      globalPerWindow {
+        total
+        used
+        granularity
+        resetsIn
       }
     }
 }
@@ -110,6 +104,7 @@ fragment BusinessListItem on Business {
     shortName
     phone
     url
+    slogan
     profileImages {
         url
     }
@@ -142,6 +137,9 @@ fragment CollectionItem on Collection {
 fragment LocationItem on Location {
     id
     name
+    distance
+    phone
+    url
     address {
       id
       suite

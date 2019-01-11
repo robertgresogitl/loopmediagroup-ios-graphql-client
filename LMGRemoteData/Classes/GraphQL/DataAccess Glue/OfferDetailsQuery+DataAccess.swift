@@ -56,9 +56,13 @@ extension OfferListItem {
         let builder = LMGDAOfferBuilder(id, headline: headline, subHeadline: subhead)
         builder.images = heroImages.compactMap { $0.url }
         builder.business = business
-//        if let schedule = schedules.first {
-//            builder.redemptionSchedule = LMGDASchedule(schedule: schedule, withinSchedule: false)
-//        }
+        builder.redemptionSchedule = LMGDASchedule(schedule: schedules)
+        for rawFlag in flags {
+            if let flag = LMGDAFlagType(string: rawFlag) {
+                builder.flag = flag
+                break
+            }
+        }
         builder.bookmarked = isBookmarked
         return builder.build()
 
