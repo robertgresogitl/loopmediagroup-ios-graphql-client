@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LMGRemoteData
+import LMGDataAccess
 
 class ViewController: UIViewController {
 
