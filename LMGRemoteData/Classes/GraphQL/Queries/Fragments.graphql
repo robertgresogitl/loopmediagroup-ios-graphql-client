@@ -56,22 +56,26 @@ fragment OfferDetailStatus on OfferStatus {
       perProfile {
         total
         used
+	priority
       }
       perProfilePerWindow {
         total
         used
         granularity
         resetsIn
+	priority
       }
       global {
         total
         used
+	priority
       }
       globalPerWindow {
         total
         used
         granularity
         resetsIn
+	priority
       }
     }
 }

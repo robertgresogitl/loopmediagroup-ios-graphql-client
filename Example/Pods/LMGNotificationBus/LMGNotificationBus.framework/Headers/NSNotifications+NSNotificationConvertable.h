@@ -27,3 +27,4 @@ extern NSString *const LMGNotificationShareMethodKey;
 extern NSString *const LMGNotificationPrevStateKey;
 extern NSString *const LMGNotificationNewStateKey;
 extern NSString *const LMGNotificationCoordinateKey;
+extern NSString *const LMGNotificationTransition;

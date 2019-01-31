@@ -14,9 +14,10 @@
 @property (nonnull, nonatomic, readonly) LMGPlatformId *offerId;
 @property (nullable, nonatomic, readonly) LMGPlatformId *locationId;
 @property (nonnull, nonatomic, readonly) NSString *state;
+@property (nonnull, nonatomic, readonly) NSString *transition;
 @property (nonnull, nonatomic, readonly) NSError *error;
 
-- (nonnull instancetype)initWithOfferId:(nonnull LMGPlatformId *)offerId locationId:(nullable LMGPlatformId *)locationId state:(nonnull NSString *)currentState error:(nonnull NSError *)error NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithOfferId:(nonnull LMGPlatformId *)offerId locationId:(nullable LMGPlatformId *)locationId state:(nonnull NSString *)currentState transition:(nonnull NSString *)transition error:(nonnull NSError *)error NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
 

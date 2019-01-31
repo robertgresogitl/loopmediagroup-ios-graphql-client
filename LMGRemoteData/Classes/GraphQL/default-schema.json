@@ -599,6 +599,23 @@
               "deprecationReason": null,
               "description": "",
               "isDeprecated": false,
+              "name": "shareUrl",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
               "name": "name",
               "type": {
                 "kind": "NON_NULL",
@@ -927,6 +944,23 @@
               "deprecationReason": null,
               "description": "",
               "isDeprecated": false,
+              "name": "shareUrl",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
               "name": "headline",
               "type": {
                 "kind": "NON_NULL",
@@ -1229,7 +1263,7 @@
           "possibleTypes": null
         },
         {
-          "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
+          "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point). ",
           "enumValues": null,
           "fields": null,
           "inputFields": null,
@@ -1255,6 +1289,23 @@
                 "ofType": {
                   "kind": "SCALAR",
                   "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
+              "name": "shareUrl",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
                   "ofType": null
                 }
               }
@@ -2925,6 +2976,23 @@
                   "ofType": null
                 }
               }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "Priority of Limit",
+              "isDeprecated": false,
+              "name": "priority",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              }
             }
           ],
           "inputFields": null,
@@ -2996,6 +3064,23 @@
               "description": "Time to reset in seconds.",
               "isDeprecated": false,
               "name": "resetsIn",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "Priority of Limit",
+              "isDeprecated": false,
+              "name": "priority",
               "type": {
                 "kind": "NON_NULL",
                 "name": null,

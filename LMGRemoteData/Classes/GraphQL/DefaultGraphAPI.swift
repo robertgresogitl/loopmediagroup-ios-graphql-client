@@ -2551,7 +2551,7 @@ public struct RedeemAction: GraphQLFragment {
 
 public struct OfferDetailStatus: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment OfferDetailStatus on OfferStatus {\n  __typename\n  redeemable\n  reason\n  limitDetails {\n    __typename\n    perProfile {\n      __typename\n      total\n      used\n    }\n    perProfilePerWindow {\n      __typename\n      total\n      used\n      granularity\n      resetsIn\n    }\n    global {\n      __typename\n      total\n      used\n    }\n    globalPerWindow {\n      __typename\n      total\n      used\n      granularity\n      resetsIn\n    }\n  }\n}"
+    "fragment OfferDetailStatus on OfferStatus {\n  __typename\n  redeemable\n  reason\n  limitDetails {\n    __typename\n    perProfile {\n      __typename\n      total\n      used\n      priority\n    }\n    perProfilePerWindow {\n      __typename\n      total\n      used\n      granularity\n      resetsIn\n      priority\n    }\n    global {\n      __typename\n      total\n      used\n      priority\n    }\n    globalPerWindow {\n      __typename\n      total\n      used\n      granularity\n      resetsIn\n      priority\n    }\n  }\n}"
 
   public static let possibleTypes = ["OfferStatus"]
 
@@ -2688,6 +2688,7 @@ public struct OfferDetailStatus: GraphQLFragment {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("total", type: .nonNull(.scalar(Int.self))),
         GraphQLField("used", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("priority", type: .nonNull(.scalar(Int.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -2696,8 +2697,8 @@ public struct OfferDetailStatus: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(total: Int, used: Int) {
-        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsage", "total": total, "used": used])
+      public init(total: Int, used: Int, priority: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsage", "total": total, "used": used, "priority": priority])
       }
 
       public var __typename: String {
@@ -2726,6 +2727,16 @@ public struct OfferDetailStatus: GraphQLFragment {
         }
         set {
           resultMap.updateValue(newValue, forKey: "used")
+        }
+      }
+
+      /// Priority of Limit
+      public var priority: Int {
+        get {
+          return resultMap["priority"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "priority")
         }
       }
     }
@@ -2739,6 +2750,7 @@ public struct OfferDetailStatus: GraphQLFragment {
         GraphQLField("used", type: .nonNull(.scalar(Int.self))),
         GraphQLField("granularity", type: .nonNull(.scalar(String.self))),
         GraphQLField("resetsIn", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("priority", type: .nonNull(.scalar(Int.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -2747,8 +2759,8 @@ public struct OfferDetailStatus: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(total: Int, used: Int, granularity: String, resetsIn: Int) {
-        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsagePerWindow", "total": total, "used": used, "granularity": granularity, "resetsIn": resetsIn])
+      public init(total: Int, used: Int, granularity: String, resetsIn: Int, priority: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsagePerWindow", "total": total, "used": used, "granularity": granularity, "resetsIn": resetsIn, "priority": priority])
       }
 
       public var __typename: String {
@@ -2799,6 +2811,16 @@ public struct OfferDetailStatus: GraphQLFragment {
           resultMap.updateValue(newValue, forKey: "resetsIn")
         }
       }
+
+      /// Priority of Limit
+      public var priority: Int {
+        get {
+          return resultMap["priority"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "priority")
+        }
+      }
     }
 
     public struct Global: GraphQLSelectionSet {
@@ -2808,6 +2830,7 @@ public struct OfferDetailStatus: GraphQLFragment {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("total", type: .nonNull(.scalar(Int.self))),
         GraphQLField("used", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("priority", type: .nonNull(.scalar(Int.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -2816,8 +2839,8 @@ public struct OfferDetailStatus: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(total: Int, used: Int) {
-        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsage", "total": total, "used": used])
+      public init(total: Int, used: Int, priority: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsage", "total": total, "used": used, "priority": priority])
       }
 
       public var __typename: String {
@@ -2846,6 +2869,16 @@ public struct OfferDetailStatus: GraphQLFragment {
         }
         set {
           resultMap.updateValue(newValue, forKey: "used")
+        }
+      }
+
+      /// Priority of Limit
+      public var priority: Int {
+        get {
+          return resultMap["priority"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "priority")
         }
       }
     }
@@ -2859,6 +2892,7 @@ public struct OfferDetailStatus: GraphQLFragment {
         GraphQLField("used", type: .nonNull(.scalar(Int.self))),
         GraphQLField("granularity", type: .nonNull(.scalar(String.self))),
         GraphQLField("resetsIn", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("priority", type: .nonNull(.scalar(Int.self))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -2867,8 +2901,8 @@ public struct OfferDetailStatus: GraphQLFragment {
         self.resultMap = unsafeResultMap
       }
 
-      public init(total: Int, used: Int, granularity: String, resetsIn: Int) {
-        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsagePerWindow", "total": total, "used": used, "granularity": granularity, "resetsIn": resetsIn])
+      public init(total: Int, used: Int, granularity: String, resetsIn: Int, priority: Int) {
+        self.init(unsafeResultMap: ["__typename": "OfferStatusLimitDetailsUsagePerWindow", "total": total, "used": used, "granularity": granularity, "resetsIn": resetsIn, "priority": priority])
       }
 
       public var __typename: String {
@@ -2917,6 +2951,16 @@ public struct OfferDetailStatus: GraphQLFragment {
         }
         set {
           resultMap.updateValue(newValue, forKey: "resetsIn")
+        }
+      }
+
+      /// Priority of Limit
+      public var priority: Int {
+        get {
+          return resultMap["priority"]! as! Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "priority")
         }
       }
     }
