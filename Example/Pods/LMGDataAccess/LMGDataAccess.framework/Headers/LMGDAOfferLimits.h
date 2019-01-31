@@ -11,6 +11,7 @@ typedef struct
 {
    NSUInteger used;
    NSUInteger total;
+   NSUInteger priority;
 } LMGDALimitDescription;
 
 bool LMGDALimitDescEqualToLMGDALimitDesc(LMGDALimitDescription desc1, LMGDALimitDescription desc2);

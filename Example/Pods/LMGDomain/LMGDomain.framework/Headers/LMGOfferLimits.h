@@ -11,6 +11,7 @@ typedef struct
 {
    NSUInteger used;
    NSUInteger total;
+   NSUInteger priority;
 } LMGLimitDescription;
 
 bool LMGLimitDescEqualToLMGLimitDesc(LMGLimitDescription desc1, LMGLimitDescription desc2);
