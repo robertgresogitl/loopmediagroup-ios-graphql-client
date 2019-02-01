@@ -36,6 +36,7 @@ extension OfferDetails {
         builder.details = details
         builder.legal = legal
         builder.promoCode = promoCode
+        builder.shareUrl = URL.init(string: shareUrl)
         builder.bookmarked = isBookmarked
         for rawFlag in flags {
             if let flag = LMGDAFlagType(string: rawFlag) {
@@ -57,6 +58,7 @@ extension OfferListItem {
         builder.images = heroImages.compactMap { $0.url }
         builder.business = business
         builder.redemptionSchedule = LMGDASchedule(schedule: schedules)
+        builder.shareUrl = URL.init(string: shareUrl)
         for rawFlag in flags {
             if let flag = LMGDAFlagType(string: rawFlag) {
                 builder.flag = flag

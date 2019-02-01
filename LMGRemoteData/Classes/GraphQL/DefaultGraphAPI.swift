@@ -1894,7 +1894,7 @@ public final class CollectionDetailQuery: GraphQLQuery {
 
 public struct OfferListItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment OfferListItem on Offer {\n  __typename\n  id\n  headline\n  subhead\n  flags\n  isBookmarked\n  schedules\n  heroImages {\n    __typename\n    url\n  }\n}"
+    "fragment OfferListItem on Offer {\n  __typename\n  id\n  headline\n  subhead\n  flags\n  isBookmarked\n  shareUrl\n  schedules\n  heroImages {\n    __typename\n    url\n  }\n}"
 
   public static let possibleTypes = ["Offer"]
 
@@ -1905,6 +1905,7 @@ public struct OfferListItem: GraphQLFragment {
     GraphQLField("subhead", type: .nonNull(.scalar(String.self))),
     GraphQLField("flags", type: .nonNull(.list(.nonNull(.scalar(String.self))))),
     GraphQLField("isBookmarked", type: .nonNull(.scalar(Bool.self))),
+    GraphQLField("shareUrl", type: .nonNull(.scalar(String.self))),
     GraphQLField("schedules", type: .nonNull(.list(.nonNull(.scalar(String.self))))),
     GraphQLField("heroImages", type: .nonNull(.list(.nonNull(.object(HeroImage.selections))))),
   ]
@@ -1915,8 +1916,8 @@ public struct OfferListItem: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, headline: String, subhead: String, flags: [String], isBookmarked: Bool, schedules: [String], heroImages: [HeroImage]) {
-    self.init(unsafeResultMap: ["__typename": "Offer", "id": id, "headline": headline, "subhead": subhead, "flags": flags, "isBookmarked": isBookmarked, "schedules": schedules, "heroImages": heroImages.map { (value: HeroImage) -> ResultMap in value.resultMap }])
+  public init(id: GraphQLID, headline: String, subhead: String, flags: [String], isBookmarked: Bool, shareUrl: String, schedules: [String], heroImages: [HeroImage]) {
+    self.init(unsafeResultMap: ["__typename": "Offer", "id": id, "headline": headline, "subhead": subhead, "flags": flags, "isBookmarked": isBookmarked, "shareUrl": shareUrl, "schedules": schedules, "heroImages": heroImages.map { (value: HeroImage) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -1970,6 +1971,15 @@ public struct OfferListItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "isBookmarked")
+    }
+  }
+
+  public var shareUrl: String {
+    get {
+      return resultMap["shareUrl"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "shareUrl")
     }
   }
 
@@ -2031,7 +2041,7 @@ public struct OfferListItem: GraphQLFragment {
 
 public struct OfferDetails: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment OfferDetails on Offer {\n  __typename\n  id\n  headline\n  subhead\n  details\n  legal\n  flags\n  promoCode\n  isBookmarked\n  business {\n    __typename\n    ...BusinessListItem\n  }\n  heroImages {\n    __typename\n    url\n  }\n}"
+    "fragment OfferDetails on Offer {\n  __typename\n  id\n  headline\n  subhead\n  details\n  legal\n  flags\n  promoCode\n  shareUrl\n  isBookmarked\n  business {\n    __typename\n    ...BusinessListItem\n  }\n  heroImages {\n    __typename\n    url\n  }\n}"
 
   public static let possibleTypes = ["Offer"]
 
@@ -2044,6 +2054,7 @@ public struct OfferDetails: GraphQLFragment {
     GraphQLField("legal", type: .scalar(String.self)),
     GraphQLField("flags", type: .nonNull(.list(.nonNull(.scalar(String.self))))),
     GraphQLField("promoCode", type: .scalar(String.self)),
+    GraphQLField("shareUrl", type: .nonNull(.scalar(String.self))),
     GraphQLField("isBookmarked", type: .nonNull(.scalar(Bool.self))),
     GraphQLField("business", type: .nonNull(.object(Business.selections))),
     GraphQLField("heroImages", type: .nonNull(.list(.nonNull(.object(HeroImage.selections))))),
@@ -2055,8 +2066,8 @@ public struct OfferDetails: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, headline: String, subhead: String, details: String, legal: String? = nil, flags: [String], promoCode: String? = nil, isBookmarked: Bool, business: Business, heroImages: [HeroImage]) {
-    self.init(unsafeResultMap: ["__typename": "Offer", "id": id, "headline": headline, "subhead": subhead, "details": details, "legal": legal, "flags": flags, "promoCode": promoCode, "isBookmarked": isBookmarked, "business": business.resultMap, "heroImages": heroImages.map { (value: HeroImage) -> ResultMap in value.resultMap }])
+  public init(id: GraphQLID, headline: String, subhead: String, details: String, legal: String? = nil, flags: [String], promoCode: String? = nil, shareUrl: String, isBookmarked: Bool, business: Business, heroImages: [HeroImage]) {
+    self.init(unsafeResultMap: ["__typename": "Offer", "id": id, "headline": headline, "subhead": subhead, "details": details, "legal": legal, "flags": flags, "promoCode": promoCode, "shareUrl": shareUrl, "isBookmarked": isBookmarked, "business": business.resultMap, "heroImages": heroImages.map { (value: HeroImage) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -2128,6 +2139,15 @@ public struct OfferDetails: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "promoCode")
+    }
+  }
+
+  public var shareUrl: String {
+    get {
+      return resultMap["shareUrl"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "shareUrl")
     }
   }
 
