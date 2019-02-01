@@ -4,6 +4,7 @@ fragment OfferListItem on Offer {
     subhead
     flags
     isBookmarked
+    shareUrl
     schedules
     heroImages {
         url
@@ -18,6 +19,7 @@ fragment OfferDetails on Offer {
     legal
     flags
     promoCode
+    shareUrl
     isBookmarked
     business {
         ...BusinessListItem

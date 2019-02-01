@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LMGRemoteData'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'Remote data layer for the LMG iOS SDK'
   s.description      = <<-DESC
 Implements the remote data objects for the LMG iOS SDK.
@@ -23,7 +23,7 @@ Implements the remote data objects for the LMG iOS SDK.
   s.swift_version = '4.2'
   s.source_files = 'LMGRemoteData/Classes/**/*.{swift}'
 
-  s.dependency 'LMGDataAccess', '1.0.4'
+  s.dependency 'LMGDataAccess', '~> 1.0.5'
   s.dependency 'LMGNotificationBus', '~> 1.0.6'
   s.dependency 'Apollo', '~> 0.9.1'
 end
