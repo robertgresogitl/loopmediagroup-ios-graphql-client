@@ -11,7 +11,7 @@ import LMGDataAccess
 extension LMGDALimitDescription {
     
     func isEqual(_ rhs: LMGDALimitDescription) -> Bool {
-        return self.total == rhs.total && self.used == rhs.used
+        return self.total == rhs.total && self.used == rhs.used && self.priority == rhs.priority
     }
 }
 

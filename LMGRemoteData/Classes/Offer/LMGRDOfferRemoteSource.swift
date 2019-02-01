@@ -43,10 +43,10 @@ public final class LMGRDOfferRemoteSource: NSObject, LMGDAOfferRemoteSource {
             $0.schedule = LMGDASchedule(schedule: data.offer.schedules)
             $0.disabilityReason = detailStatus.reason
             if let limitsDetails = detailStatus.limitDetails {
-                let perProfile = limitsDetails.perProfile != nil ? LMGDALimitDescription(used: UInt(limitsDetails.perProfile!.used), total: UInt(limitsDetails.perProfile!.total)) : LMGDALimitDescriptionZero
-                let perProfilePerWindow = limitsDetails.perProfilePerWindow != nil ? LMGDALimitDescription(used: UInt(limitsDetails.perProfilePerWindow!.used), total: UInt(limitsDetails.perProfilePerWindow!.total)) : LMGDALimitDescriptionZero
-                let global = limitsDetails.global != nil ? LMGDALimitDescription(used: UInt(limitsDetails.global!.used), total: UInt(limitsDetails.global!.total)) : LMGDALimitDescriptionZero
-                let globalPerWindow = limitsDetails.globalPerWindow != nil ? LMGDALimitDescription(used: UInt(limitsDetails.globalPerWindow!.used), total: UInt(limitsDetails.globalPerWindow!.total)) : LMGDALimitDescriptionZero
+                let perProfile = limitsDetails.perProfile != nil ? LMGDALimitDescription(used: UInt(limitsDetails.perProfile!.used), total: UInt(limitsDetails.perProfile!.total), priority: UInt(limitsDetails.perProfile!.priority)) : LMGDALimitDescriptionZero
+                let perProfilePerWindow = limitsDetails.perProfilePerWindow != nil ? LMGDALimitDescription(used: UInt(limitsDetails.perProfilePerWindow!.used), total: UInt(limitsDetails.perProfilePerWindow!.total), priority: UInt(limitsDetails.perProfilePerWindow!.priority)) : LMGDALimitDescriptionZero
+                let global = limitsDetails.global != nil ? LMGDALimitDescription(used: UInt(limitsDetails.global!.used), total: UInt(limitsDetails.global!.total), priority: UInt(limitsDetails.global!.priority)) : LMGDALimitDescriptionZero
+                let globalPerWindow = limitsDetails.globalPerWindow != nil ? LMGDALimitDescription(used: UInt(limitsDetails.globalPerWindow!.used), total: UInt(limitsDetails.globalPerWindow!.total), priority: UInt(limitsDetails.globalPerWindow!.priority)) : LMGDALimitDescriptionZero
                 if (!perProfile.isEqual(LMGDALimitDescriptionZero) ||
                     !perProfilePerWindow.isEqual(LMGDALimitDescriptionZero) ||
                     !global.isEqual(LMGDALimitDescriptionZero) ||

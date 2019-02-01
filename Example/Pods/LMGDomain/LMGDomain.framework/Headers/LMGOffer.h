@@ -38,6 +38,7 @@ typedef NS_ENUM(NSUInteger, LMGFlagType) {
 @property (nullable, nonatomic, copy, readonly) NSString *legal;
 @property (nullable, nonatomic, copy, readonly) LMGUrlPath *priorityImage;
 @property (nullable, nonatomic, copy, readonly) NSString *promoCode;
+@property (nullable, nonatomic, copy, readonly) NSURL *shareUrl;
 @property (nullable, nonatomic, copy, readonly) LMGSchedule *redemptionSchedule;
 @property (nullable, nonatomic, copy, readonly) LMGBusiness *business;
 
@@ -63,6 +64,7 @@ typedef NS_ENUM(NSUInteger, LMGFlagType) {
 @property (nullable, nonatomic, copy) NSString *details;
 @property (nullable, nonatomic, copy) NSString *legal;
 @property (nullable, nonatomic, copy) NSString *promoCode;
+@property (nullable, nonatomic, copy) NSURL *shareUrl;
 @property (nullable, nonatomic, copy) LMGSchedule *redemptionSchedule;
 @property (nullable, nonatomic, copy) LMGBusiness *business;
 @property (nonnull, nonatomic, copy) NSArray<LMGUrlPath *> *images;

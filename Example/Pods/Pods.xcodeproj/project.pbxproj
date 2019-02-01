@@ -142,7 +142,7 @@
 		162CB1A16E464FDFECE80E68BC9B38E3 /* LMGGetBusinessInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetBusinessInfo.h; path = LMGDomain.framework/Headers/LMGGetBusinessInfo.h; sourceTree = "<group>"; };
 		193266344298443A22F46FAA5F802990 /* LMGGetSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetSession.h; path = LMGDomain.framework/Headers/LMGGetSession.h; sourceTree = "<group>"; };
 		19E595C910A9BBF81C670C9767485FE6 /* LMGRedemptionTransitionArgument+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGRedemptionTransitionArgument+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGRedemptionTransitionArgument+DataAccess.h"; sourceTree = "<group>"; };
-		1A1CADC0467D618C5C2981B0C7743957 /* Pods_LMGRemoteData_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LMGRemoteData_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A1CADC0467D618C5C2981B0C7743957 /* Pods_LMGRemoteData_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LMGRemoteData_Tests.framework; path = "Pods-LMGRemoteData_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4D6722418D137242599D02AF7D1A13 /* LMGDAUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDAUser.h; path = LMGDataAccess.framework/Headers/LMGDAUser.h; sourceTree = "<group>"; };
 		1CB8B8C187206A2E03FCFE92593678B0 /* LMGRemoteData-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LMGRemoteData-prefix.pch"; sourceTree = "<group>"; };
 		1D42F27AA88C081B185DDB1D352D5EC4 /* LMGSDKVersionDeprecated.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGSDKVersionDeprecated.h; path = LMGDomain.framework/Headers/LMGSDKVersionDeprecated.h; sourceTree = "<group>"; };
@@ -163,12 +163,12 @@
 		29C69C1D2F16BD17FB6420CC8336D3EF /* GraphQLResponseGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLResponseGenerator.swift; path = Sources/Apollo/GraphQLResponseGenerator.swift; sourceTree = "<group>"; };
 		2A24ECCE210750E54E74B14A8579CF17 /* GraphQLError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GraphQLError.swift; path = Sources/Apollo/GraphQLError.swift; sourceTree = "<group>"; };
 		2A79DB87A23527370452488897EAC8DF /* LMGDASearchTermsRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASearchTermsRepository.h; path = LMGDataAccess.framework/Headers/LMGDASearchTermsRepository.h; sourceTree = "<group>"; };
-		2AF4F095A7CF94D66D46868CF8E56AA0 /* LMGRemoteData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LMGRemoteData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AF4F095A7CF94D66D46868CF8E56AA0 /* LMGRemoteData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LMGRemoteData.framework; path = LMGRemoteData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0CD207E0AF71EB39022C5BD2C5017F /* LMGDARedemptionStateTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDARedemptionStateTransition.h; path = LMGDataAccess.framework/Headers/LMGDARedemptionStateTransition.h; sourceTree = "<group>"; };
 		2C7E31297F07DA6C01B88CC2381B1F61 /* LMGBusiness.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBusiness.h; path = LMGDomain.framework/Headers/LMGBusiness.h; sourceTree = "<group>"; };
 		2D427BA92B367087B24D216DF942F4A4 /* NSString+EmptyCheck.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+EmptyCheck.h"; path = "LMGDomain.framework/Headers/NSString+EmptyCheck.h"; sourceTree = "<group>"; };
 		2ECACFAC18EBD0667AE8FE01E39AFC43 /* Locking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Locking.swift; path = Sources/Apollo/Locking.swift; sourceTree = "<group>"; };
-		2F0C9DEAA9652B30C59DA4129788D779 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2F0C9DEAA9652B30C59DA4129788D779 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		2F111968E915372B59617C5228ED5024 /* LMGOfferBookmarked+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferBookmarked+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferBookmarked+NSNotificationConvertable.h"; sourceTree = "<group>"; };
 		2F5345B2D50D22E28A29F8D49A8B0B57 /* LMGOfferUnbookmarked+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGOfferUnbookmarked+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGOfferUnbookmarked+NSNotificationConvertable.h"; sourceTree = "<group>"; };
 		329656E254412FCFF005C82322FD6FF6 /* LMGRedemptionTransitionRequestParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRedemptionTransitionRequestParams.h; path = LMGDomain.framework/Headers/LMGRedemptionTransitionRequestParams.h; sourceTree = "<group>"; };
@@ -197,9 +197,9 @@
 		43F0A4E15783479D3F573312C1352E99 /* LMGPagedResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGPagedResult.h; path = LMGDomain.framework/Headers/LMGPagedResult.h; sourceTree = "<group>"; };
 		441A1F89E8BB6ADC480E19790B859C8B /* ApolloStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApolloStore.swift; path = Sources/Apollo/ApolloStore.swift; sourceTree = "<group>"; };
 		4614E44CE075857898C4D9F031771417 /* LMGDABusinessLocalStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessLocalStore.h; path = LMGDataAccess.framework/Headers/LMGDABusinessLocalStore.h; sourceTree = "<group>"; };
-		46D515292780A78EFBF94EE756AA90AC /* Pods_LMGRemoteData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LMGRemoteData_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D515292780A78EFBF94EE756AA90AC /* Pods_LMGRemoteData_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LMGRemoteData_Example.framework; path = "Pods-LMGRemoteData_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4808D42D601F4962D85E74FD5DCA473D /* JSONSerializationFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONSerializationFormat.swift; path = Sources/Apollo/JSONSerializationFormat.swift; sourceTree = "<group>"; };
-		49C1F71374EBDDA5192DDF95DF668A8F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		49C1F71374EBDDA5192DDF95DF668A8F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		4B497FFFD39F83DCDC1A3858B6C3E9C3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C5FD4A282932513E287ABBED87C72CF /* LMGRedemptionStateTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGRedemptionStateTransition.h; path = LMGDomain.framework/Headers/LMGRedemptionStateTransition.h; sourceTree = "<group>"; };
 		4E974FDD51A194E13AAE980E50BB2955 /* LMGSessionStarted+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGSessionStarted+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGSessionStarted+NSNotificationConvertable.h"; sourceTree = "<group>"; };
@@ -265,20 +265,9 @@
 		79D4A301C6FE65C404C549836AAD4877 /* LMGUseCaseFinished+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGUseCaseFinished+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGUseCaseFinished+NSNotificationConvertable.h"; sourceTree = "<group>"; };
 		7A8CAD553D8F300BE163B7B5B3308300 /* LMGDASessionStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASessionStore.h; path = LMGDataAccess.framework/Headers/LMGDASessionStore.h; sourceTree = "<group>"; };
 		7C482FE29251458537138F3728AF7000 /* LMGOfferUnbookmarked.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGOfferUnbookmarked.h; path = LMGDomain.framework/Headers/LMGOfferUnbookmarked.h; sourceTree = "<group>"; };
-		7C5D9EA121E947D400B96DC1 /* auth-schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "auth-schema.json"; sourceTree = "<group>"; };
-		7C5D9EA321E947D500B96DC1 /* OffersQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OffersQuery.graphql; sourceTree = "<group>"; };
-		7C5D9EA421E947D500B96DC1 /* SessionMutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = SessionMutations.graphql; sourceTree = "<group>"; };
-		7C5D9EA521E947D500B96DC1 /* BusinessesQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = BusinessesQuery.graphql; sourceTree = "<group>"; };
-		7C5D9EA621E947D500B96DC1 /* UserQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = UserQuery.graphql; sourceTree = "<group>"; };
-		7C5D9EA721E947D500B96DC1 /* OfferMutations.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OfferMutations.graphql; sourceTree = "<group>"; };
-		7C5D9EA821E947D500B96DC1 /* OfferRedemption.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = OfferRedemption.graphql; sourceTree = "<group>"; };
-		7C5D9EA921E947D500B96DC1 /* LocationsQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocationsQuery.graphql; sourceTree = "<group>"; };
-		7C5D9EAA21E947D500B96DC1 /* Fragments.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Fragments.graphql; sourceTree = "<group>"; };
-		7C5D9EAB21E947D500B96DC1 /* CollectionsQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CollectionsQuery.graphql; sourceTree = "<group>"; };
-		7C5D9EAC21E947D500B96DC1 /* default-schema.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "default-schema.json"; sourceTree = "<group>"; };
 		7CA0A5B0F3DB395A54558ACC33CA4987 /* LMGDASessionStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASessionStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDASessionStoreFactory.h; sourceTree = "<group>"; };
 		7CE86B029303042225B48FC84153741E /* LMGDABusinessStoreFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDABusinessStoreFactory.h; path = LMGDataAccess.framework/Headers/LMGDABusinessStoreFactory.h; sourceTree = "<group>"; };
-		7DC7A326C86E53AD31DD832F4BDB828A /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DC7A326C86E53AD31DD832F4BDB828A /* Apollo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Apollo.framework; path = Apollo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC3B0E2773C9C1A7C087FACEE2E5DEF /* LMGDASearchTermsStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASearchTermsStore.h; path = LMGDataAccess.framework/Headers/LMGDASearchTermsStore.h; sourceTree = "<group>"; };
 		7F6A58D99504DCADD7E976E84B8562BC /* LMGDADeviceLocationRepository.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDADeviceLocationRepository.h; path = LMGDataAccess.framework/Headers/LMGDADeviceLocationRepository.h; sourceTree = "<group>"; };
 		8002343F82130F6C37B34B1A5507F92C /* LMGDASaveableParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDASaveableParams.h; path = LMGDataAccess.framework/Headers/LMGDASaveableParams.h; sourceTree = "<group>"; };
@@ -298,7 +287,7 @@
 		8E36B42628E7B50FF794F4883AA57420 /* LMGDACollectionRemoteStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGDACollectionRemoteStore.h; path = LMGDataAccess.framework/Headers/LMGDACollectionRemoteStore.h; sourceTree = "<group>"; };
 		9124331CB02D550C8546A6FA4B1B7ECD /* LMGGetBusinessesWithParams.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetBusinessesWithParams.h; path = LMGDomain.framework/Headers/LMGGetBusinessesWithParams.h; sourceTree = "<group>"; };
 		93589CB37AD3092563B6EFB5F1ADA722 /* LMGBookmarkOffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGBookmarkOffer.h; path = LMGDomain.framework/Headers/LMGBookmarkOffer.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9461C5227487A89D56E3F817D98EA6AA /* LMGCollectionsListed+NSNotificationConvertable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGCollectionsListed+NSNotificationConvertable.h"; path = "LMGNotificationBus.framework/Headers/LMGCollectionsListed+NSNotificationConvertable.h"; sourceTree = "<group>"; };
 		948DC37B6588FE7B819C14117C86BD6D /* LMGRedemptionStateTransition+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGRedemptionStateTransition+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGRedemptionStateTransition+DataAccess.h"; sourceTree = "<group>"; };
 		957462EF799183ECE502DDFCC860E890 /* LMGAuthTokenExpired.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGAuthTokenExpired.h; path = LMGDomain.framework/Headers/LMGAuthTokenExpired.h; sourceTree = "<group>"; };
@@ -376,7 +365,7 @@
 		C76B4E251710CAB86072C3137D5666B7 /* LMGLocationsMapRequestParams+DataAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "LMGLocationsMapRequestParams+DataAccess.h"; path = "LMGDataAccess.framework/Headers/LMGLocationsMapRequestParams+DataAccess.h"; sourceTree = "<group>"; };
 		C7CC650B6B77EC591787AE0D4835AC49 /* LMGNotifications.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGNotifications.h; path = LMGDomain.framework/Headers/LMGNotifications.h; sourceTree = "<group>"; };
 		CA21688E8A9B5C3DF1866C66187CA6CF /* JSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = Sources/Apollo/JSON.swift; sourceTree = "<group>"; };
-		CA815CCE23717A90E8EBCF2EC988C840 /* LMGRemoteData.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = LMGRemoteData.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CA815CCE23717A90E8EBCF2EC988C840 /* LMGRemoteData.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = LMGRemoteData.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CB2D56BD1104D68010BC4000A2B058B2 /* LMGGetSearchTerms.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGGetSearchTerms.h; path = LMGDomain.framework/Headers/LMGGetSearchTerms.h; sourceTree = "<group>"; };
 		CCFCD5B000F481EB00EBDE80900EABFC /* LMGCoordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGCoordinate.h; path = LMGDomain.framework/Headers/LMGCoordinate.h; sourceTree = "<group>"; };
 		CE240A9D978B67DA49943D0D1DB71E68 /* LMGNotificationCenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LMGNotificationCenter.h; path = LMGDomain.framework/Headers/LMGNotificationCenter.h; sourceTree = "<group>"; };
@@ -473,9 +462,6 @@
 				5C11B868759489F8ABB172D2D49A00F7 /* AuthRequestsConfigurator.swift */,
 				37B293D04426138B2A1CB681727EA501 /* DefaultGraphAPI.swift */,
 				1DCCE4D09FE195D2D306D6816DACEAF9 /* DataAccess Glue */,
-				7C5D9EA121E947D400B96DC1 /* auth-schema.json */,
-				7C5D9EAC21E947D500B96DC1 /* default-schema.json */,
-				7C5D9EA221E947D400B96DC1 /* Queries */,
 			);
 			name = GraphQL;
 			path = LMGRemoteData/Classes/GraphQL;
@@ -494,6 +480,7 @@
 				FD3B8EA35F333AD8A60D5ECA35110645 /* SessionMutations+DataAccess.swift */,
 				CEF487C21F7553A7597F0B0347B46A35 /* UserQuery+DataAccess.swift */,
 			);
+			name = "DataAccess Glue";
 			path = "DataAccess Glue";
 			sourceTree = "<group>";
 		};
@@ -529,6 +516,7 @@
 				0A9423BFBDCB3188EB37DC0B1C6ABD12 /* NSNotifications+NSNotificationConvertable.h */,
 				7D0D6F2B2A0F55B47F204F6DB5622381 /* Frameworks */,
 			);
+			name = LMGNotificationBus;
 			path = LMGNotificationBus;
 			sourceTree = "<group>";
 		};
@@ -547,6 +535,7 @@
 				57A2AFDB8574BFC9CC107F0D7F530420 /* Core */,
 				BD69A07863150D970EF8EB997F5C733F /* Support Files */,
 			);
+			name = Apollo;
 			path = Apollo;
 			sourceTree = "<group>";
 		};
@@ -726,6 +715,7 @@
 				2D427BA92B367087B24D216DF942F4A4 /* NSString+EmptyCheck.h */,
 				87DDFE08252DC3EC48ED7373407A9FF8 /* Frameworks */,
 			);
+			name = LMGDomain;
 			path = LMGDomain;
 			sourceTree = "<group>";
 		};
@@ -819,23 +809,8 @@
 				347C87DC71CD6C1EB3F20074B5FA2D7D /* NSString+SaveableParams.h */,
 				B8768BADB441FA2AFA8EC638F498AA88 /* Frameworks */,
 			);
+			name = LMGDataAccess;
 			path = LMGDataAccess;
-			sourceTree = "<group>";
-		};
-		7C5D9EA221E947D400B96DC1 /* Queries */ = {
-			isa = PBXGroup;
-			children = (
-				7C5D9EA321E947D500B96DC1 /* OffersQuery.graphql */,
-				7C5D9EA421E947D500B96DC1 /* SessionMutations.graphql */,
-				7C5D9EA521E947D500B96DC1 /* BusinessesQuery.graphql */,
-				7C5D9EA621E947D500B96DC1 /* UserQuery.graphql */,
-				7C5D9EA721E947D500B96DC1 /* OfferMutations.graphql */,
-				7C5D9EA821E947D500B96DC1 /* OfferRedemption.graphql */,
-				7C5D9EA921E947D500B96DC1 /* LocationsQuery.graphql */,
-				7C5D9EAA21E947D500B96DC1 /* Fragments.graphql */,
-				7C5D9EAB21E947D500B96DC1 /* CollectionsQuery.graphql */,
-			);
-			path = Queries;
 			sourceTree = "<group>";
 		};
 		7D0D6F2B2A0F55B47F204F6DB5622381 /* Frameworks */ = {
@@ -1581,7 +1556,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
