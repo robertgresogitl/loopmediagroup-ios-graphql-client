@@ -146,6 +146,7 @@ fragment LocationItem on Location {
     distance
     phone
     url
+    shareUrl
     address {
       id
       suite

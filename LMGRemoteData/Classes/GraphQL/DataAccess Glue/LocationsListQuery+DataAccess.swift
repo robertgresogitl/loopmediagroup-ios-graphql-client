@@ -16,6 +16,7 @@ extension LocationItem {
         builder.phoneNumber = phone
         builder.urlPath = url
         builder.business = business
+        builder.shareUrl = URL(string: shareUrl)
         return builder.build()
     }
 }
