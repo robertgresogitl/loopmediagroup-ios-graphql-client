@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LMGNotificationBus'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'Notification Bus layer for the LMG iOS SDK'
   s.description      = <<-DESC
 Implements the notification bus for the LMG iOS SDK.

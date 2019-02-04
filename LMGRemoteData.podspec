@@ -23,7 +23,7 @@ Implements the remote data objects for the LMG iOS SDK.
   s.swift_version = '4.2'
   s.source_files = 'LMGRemoteData/Classes/**/*.{swift}'
 
-  s.dependency 'LMGDataAccess', '~> 1.0.5'
-  s.dependency 'LMGNotificationBus', '~> 1.0.6'
+  s.dependency 'LMGDataAccess', '~> 1.0.6'
+  s.dependency 'LMGNotificationBus', '~> 1.0.7'
   s.dependency 'Apollo', '~> 0.9.1'
 end
