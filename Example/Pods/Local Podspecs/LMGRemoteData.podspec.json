@@ -22,10 +22,10 @@
   "source_files": "LMGRemoteData/Classes/**/*.{swift}",
   "dependencies": {
     "LMGDataAccess": [
-      "~> 1.0.5"
+      "~> 1.0.6"
     ],
     "LMGNotificationBus": [
-      "~> 1.0.6"
+      "~> 1.0.7"
     ],
     "Apollo": [
       "~> 0.9.1"

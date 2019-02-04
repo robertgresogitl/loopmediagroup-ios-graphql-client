@@ -27,6 +27,7 @@
 @property (nullable, nonatomic, copy, readonly) NSString *phoneNumber;
 @property (nullable, nonatomic, copy, readonly) NSString *urlPath;
 @property (nullable, nonatomic, copy, readonly) LMGDABusiness *business;
+@property (nullable, nonatomic, copy, readonly) NSURL *shareUrl;
 
 - (nonnull instancetype)initWith:(nonnull LMGDALocationBuilder *)builder NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
@@ -45,6 +46,7 @@
 @property (nullable, nonatomic, copy) NSString *phoneNumber;
 @property (nullable, nonatomic, copy) NSString *urlPath;
 @property (nullable, nonatomic, copy) LMGDABusiness *business;
+@property (nullable, nonatomic, copy) NSURL *shareUrl;
 
 - (nonnull instancetype)initWith:(nonnull LMGDAPlatformId *)locationId address:(nonnull LMGDAAddress *)address name:(nonnull NSString *)name NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWith:(nonnull LMGDALocation *)location;
