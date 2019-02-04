@@ -3761,7 +3761,7 @@ public struct CollectionItem: GraphQLFragment {
 
 public struct LocationItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment LocationItem on Location {\n  __typename\n  id\n  name\n  distance\n  phone\n  url\n  address {\n    __typename\n    id\n    suite\n    building\n    streetAddress\n    street\n    postalcode\n    city\n    state\n    country\n    centre\n  }\n}"
+    "fragment LocationItem on Location {\n  __typename\n  id\n  name\n  distance\n  phone\n  url\n  shareUrl\n  address {\n    __typename\n    id\n    suite\n    building\n    streetAddress\n    street\n    postalcode\n    city\n    state\n    country\n    centre\n  }\n}"
 
   public static let possibleTypes = ["Location"]
 
@@ -3772,6 +3772,7 @@ public struct LocationItem: GraphQLFragment {
     GraphQLField("distance", type: .scalar(Double.self)),
     GraphQLField("phone", type: .scalar(String.self)),
     GraphQLField("url", type: .scalar(String.self)),
+    GraphQLField("shareUrl", type: .nonNull(.scalar(String.self))),
     GraphQLField("address", type: .nonNull(.object(Address.selections))),
   ]
 
@@ -3781,8 +3782,8 @@ public struct LocationItem: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, name: String, distance: Double? = nil, phone: String? = nil, url: String? = nil, address: Address) {
-    self.init(unsafeResultMap: ["__typename": "Location", "id": id, "name": name, "distance": distance, "phone": phone, "url": url, "address": address.resultMap])
+  public init(id: GraphQLID, name: String, distance: Double? = nil, phone: String? = nil, url: String? = nil, shareUrl: String, address: Address) {
+    self.init(unsafeResultMap: ["__typename": "Location", "id": id, "name": name, "distance": distance, "phone": phone, "url": url, "shareUrl": shareUrl, "address": address.resultMap])
   }
 
   public var __typename: String {
@@ -3836,6 +3837,15 @@ public struct LocationItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "url")
+    }
+  }
+
+  public var shareUrl: String {
+    get {
+      return resultMap["shareUrl"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "shareUrl")
     }
   }
 
