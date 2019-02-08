@@ -160,3 +160,23 @@ fragment LocationItem on Location {
       centre
     }
 }
+
+fragment OfferLocationItem on Location {
+    id
+    name
+    distance
+    phone
+    url
+    address {
+      id
+      suite
+      building
+      streetAddress
+      street
+      postalcode
+      city
+      state
+      country
+      centre
+    }
+}
