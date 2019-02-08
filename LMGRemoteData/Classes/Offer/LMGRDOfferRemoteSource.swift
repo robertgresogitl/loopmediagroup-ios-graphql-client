@@ -27,7 +27,7 @@ public final class LMGRDOfferRemoteSource: NSObject, LMGDAOfferRemoteSource {
         client.session = session
         
         let data = try client.syncFetch(query: OfferDetailsQuery(id: params.entityId, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData()), queue: queue)
-        let locations = data.offer.locations.compactMap { $0.fragments.locationItem.toDataAccess(business: nil) }
+        let locations = data.offer.locations.compactMap { $0.fragments.offerLocationItem.toDataAccess(business: nil) }
         return data.offer.fragments.offerDetails.toDataAccess(locations: locations)
     }
     
