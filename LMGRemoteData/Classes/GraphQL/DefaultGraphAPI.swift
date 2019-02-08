@@ -4,9 +4,9 @@ import Apollo
 
 public final class OfferDetailsQuery: GraphQLQuery {
   public let operationDefinition =
-    "query OfferDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!]) {\n  offer(offerId: $id) {\n    __typename\n    ...OfferDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {\n      __typename\n      ...LocationItem\n    }\n  }\n}"
+    "query OfferDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!]) {\n  offer(offerId: $id) {\n    __typename\n    ...OfferDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {\n      __typename\n      ...OfferLocationItem\n    }\n  }\n}"
 
-  public var queryDocument: String { return operationDefinition.appending(OfferDetails.fragmentDefinition).appending(BusinessListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(LocationItem.fragmentDefinition) }
+  public var queryDocument: String { return operationDefinition.appending(OfferDetails.fragmentDefinition).appending(BusinessListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(OfferLocationItem.fragmentDefinition) }
 
   public var id: GraphQLID
   public var orderPoint: [Double]?
@@ -112,7 +112,7 @@ public final class OfferDetailsQuery: GraphQLQuery {
 
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLFragmentSpread(LocationItem.self),
+          GraphQLFragmentSpread(OfferLocationItem.self),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -146,9 +146,9 @@ public final class OfferDetailsQuery: GraphQLQuery {
             self.resultMap = unsafeResultMap
           }
 
-          public var locationItem: LocationItem {
+          public var offerLocationItem: OfferLocationItem {
             get {
-              return LocationItem(unsafeResultMap: resultMap)
+              return OfferLocationItem(unsafeResultMap: resultMap)
             }
             set {
               resultMap += newValue.resultMap
@@ -3846,6 +3846,223 @@ public struct LocationItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "shareUrl")
+    }
+  }
+
+  public var address: Address {
+    get {
+      return Address(unsafeResultMap: resultMap["address"]! as! ResultMap)
+    }
+    set {
+      resultMap.updateValue(newValue.resultMap, forKey: "address")
+    }
+  }
+
+  public struct Address: GraphQLSelectionSet {
+    public static let possibleTypes = ["Address"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+      GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+      GraphQLField("suite", type: .scalar(String.self)),
+      GraphQLField("building", type: .scalar(String.self)),
+      GraphQLField("streetAddress", type: .nonNull(.scalar(String.self))),
+      GraphQLField("street", type: .nonNull(.scalar(String.self))),
+      GraphQLField("postalcode", type: .nonNull(.scalar(String.self))),
+      GraphQLField("city", type: .nonNull(.scalar(String.self))),
+      GraphQLField("state", type: .nonNull(.scalar(String.self))),
+      GraphQLField("country", type: .nonNull(.scalar(String.self))),
+      GraphQLField("centre", type: .nonNull(.list(.nonNull(.scalar(Double.self))))),
+    ]
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(id: GraphQLID, suite: String? = nil, building: String? = nil, streetAddress: String, street: String, postalcode: String, city: String, state: String, country: String, centre: [Double]) {
+      self.init(unsafeResultMap: ["__typename": "Address", "id": id, "suite": suite, "building": building, "streetAddress": streetAddress, "street": street, "postalcode": postalcode, "city": city, "state": state, "country": country, "centre": centre])
+    }
+
+    public var __typename: String {
+      get {
+        return resultMap["__typename"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "__typename")
+      }
+    }
+
+    public var id: GraphQLID {
+      get {
+        return resultMap["id"]! as! GraphQLID
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "id")
+      }
+    }
+
+    public var suite: String? {
+      get {
+        return resultMap["suite"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "suite")
+      }
+    }
+
+    public var building: String? {
+      get {
+        return resultMap["building"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "building")
+      }
+    }
+
+    public var streetAddress: String {
+      get {
+        return resultMap["streetAddress"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "streetAddress")
+      }
+    }
+
+    public var street: String {
+      get {
+        return resultMap["street"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "street")
+      }
+    }
+
+    public var postalcode: String {
+      get {
+        return resultMap["postalcode"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "postalcode")
+      }
+    }
+
+    public var city: String {
+      get {
+        return resultMap["city"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "city")
+      }
+    }
+
+    public var state: String {
+      get {
+        return resultMap["state"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "state")
+      }
+    }
+
+    public var country: String {
+      get {
+        return resultMap["country"]! as! String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "country")
+      }
+    }
+
+    public var centre: [Double] {
+      get {
+        return resultMap["centre"]! as! [Double]
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "centre")
+      }
+    }
+  }
+}
+
+public struct OfferLocationItem: GraphQLFragment {
+  public static let fragmentDefinition =
+    "fragment OfferLocationItem on Location {\n  __typename\n  id\n  name\n  distance\n  phone\n  url\n  address {\n    __typename\n    id\n    suite\n    building\n    streetAddress\n    street\n    postalcode\n    city\n    state\n    country\n    centre\n  }\n}"
+
+  public static let possibleTypes = ["Location"]
+
+  public static let selections: [GraphQLSelection] = [
+    GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+    GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+    GraphQLField("name", type: .nonNull(.scalar(String.self))),
+    GraphQLField("distance", type: .scalar(Double.self)),
+    GraphQLField("phone", type: .scalar(String.self)),
+    GraphQLField("url", type: .scalar(String.self)),
+    GraphQLField("address", type: .nonNull(.object(Address.selections))),
+  ]
+
+  public private(set) var resultMap: ResultMap
+
+  public init(unsafeResultMap: ResultMap) {
+    self.resultMap = unsafeResultMap
+  }
+
+  public init(id: GraphQLID, name: String, distance: Double? = nil, phone: String? = nil, url: String? = nil, address: Address) {
+    self.init(unsafeResultMap: ["__typename": "Location", "id": id, "name": name, "distance": distance, "phone": phone, "url": url, "address": address.resultMap])
+  }
+
+  public var __typename: String {
+    get {
+      return resultMap["__typename"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "__typename")
+    }
+  }
+
+  public var id: GraphQLID {
+    get {
+      return resultMap["id"]! as! GraphQLID
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: String {
+    get {
+      return resultMap["name"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var distance: Double? {
+    get {
+      return resultMap["distance"] as? Double
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "distance")
+    }
+  }
+
+  public var phone: String? {
+    get {
+      return resultMap["phone"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "phone")
+    }
+  }
+
+  public var url: String? {
+    get {
+      return resultMap["url"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "url")
     }
   }
 
