@@ -7,7 +7,7 @@ PODS:
   - LMGDomain (1.0.8)
   - LMGNotificationBus (1.0.7):
     - LMGDomain (~> 1.0.8)
-  - LMGRemoteData (1.0.5):
+  - LMGRemoteData (1.0.7):
     - Apollo (~> 0.9.1)
     - LMGDataAccess (~> 1.0.6)
     - LMGNotificationBus (~> 1.0.7)
@@ -16,7 +16,7 @@ DEPENDENCIES:
   - LMGRemoteData (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Apollo
     - LMGDataAccess
     - LMGDomain
@@ -31,8 +31,8 @@ SPEC CHECKSUMS:
   LMGDataAccess: d00b8c3abd306e31937de4aa9ba0c3c77df09f7a
   LMGDomain: acb73c196515449025eaa0ef1a5c5432faad9a6c
   LMGNotificationBus: e175bc60994753475866adf1385c84d6f779108a
-  LMGRemoteData: 211f3dac15c3dc3e5e79efafdcb1b25983890688
+  LMGRemoteData: bea5439ba667637e7a097890cb905c1c883bd73c
 
 PODFILE CHECKSUM: ad96e676ee533573b82838191407daf46c100e38
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0.rc.2
