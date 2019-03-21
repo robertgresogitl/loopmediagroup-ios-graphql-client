@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import LMGDataAccess
 
 class ViewController: UIViewController {
 
