@@ -89,6 +89,10 @@ extension LMGDAUser {
         if let gender = UserGender(daGender: gender) {
             dict[genderKey] = gender.rawValue
         }
-        return dict.merging(customTraits as! [String : JSONEncodable]) { first,second in first }
+        if let traits = customTraits as? [String : JSONEncodable] {
+            dict = dict.merging(traits) { first,second in first }
+        }
+        
+        return dict;
     }
 }
