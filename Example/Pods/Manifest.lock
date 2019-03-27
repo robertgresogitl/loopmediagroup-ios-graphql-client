@@ -2,12 +2,12 @@ PODS:
   - Apollo (0.9.5):
     - Apollo/Core (= 0.9.5)
   - Apollo/Core (0.9.5)
-  - LMGDataAccess (1.0.6):
-    - LMGDomain (~> 1.0.8)
-  - LMGDomain (1.0.8)
-  - LMGNotificationBus (1.0.7):
-    - LMGDomain (~> 1.0.8)
-  - LMGRemoteData (1.0.7):
+  - LMGDataAccess (1.0.8):
+    - LMGDomain (~> 1.0.12)
+  - LMGDomain (1.0.12)
+  - LMGNotificationBus (1.0.8):
+    - LMGDomain (~> 1.0.12)
+  - LMGRemoteData (1.0.8):
     - Apollo (~> 0.9.1)
     - LMGDataAccess (~> 1.0.6)
     - LMGNotificationBus (~> 1.0.7)
@@ -28,11 +28,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Apollo: 19caf3246d292bbb69ecad1bd098661f78222aba
-  LMGDataAccess: d00b8c3abd306e31937de4aa9ba0c3c77df09f7a
-  LMGDomain: acb73c196515449025eaa0ef1a5c5432faad9a6c
-  LMGNotificationBus: e175bc60994753475866adf1385c84d6f779108a
-  LMGRemoteData: bea5439ba667637e7a097890cb905c1c883bd73c
+  LMGDataAccess: 7fd031acb2d50743b9388e19e3cca5543727b4e3
+  LMGDomain: e918411f31287c624a3a691979fa21f2255a1a3c
+  LMGNotificationBus: e32697c96580d92658c05dc2bd8f11e216a0a872
+  LMGRemoteData: afa11f805ae6cda3abc19ce5373c23258502d18f
 
 PODFILE CHECKSUM: ad96e676ee533573b82838191407daf46c100e38
 
-COCOAPODS: 1.6.0.rc.2
+COCOAPODS: 1.5.3

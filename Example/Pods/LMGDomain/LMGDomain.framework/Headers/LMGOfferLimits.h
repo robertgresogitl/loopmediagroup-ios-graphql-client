@@ -32,4 +32,6 @@ extern const LMGLimitDescription LMGLimitDescriptionZero;
 - (nonnull instancetype)initWithPerProfile:(LMGLimitDescription)perProfileLimits perProfilePerWindow:(LMGLimitDescription)perProfilePerWindowLimits global:(LMGLimitDescription)globalLimits globalPerWindow:(LMGLimitDescription)globalPerWindowLimits profileWindow:(nullable NSString *)profileWindow globalWindow:(nullable NSString *)globalWindow NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
+- (NSString *)limitDescription;
+
 @end

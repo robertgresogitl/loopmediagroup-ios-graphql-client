@@ -11,7 +11,7 @@ import LMGDataAccess
 extension CollectionItem {
     
     func toDataAccess() -> LMGDACollection {
-        let builder = LMGDACollectionBuilder(id: id, name: name, shortName: shortName)
+        let builder = LMGDACollectionBuilder(id: id, name: name, shortName: shortName, slug: slug)
         builder.iconUrlPath = iconSmallImages.first?.url
         builder.imageUrlPath = heroStandardImages.first?.url
         return builder.build()

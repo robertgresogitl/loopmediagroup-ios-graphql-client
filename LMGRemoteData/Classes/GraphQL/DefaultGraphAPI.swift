@@ -3607,7 +3607,7 @@ public struct CategoryItem: GraphQLFragment {
 
 public struct CollectionItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment CollectionItem on Collection {\n  __typename\n  id\n  name\n  shortName\n  iconSmallImages {\n    __typename\n    url\n  }\n  heroStandardImages {\n    __typename\n    url\n  }\n}"
+    "fragment CollectionItem on Collection {\n  __typename\n  id\n  name\n  shortName\n  slug\n  iconSmallImages {\n    __typename\n    url\n  }\n  heroStandardImages {\n    __typename\n    url\n  }\n}"
 
   public static let possibleTypes = ["Collection"]
 
@@ -3616,6 +3616,7 @@ public struct CollectionItem: GraphQLFragment {
     GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
     GraphQLField("name", type: .nonNull(.scalar(String.self))),
     GraphQLField("shortName", type: .nonNull(.scalar(String.self))),
+    GraphQLField("slug", type: .nonNull(.scalar(String.self))),
     GraphQLField("iconSmallImages", type: .nonNull(.list(.nonNull(.object(IconSmallImage.selections))))),
     GraphQLField("heroStandardImages", type: .nonNull(.list(.nonNull(.object(HeroStandardImage.selections))))),
   ]
@@ -3626,8 +3627,8 @@ public struct CollectionItem: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, name: String, shortName: String, iconSmallImages: [IconSmallImage], heroStandardImages: [HeroStandardImage]) {
-    self.init(unsafeResultMap: ["__typename": "Collection", "id": id, "name": name, "shortName": shortName, "iconSmallImages": iconSmallImages.map { (value: IconSmallImage) -> ResultMap in value.resultMap }, "heroStandardImages": heroStandardImages.map { (value: HeroStandardImage) -> ResultMap in value.resultMap }])
+  public init(id: GraphQLID, name: String, shortName: String, slug: String, iconSmallImages: [IconSmallImage], heroStandardImages: [HeroStandardImage]) {
+    self.init(unsafeResultMap: ["__typename": "Collection", "id": id, "name": name, "shortName": shortName, "slug": slug, "iconSmallImages": iconSmallImages.map { (value: IconSmallImage) -> ResultMap in value.resultMap }, "heroStandardImages": heroStandardImages.map { (value: HeroStandardImage) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -3663,6 +3664,15 @@ public struct CollectionItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "shortName")
+    }
+  }
+
+  public var slug: String {
+    get {
+      return resultMap["slug"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "slug")
     }
   }
 

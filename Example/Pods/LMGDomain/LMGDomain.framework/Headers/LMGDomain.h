@@ -131,3 +131,4 @@ FOUNDATION_EXPORT const unsigned char LMGDomainVersionString[];
 #import <LMGDomain/LMGUserBuilder.h>
 #import <LMGDomain/LMGContentFilter.h>
 #import <LMGDomain/LMGRequestParams+ContentFilter.h>
+#import <LMGDomain/LMGBranding.h>
