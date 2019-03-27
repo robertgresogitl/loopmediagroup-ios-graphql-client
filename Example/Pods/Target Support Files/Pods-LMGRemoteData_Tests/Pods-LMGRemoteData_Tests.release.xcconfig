@@ -1,8 +1,8 @@
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Apollo" "${PODS_CONFIGURATION_BUILD_DIR}/LMGRemoteData" "${PODS_ROOT}/LMGDataAccess" "${PODS_ROOT}/LMGDomain" "${PODS_ROOT}/LMGNotificationBus"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Apollo/Apollo.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/LMGRemoteData/LMGRemoteData.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "Apollo" -framework "CoreLocation" -framework "Foundation" -framework "LMGDataAccess" -framework "LMGDomain" -framework "LMGNotificationBus" -framework "LMGRemoteData" -framework "MapKit"
+OTHER_CFLAGS = $(inherited) -iquote "${PODS_CONFIGURATION_BUILD_DIR}/Apollo/Apollo.framework/Headers" -iquote "${PODS_CONFIGURATION_BUILD_DIR}/LMGRemoteData/LMGRemoteData.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "CoreLocation" -framework "Foundation" -framework "LMGDataAccess" -framework "LMGDomain" -framework "LMGNotificationBus" -framework "MapKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

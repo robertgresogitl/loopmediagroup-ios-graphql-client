@@ -16,6 +16,7 @@
 @property (nonnull, nonatomic, copy, readonly) LMGPlatformId *id;
 @property (nonnull, nonatomic, copy, readonly) NSString *name;
 @property (nonnull, nonatomic, copy, readonly) NSString *shortName;
+@property (nonnull, nonatomic, copy, readonly) NSString *slug;
 
 @property (nullable, nonatomic, copy, readonly) LMGUrlPath *imageUrlPath;
 @property (nullable, nonatomic, copy, readonly) LMGUrlPath *iconUrlPath;
@@ -31,12 +32,17 @@
 @property (nonnull, nonatomic, copy, readonly) LMGPlatformId *id;
 @property (nonnull, nonatomic, copy, readonly) NSString *name;
 @property (nonnull, nonatomic, copy, readonly) NSString *shortName;
+@property (nonnull, nonatomic, copy, readonly) NSString *slug;
 
 @property (nullable, nonatomic, copy) LMGUrlPath *imageUrlPath;
 @property (nullable, nonatomic, copy) LMGUrlPath *iconUrlPath;
 @property (nullable, nonatomic, copy) LMGUrlPath *infoUrlPath;
 
+- (nonnull instancetype)initWithId:(nonnull LMGPlatformId *)collectionId name:(nonnull NSString *)name shortName:(nonnull NSString *)shortName slug:(nonnull NSString *)slug NS_DESIGNATED_INITIALIZER;
+
+// TEMP for adding slug, so circleCI can compile it
 - (nonnull instancetype)initWithId:(nonnull LMGPlatformId *)collectionId name:(nonnull NSString *)name shortName:(nonnull NSString *)shortName NS_DESIGNATED_INITIALIZER;
+
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
 - (nonnull LMGCollection *)build;

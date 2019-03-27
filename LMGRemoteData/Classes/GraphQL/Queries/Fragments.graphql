@@ -132,6 +132,7 @@ fragment CollectionItem on Collection {
     id
     name
     shortName
+    slug
     iconSmallImages {
         url
     }

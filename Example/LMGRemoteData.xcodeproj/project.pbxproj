@@ -356,7 +356,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 				"${PODS_ROOT}/LMGDataAccess/LMGDataAccess.framework",
 				"${PODS_ROOT}/LMGDomain/LMGDomain.framework",
@@ -373,7 +373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LMGRemoteData_Example/Pods-LMGRemoteData_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D0AACA8F7F6C588611A6044A /* [CP] Check Pods Manifest.lock */ = {
