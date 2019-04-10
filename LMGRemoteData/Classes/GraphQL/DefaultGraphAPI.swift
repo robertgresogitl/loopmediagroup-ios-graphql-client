@@ -1617,29 +1617,29 @@ public final class LocationsListQuery: GraphQLQuery {
 
 public final class CollectionListQuery: GraphQLQuery {
   public let operationDefinition =
-    "query CollectionList($cursor: String, $tags: [String!], $geoArea: [[Float!]!]) {\n  collectionFeed(cursor: $cursor, tags: $tags, contextGeoArea: $geoArea) {\n    __typename\n    cursor {\n      __typename\n      next\n    }\n    collections {\n      __typename\n      ...CollectionItem\n    }\n  }\n}"
+    "query CollectionList($cursor: String, $tagNames: [String!], $geoArea: [[Float!]!]) {\n  collectionFeed(cursor: $cursor, tagNames: $tagNames, contextGeoArea: $geoArea) {\n    __typename\n    cursor {\n      __typename\n      next\n    }\n    collections {\n      __typename\n      ...CollectionItem\n    }\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(CollectionItem.fragmentDefinition) }
 
   public var cursor: String?
-  public var tags: [String]?
+  public var tagNames: [String]?
   public var geoArea: [[Double]]?
 
-  public init(cursor: String? = nil, tags: [String]?, geoArea: [[Double]]?) {
+  public init(cursor: String? = nil, tagNames: [String]?, geoArea: [[Double]]?) {
     self.cursor = cursor
-    self.tags = tags
+    self.tagNames = tagNames
     self.geoArea = geoArea
   }
 
   public var variables: GraphQLMap? {
-    return ["cursor": cursor, "tags": tags, "geoArea": geoArea]
+    return ["cursor": cursor, "tagNames": tagNames, "geoArea": geoArea]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("collectionFeed", arguments: ["cursor": GraphQLVariable("cursor"), "tags": GraphQLVariable("tags"), "contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.object(CollectionFeed.selections))),
+      GraphQLField("collectionFeed", arguments: ["cursor": GraphQLVariable("cursor"), "tagNames": GraphQLVariable("tagNames"), "contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.object(CollectionFeed.selections))),
     ]
 
     public private(set) var resultMap: ResultMap

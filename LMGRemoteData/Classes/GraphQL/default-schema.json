@@ -152,16 +152,6 @@
                 {
                   "defaultValue": null,
                   "description": "",
-                  "name": "cursor",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                },
-                {
-                  "defaultValue": null,
-                  "description": "",
                   "name": "q",
                   "type": {
                     "kind": "SCALAR",
@@ -240,6 +230,26 @@
                       }
                     }
                   }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "cursor",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "limit",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
+                  }
                 }
               ],
               "deprecationReason": null,
@@ -292,17 +302,7 @@
                 {
                   "defaultValue": null,
                   "description": "",
-                  "name": "cursor",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                },
-                {
-                  "defaultValue": null,
-                  "description": "",
-                  "name": "tags",
+                  "name": "tagNames",
                   "type": {
                     "kind": "LIST",
                     "name": null,
@@ -341,6 +341,26 @@
                         }
                       }
                     }
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "cursor",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "limit",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
                   }
                 }
               ],
@@ -429,6 +449,16 @@
                   "type": {
                     "kind": "SCALAR",
                     "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "limit",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
                     "ofType": null
                   }
                 }
@@ -1846,23 +1876,6 @@
               "deprecationReason": null,
               "description": "",
               "isDeprecated": false,
-              "name": "group",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              }
-            },
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "",
-              "isDeprecated": false,
               "name": "iconSmallImages",
               "type": {
                 "kind": "NON_NULL",
@@ -1916,26 +1929,19 @@
           "possibleTypes": null
         },
         {
+          "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. ",
+          "enumValues": null,
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "kind": "SCALAR",
+          "name": "Int",
+          "possibleTypes": null
+        },
+        {
           "description": "",
           "enumValues": null,
           "fields": [
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "",
-              "isDeprecated": false,
-              "name": "cursor",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Cursor",
-                  "ofType": null
-                }
-              }
-            },
             {
               "args": [
               ],
@@ -1958,6 +1964,23 @@
                       "ofType": null
                     }
                   }
+                }
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
+              "name": "cursor",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Cursor",
+                  "ofType": null
                 }
               }
             }
@@ -2118,16 +2141,6 @@
                 {
                   "defaultValue": null,
                   "description": "",
-                  "name": "cursor",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                },
-                {
-                  "defaultValue": null,
-                  "description": "",
                   "name": "contextGeoArea",
                   "type": {
                     "kind": "LIST",
@@ -2185,6 +2198,26 @@
                         "ofType": null
                       }
                     }
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "cursor",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "limit",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int",
+                    "ofType": null
                   }
                 }
               ],
@@ -2286,36 +2319,9 @@
           "possibleTypes": null
         },
         {
-          "description": "The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. ",
-          "enumValues": null,
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "kind": "SCALAR",
-          "name": "Int",
-          "possibleTypes": null
-        },
-        {
           "description": "",
           "enumValues": null,
           "fields": [
-            {
-              "args": [
-              ],
-              "deprecationReason": null,
-              "description": "",
-              "isDeprecated": false,
-              "name": "cursor",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Cursor",
-                  "ofType": null
-                }
-              }
-            },
             {
               "args": [
               ],
@@ -2340,19 +2346,7 @@
                   }
                 }
               }
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-          ],
-          "kind": "OBJECT",
-          "name": "CollectionFeed",
-          "possibleTypes": null
-        },
-        {
-          "description": "",
-          "enumValues": null,
-          "fields": [
+            },
             {
               "args": [
               ],
@@ -2369,7 +2363,19 @@
                   "ofType": null
                 }
               }
-            },
+            }
+          ],
+          "inputFields": null,
+          "interfaces": [
+          ],
+          "kind": "OBJECT",
+          "name": "CollectionFeed",
+          "possibleTypes": null
+        },
+        {
+          "description": "",
+          "enumValues": null,
+          "fields": [
             {
               "args": [
               ],
@@ -2392,6 +2398,23 @@
                       "ofType": null
                     }
                   }
+                }
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
+              "name": "cursor",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Cursor",
+                  "ofType": null
                 }
               }
             }
