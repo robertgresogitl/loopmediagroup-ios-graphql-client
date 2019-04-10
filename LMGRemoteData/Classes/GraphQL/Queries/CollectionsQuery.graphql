@@ -1,5 +1,5 @@
-query CollectionList($cursor: String, $tags: [String!], $geoArea: [[Float!]!]) {
-  collectionFeed(cursor: $cursor, tags: $tags, contextGeoArea: $geoArea) {
+query CollectionList($cursor: String, $tagNames: [String!], $geoArea: [[Float!]!]) {
+  collectionFeed(cursor: $cursor, tagNames: $tagNames, contextGeoArea: $geoArea) {
     cursor {
       next
     }
