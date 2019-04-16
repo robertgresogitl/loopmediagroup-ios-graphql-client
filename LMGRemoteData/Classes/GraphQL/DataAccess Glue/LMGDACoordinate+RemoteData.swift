@@ -10,6 +10,6 @@ import LMGDataAccess
 
 extension LMGDACoordinate {
     func toRemoteData() -> [Double] {
-        return [self.latitude, self.longitude]
+        return [self.longitude, self.latitude]
     }
 }
