@@ -492,6 +492,16 @@
                       "ofType": null
                     }
                   }
+                },
+                {
+                  "defaultValue": null,
+                  "description": "Location that Offer is accessed for.",
+                  "name": "locationId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID",
+                    "ofType": null
+                  }
                 }
               ],
               "deprecationReason": null,
