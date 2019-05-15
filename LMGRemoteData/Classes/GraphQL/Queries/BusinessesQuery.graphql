@@ -24,9 +24,9 @@ query BusinessesList($cursor: String, $q: String, $bookmarked: Boolean, $geoArea
   }
 }
 
-query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!]) {
+query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $limit: Int) {
   collection(collectionId: $id) {
-    businessFeed(cursor: $cursor, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {
+    businessFeed(cursor: $cursor, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, limit: $limit) {
       cursor {
         next
       }

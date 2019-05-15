@@ -38,7 +38,7 @@ public final class LMGRDBusinessRemoteSource: NSObject, LMGDABusinessRemoteSourc
     public func getForCollection(_ params: LMGDACollectionRequestParams, session: LMGDASession) throws -> LMGDAPagedResult<LMGDABusiness> {
         client.session = session
         
-        let data = try client.syncFetch(query: CollectionBusinessesListQuery(id: params.collectionId, cursor: params.nextPage, geoArea: params.contentArea?.map { $0.toRemoteData() }, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData()), queue: queue)
+        let data = try client.syncFetch(query: CollectionBusinessesListQuery(id: params.collectionId, cursor: params.nextPage, geoArea: params.contentArea?.map { $0.toRemoteData() }, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData(), limit: Int(params.limit)), queue: queue)
         let businesses = data.collection.businessFeed.businesses.compactMap { business -> LMGDABusiness in
             let locations = business.locations.compactMap { $0.fragments.locationItem.toDataAccess(business: nil) }
             let offers = business.offers.compactMap { $0.fragments.offerListItem.toDataAccess(business: business.fragments.businessListItem.toDataAccess(locations: nil, offers: nil)) }

@@ -629,7 +629,7 @@ public final class BusinessesListQuery: GraphQLQuery {
 
 public final class CollectionBusinessesListQuery: GraphQLQuery {
   public let operationDefinition =
-    "query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!]) {\n  collection(collectionId: $id) {\n    __typename\n    businessFeed(cursor: $cursor, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {\n      __typename\n      cursor {\n        __typename\n        next\n      }\n      businesses {\n        __typename\n        ...BusinessListItem\n        locations {\n          __typename\n          ...LocationItem\n        }\n        offers {\n          __typename\n          ...OfferListItem\n        }\n      }\n    }\n  }\n}"
+    "query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $limit: Int) {\n  collection(collectionId: $id) {\n    __typename\n    businessFeed(cursor: $cursor, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, limit: $limit) {\n      __typename\n      cursor {\n        __typename\n        next\n      }\n      businesses {\n        __typename\n        ...BusinessListItem\n        locations {\n          __typename\n          ...LocationItem\n        }\n        offers {\n          __typename\n          ...OfferListItem\n        }\n      }\n    }\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(BusinessListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(LocationItem.fragmentDefinition).appending(OfferListItem.fragmentDefinition) }
 
@@ -638,17 +638,19 @@ public final class CollectionBusinessesListQuery: GraphQLQuery {
   public var geoArea: [[Double]]?
   public var orderPoint: [Double]?
   public var originPoint: [Double]?
+  public var limit: Int?
 
-  public init(id: GraphQLID, cursor: String? = nil, geoArea: [[Double]]?, orderPoint: [Double]?, originPoint: [Double]?) {
+  public init(id: GraphQLID, cursor: String? = nil, geoArea: [[Double]]?, orderPoint: [Double]?, originPoint: [Double]?, limit: Int? = nil) {
     self.id = id
     self.cursor = cursor
     self.geoArea = geoArea
     self.orderPoint = orderPoint
     self.originPoint = originPoint
+    self.limit = limit
   }
 
   public var variables: GraphQLMap? {
-    return ["id": id, "cursor": cursor, "geoArea": geoArea, "orderPoint": orderPoint, "originPoint": originPoint]
+    return ["id": id, "cursor": cursor, "geoArea": geoArea, "orderPoint": orderPoint, "originPoint": originPoint, "limit": limit]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -682,7 +684,7 @@ public final class CollectionBusinessesListQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("businessFeed", arguments: ["cursor": GraphQLVariable("cursor"), "contextGeoArea": GraphQLVariable("geoArea"), "orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint")], type: .nonNull(.object(BusinessFeed.selections))),
+        GraphQLField("businessFeed", arguments: ["cursor": GraphQLVariable("cursor"), "contextGeoArea": GraphQLVariable("geoArea"), "orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "limit": GraphQLVariable("limit")], type: .nonNull(.object(BusinessFeed.selections))),
       ]
 
       public private(set) var resultMap: ResultMap
