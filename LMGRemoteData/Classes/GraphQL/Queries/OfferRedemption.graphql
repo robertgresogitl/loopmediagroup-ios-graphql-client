@@ -3,7 +3,7 @@ query OfferRedeemAction($id: ID!, $locationId: ID!) {
     promoCode
     schedules
   }
-  offerState(offerId: $id) {
+  offerState(offerId: $id, locationId: $locationId) {
     ...RedeemAction
   }
   offerStatus(offerId: $id, locationId: $locationId) {

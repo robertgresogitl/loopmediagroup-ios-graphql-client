@@ -1057,7 +1057,7 @@ public final class UnbookmarkOfferMutation: GraphQLMutation {
 
 public final class OfferRedeemActionQuery: GraphQLQuery {
   public let operationDefinition =
-    "query OfferRedeemAction($id: ID!, $locationId: ID!) {\n  offer(offerId: $id) {\n    __typename\n    promoCode\n    schedules\n  }\n  offerState(offerId: $id) {\n    __typename\n    ...RedeemAction\n  }\n  offerStatus(offerId: $id, locationId: $locationId) {\n    __typename\n    ...OfferDetailStatus\n  }\n}"
+    "query OfferRedeemAction($id: ID!, $locationId: ID!) {\n  offer(offerId: $id) {\n    __typename\n    promoCode\n    schedules\n  }\n  offerState(offerId: $id, locationId: $locationId) {\n    __typename\n    ...RedeemAction\n  }\n  offerStatus(offerId: $id, locationId: $locationId) {\n    __typename\n    ...OfferDetailStatus\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(RedeemAction.fragmentDefinition).appending(OfferDetailStatus.fragmentDefinition) }
 
@@ -1078,7 +1078,7 @@ public final class OfferRedeemActionQuery: GraphQLQuery {
 
     public static let selections: [GraphQLSelection] = [
       GraphQLField("offer", arguments: ["offerId": GraphQLVariable("id")], type: .nonNull(.object(Offer.selections))),
-      GraphQLField("offerState", arguments: ["offerId": GraphQLVariable("id")], type: .nonNull(.object(OfferState.selections))),
+      GraphQLField("offerState", arguments: ["offerId": GraphQLVariable("id"), "locationId": GraphQLVariable("locationId")], type: .nonNull(.object(OfferState.selections))),
       GraphQLField("offerStatus", arguments: ["offerId": GraphQLVariable("id"), "locationId": GraphQLVariable("locationId")], type: .nonNull(.object(OfferStatus.selections))),
     ]
 
