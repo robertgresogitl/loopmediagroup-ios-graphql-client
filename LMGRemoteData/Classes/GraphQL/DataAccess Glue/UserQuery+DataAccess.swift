@@ -39,13 +39,14 @@ private let nameKey = "name"
 private let emailKey = "email"
 private let birthdayKey = "birthday"
 private let genderKey = "gender"
+private let dateFormat = "yyyy-MM-dd"
 
 extension GetUserTraitsQuery.Data {
 
     func toDataAccess() throws -> LMGDAUser {
         let data = getSessionTraits.traits.data(using: .utf8)
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        formatter.dateFormat = dateFormat
         formatter.locale = Locale(identifier:"en_US_POSIX")
         guard let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? Dictionary<String, Any> else {
             return LMGDAUser.init(nil)
@@ -82,7 +83,7 @@ extension LMGDAUser {
         }
         if let birthday = birthday {
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            formatter.dateFormat = dateFormat
             formatter.locale = Locale(identifier:"en_US_POSIX")
             dict[birthdayKey] = formatter.string(from: birthday)
         }
