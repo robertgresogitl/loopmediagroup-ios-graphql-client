@@ -111,6 +111,7 @@ fragment BusinessListItem on Business {
     phone
     url
     slogan
+    desc
     profileImages {
         url
     }

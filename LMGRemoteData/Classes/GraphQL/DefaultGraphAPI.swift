@@ -3305,7 +3305,7 @@ public struct BusinessDetails: GraphQLFragment {
 
 public struct BusinessListItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment BusinessListItem on Business {\n  __typename\n  id\n  name\n  shortName\n  phone\n  url\n  slogan\n  profileImages {\n    __typename\n    url\n  }\n  categories {\n    __typename\n    ...CategoryItem\n  }\n}"
+    "fragment BusinessListItem on Business {\n  __typename\n  id\n  name\n  shortName\n  phone\n  url\n  slogan\n  desc\n  profileImages {\n    __typename\n    url\n  }\n  categories {\n    __typename\n    ...CategoryItem\n  }\n}"
 
   public static let possibleTypes = ["Business"]
 
@@ -3317,6 +3317,7 @@ public struct BusinessListItem: GraphQLFragment {
     GraphQLField("phone", type: .scalar(String.self)),
     GraphQLField("url", type: .scalar(String.self)),
     GraphQLField("slogan", type: .scalar(String.self)),
+    GraphQLField("desc", type: .scalar(String.self)),
     GraphQLField("profileImages", type: .nonNull(.list(.nonNull(.object(ProfileImage.selections))))),
     GraphQLField("categories", type: .nonNull(.list(.nonNull(.object(Category.selections))))),
   ]
@@ -3327,8 +3328,8 @@ public struct BusinessListItem: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, name: String, shortName: String, phone: String? = nil, url: String? = nil, slogan: String? = nil, profileImages: [ProfileImage], categories: [Category]) {
-    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "shortName": shortName, "phone": phone, "url": url, "slogan": slogan, "profileImages": profileImages.map { (value: ProfileImage) -> ResultMap in value.resultMap }, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
+  public init(id: GraphQLID, name: String, shortName: String, phone: String? = nil, url: String? = nil, slogan: String? = nil, desc: String? = nil, profileImages: [ProfileImage], categories: [Category]) {
+    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "shortName": shortName, "phone": phone, "url": url, "slogan": slogan, "desc": desc, "profileImages": profileImages.map { (value: ProfileImage) -> ResultMap in value.resultMap }, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -3391,6 +3392,15 @@ public struct BusinessListItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "slogan")
+    }
+  }
+
+  public var desc: String? {
+    get {
+      return resultMap["desc"] as? String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "desc")
     }
   }
 
