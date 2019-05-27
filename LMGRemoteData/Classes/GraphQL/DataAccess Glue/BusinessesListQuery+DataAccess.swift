@@ -17,6 +17,7 @@ extension BusinessListItem {
         builder.categories = categories.compactMap { $0.fragments.categoryItem.toDataAccess() }
         builder.logo = profileImages.first?.url
         builder.phone = phone
+        builder.details = desc
         builder.slogan = slogan
         builder.url = url
         return builder.build()
