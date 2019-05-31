@@ -18,6 +18,7 @@ typedef void (^LMGBusinessesListRequestParamsBuildBlock)(LMGBusinessesListReques
 
 @property (nullable, nonatomic, copy, readonly) NSString *searchTerm;
 @property (nonatomic, readonly, getter=areOffersBookmarked) BOOL bookmarkedOffers;
+@property (nonatomic, readonly, getter=isContentAreaIgnored) BOOL ignoreContentArea;
 
 - (nonnull instancetype)initWithBuilder:(nonnull LMGBusinessesListRequestParamsBuilder *)builder NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init NS_UNAVAILABLE;
@@ -37,6 +38,7 @@ typedef void (^LMGBusinessesListRequestParamsBuildBlock)(LMGBusinessesListReques
 @property (nullable, nonatomic, copy) LMGCoordinate *sortCoordinate;
 @property (nullable, nonatomic, copy) LMGCoordinate *originCoordinate;
 @property (nullable, nonatomic) NSString *nextPage;
+@property (nonatomic, getter=isContentAreaIgnored) BOOL ignoreContentArea;
 @property (nonatomic, getter=shouldRefresh) BOOL refresh;
 @property (nonatomic, getter=areOffersBookmarked) BOOL bookmarkedOffers;
 @property (nonatomic, getter=shouldUseDeviceLocation) BOOL useDeviceLocation;

@@ -27,7 +27,7 @@ extension LocationItem.Address {
         let coordinateBuider = LMGDACoordinateBuilder()
         coordinateBuider.longitude = centre.first!
         coordinateBuider.latitude = centre.last!
-        return LMGDAAddress(id: id, streetAddress: street, postalCode: postalcode, city: city, province: state, country: country, coordinate: coordinateBuider.build(), suite: suite, building: streetAddress)
+        return LMGDAAddress(id: id, streetAddress: street ?? "", postalCode: postalcode ?? "", city: city, province: state, country: country, coordinate: coordinateBuider.build(), suite: suite, building: streetAddress)
     }
 }
 
@@ -48,10 +48,11 @@ extension OfferLocationItem {
 
 extension OfferLocationItem.Address {
     
+    // TODO: FIX THE FAKE EMPTY STRINGS BELOW!!!!
     func toDataAccess() -> LMGDAAddress {
         let coordinateBuider = LMGDACoordinateBuilder()
         coordinateBuider.longitude = centre.first!
         coordinateBuider.latitude = centre.last!
-        return LMGDAAddress(id: id, streetAddress: street, postalCode: postalcode, city: city, province: state, country: country, coordinate: coordinateBuider.build(), suite: suite, building: streetAddress)
+        return LMGDAAddress(id: id, streetAddress: street ?? "", postalCode: postalcode ?? "", city: city, province: state, country: country, coordinate: coordinateBuider.build(), suite: suite, building: streetAddress)
     }
 }

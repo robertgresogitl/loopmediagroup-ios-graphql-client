@@ -50,7 +50,7 @@ public final class LMGRDBusinessRemoteSource: NSObject, LMGDABusinessRemoteSourc
     public func getWith(_ params: LMGDADetailsRequestParams, in session: LMGDASession) throws -> LMGDABusiness {
         client.session = session
         
-        let data = try client.syncFetch(query: BusinessDetailsQuery(id: params.entityId, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData()), queue: queue)
+        let data = try client.syncFetch(query: BusinessDetailsQuery(id: params.entityId, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData(), geoArea: params.contentArea?.map { $0.toRemoteData() }), queue: queue)
         let locations = data.business.locations.compactMap { $0.fragments.locationItem.toDataAccess(business: nil) }
         return data.business.fragments.businessDetails.toDataAccess(locations: locations)
     }

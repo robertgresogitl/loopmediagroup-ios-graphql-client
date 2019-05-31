@@ -15,6 +15,7 @@
 @property (nonatomic, readonly, getter=shouldRefresh) BOOL refresh;
 @property (nullable, nonatomic, copy, readonly) LMGCoordinate *sortCoordinate;
 @property (nullable, nonatomic, copy, readonly) LMGCoordinate *originCoordinate;
+@property (nullable, nonatomic, copy, readonly) NSArray<LMGCoordinate *> *contentArea;
 
 - (nonnull instancetype)paramsWithOriginCoordinate:(nonnull LMGCoordinate *)coordinate;
 - (nonnull instancetype)paramsWithSortCoordinate:(nonnull LMGCoordinate *)coordinate;
@@ -25,7 +26,6 @@
 @protocol LMGDataListRequestParams <LMGDataRequestParams>
 
 @property (nonatomic, readonly) NSUInteger limit;
-@property (nullable, nonatomic, copy, readonly) NSArray<LMGCoordinate *> *contentArea;
 @property (nullable, nonatomic, copy, readonly) NSString *nextPage;
 
 - (nonnull instancetype)paramsWithContentArea:(nonnull NSArray<LMGCoordinate *> *)contentArea;
