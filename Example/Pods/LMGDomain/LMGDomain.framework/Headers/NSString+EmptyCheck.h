@@ -12,4 +12,6 @@
 
 @property (assign, readonly) BOOL isEmpty;
 
++ (BOOL)isNilOrEmpty:(NSString *)value;
+
 @end

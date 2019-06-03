@@ -162,22 +162,24 @@ public final class OfferDetailsQuery: GraphQLQuery {
 
 public final class BusinessDetailsQuery: GraphQLQuery {
   public let operationDefinition =
-    "query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!]) {\n  business(businessId: $id) {\n    __typename\n    ...BusinessDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {\n      __typename\n      ...LocationItem\n    }\n  }\n}"
+    "query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!], $geoArea: [[Float!]!]) {\n  business(businessId: $id) {\n    __typename\n    ...BusinessDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {\n      __typename\n      ...LocationItem\n    }\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(BusinessDetails.fragmentDefinition).appending(OfferListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(LocationItem.fragmentDefinition) }
 
   public var id: GraphQLID
   public var orderPoint: [Double]?
   public var originPoint: [Double]?
+  public var geoArea: [[Double]]?
 
-  public init(id: GraphQLID, orderPoint: [Double]?, originPoint: [Double]?) {
+  public init(id: GraphQLID, orderPoint: [Double]?, originPoint: [Double]?, geoArea: [[Double]]?) {
     self.id = id
     self.orderPoint = orderPoint
     self.originPoint = originPoint
+    self.geoArea = geoArea
   }
 
   public var variables: GraphQLMap? {
-    return ["id": id, "orderPoint": orderPoint, "originPoint": originPoint]
+    return ["id": id, "orderPoint": orderPoint, "originPoint": originPoint, "geoArea": geoArea]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -212,7 +214,7 @@ public final class BusinessDetailsQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLFragmentSpread(BusinessDetails.self),
-        GraphQLField("locations", arguments: ["orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint")], type: .nonNull(.list(.nonNull(.object(Location.selections))))),
+        GraphQLField("locations", arguments: ["orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Location.selections))))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -320,7 +322,7 @@ public final class BusinessDetailsQuery: GraphQLQuery {
 
 public final class BusinessesListQuery: GraphQLQuery {
   public let operationDefinition =
-    "query BusinessesList($cursor: String, $q: String, $bookmarked: Boolean, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!]) {\n  businessFeed(cursor: $cursor, q: $q, bookmarkedOffersOnly: $bookmarked, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {\n    __typename\n    cursor {\n      __typename\n      next\n    }\n    businesses {\n      __typename\n      ...BusinessListItem\n      locations {\n        __typename\n        ...LocationItem\n      }\n      offers {\n        __typename\n        ...OfferListItem\n      }\n    }\n  }\n}"
+    "query BusinessesList($cursor: String, $q: String, $bookmarked: Boolean, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!]) {\n  businessFeed(cursor: $cursor, q: $q, bookmarkedOffersOnly: $bookmarked, orderingGeoPoint: $orderPoint) {\n    __typename\n    cursor {\n      __typename\n      next\n    }\n    businesses {\n      __typename\n      ...BusinessListItem\n      locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {\n        __typename\n        ...LocationItem\n      }\n      offers(contextGeoArea: $geoArea) {\n        __typename\n        ...OfferListItem\n      }\n    }\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(BusinessListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(LocationItem.fragmentDefinition).appending(OfferListItem.fragmentDefinition) }
 
@@ -348,7 +350,7 @@ public final class BusinessesListQuery: GraphQLQuery {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("businessFeed", arguments: ["cursor": GraphQLVariable("cursor"), "q": GraphQLVariable("q"), "bookmarkedOffersOnly": GraphQLVariable("bookmarked"), "contextGeoArea": GraphQLVariable("geoArea"), "orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint")], type: .nonNull(.object(BusinessFeed.selections))),
+      GraphQLField("businessFeed", arguments: ["cursor": GraphQLVariable("cursor"), "q": GraphQLVariable("q"), "bookmarkedOffersOnly": GraphQLVariable("bookmarked"), "orderingGeoPoint": GraphQLVariable("orderPoint")], type: .nonNull(.object(BusinessFeed.selections))),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -460,8 +462,8 @@ public final class BusinessesListQuery: GraphQLQuery {
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLFragmentSpread(BusinessListItem.self),
-          GraphQLField("locations", type: .nonNull(.list(.nonNull(.object(Location.selections))))),
-          GraphQLField("offers", type: .nonNull(.list(.nonNull(.object(Offer.selections))))),
+          GraphQLField("locations", arguments: ["orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Location.selections))))),
+          GraphQLField("offers", arguments: ["contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Offer.selections))))),
         ]
 
         public private(set) var resultMap: ResultMap
@@ -629,7 +631,7 @@ public final class BusinessesListQuery: GraphQLQuery {
 
 public final class CollectionBusinessesListQuery: GraphQLQuery {
   public let operationDefinition =
-    "query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $limit: Int) {\n  collection(collectionId: $id) {\n    __typename\n    businessFeed(cursor: $cursor, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, limit: $limit) {\n      __typename\n      cursor {\n        __typename\n        next\n      }\n      businesses {\n        __typename\n        ...BusinessListItem\n        locations {\n          __typename\n          ...LocationItem\n        }\n        offers {\n          __typename\n          ...OfferListItem\n        }\n      }\n    }\n  }\n}"
+    "query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $limit: Int) {\n  collection(collectionId: $id) {\n    __typename\n    businessFeed(cursor: $cursor, orderingGeoPoint: $orderPoint, limit: $limit) {\n      __typename\n      cursor {\n        __typename\n        next\n      }\n      businesses {\n        __typename\n        ...BusinessListItem\n        locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {\n          __typename\n          ...LocationItem\n        }\n        offers(contextGeoArea: $geoArea) {\n          __typename\n          ...OfferListItem\n        }\n      }\n    }\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(BusinessListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(LocationItem.fragmentDefinition).appending(OfferListItem.fragmentDefinition) }
 
@@ -684,7 +686,7 @@ public final class CollectionBusinessesListQuery: GraphQLQuery {
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-        GraphQLField("businessFeed", arguments: ["cursor": GraphQLVariable("cursor"), "contextGeoArea": GraphQLVariable("geoArea"), "orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "limit": GraphQLVariable("limit")], type: .nonNull(.object(BusinessFeed.selections))),
+        GraphQLField("businessFeed", arguments: ["cursor": GraphQLVariable("cursor"), "orderingGeoPoint": GraphQLVariable("orderPoint"), "limit": GraphQLVariable("limit")], type: .nonNull(.object(BusinessFeed.selections))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -805,8 +807,8 @@ public final class CollectionBusinessesListQuery: GraphQLQuery {
           public static let selections: [GraphQLSelection] = [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLFragmentSpread(BusinessListItem.self),
-            GraphQLField("locations", type: .nonNull(.list(.nonNull(.object(Location.selections))))),
-            GraphQLField("offers", type: .nonNull(.list(.nonNull(.object(Offer.selections))))),
+            GraphQLField("locations", arguments: ["orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Location.selections))))),
+            GraphQLField("offers", arguments: ["contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Offer.selections))))),
           ]
 
           public private(set) var resultMap: ResultMap
@@ -3888,9 +3890,9 @@ public struct LocationItem: GraphQLFragment {
       GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
       GraphQLField("suite", type: .scalar(String.self)),
       GraphQLField("building", type: .scalar(String.self)),
-      GraphQLField("streetAddress", type: .nonNull(.scalar(String.self))),
-      GraphQLField("street", type: .nonNull(.scalar(String.self))),
-      GraphQLField("postalcode", type: .nonNull(.scalar(String.self))),
+      GraphQLField("streetAddress", type: .scalar(String.self)),
+      GraphQLField("street", type: .scalar(String.self)),
+      GraphQLField("postalcode", type: .scalar(String.self)),
       GraphQLField("city", type: .nonNull(.scalar(String.self))),
       GraphQLField("state", type: .nonNull(.scalar(String.self))),
       GraphQLField("country", type: .nonNull(.scalar(String.self))),
@@ -3903,7 +3905,7 @@ public struct LocationItem: GraphQLFragment {
       self.resultMap = unsafeResultMap
     }
 
-    public init(id: GraphQLID, suite: String? = nil, building: String? = nil, streetAddress: String, street: String, postalcode: String, city: String, state: String, country: String, centre: [Double]) {
+    public init(id: GraphQLID, suite: String? = nil, building: String? = nil, streetAddress: String? = nil, street: String? = nil, postalcode: String? = nil, city: String, state: String, country: String, centre: [Double]) {
       self.init(unsafeResultMap: ["__typename": "Address", "id": id, "suite": suite, "building": building, "streetAddress": streetAddress, "street": street, "postalcode": postalcode, "city": city, "state": state, "country": country, "centre": centre])
     }
 
@@ -3943,27 +3945,27 @@ public struct LocationItem: GraphQLFragment {
       }
     }
 
-    public var streetAddress: String {
+    public var streetAddress: String? {
       get {
-        return resultMap["streetAddress"]! as! String
+        return resultMap["streetAddress"] as? String
       }
       set {
         resultMap.updateValue(newValue, forKey: "streetAddress")
       }
     }
 
-    public var street: String {
+    public var street: String? {
       get {
-        return resultMap["street"]! as! String
+        return resultMap["street"] as? String
       }
       set {
         resultMap.updateValue(newValue, forKey: "street")
       }
     }
 
-    public var postalcode: String {
+    public var postalcode: String? {
       get {
-        return resultMap["postalcode"]! as! String
+        return resultMap["postalcode"] as? String
       }
       set {
         resultMap.updateValue(newValue, forKey: "postalcode")
@@ -4105,9 +4107,9 @@ public struct OfferLocationItem: GraphQLFragment {
       GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
       GraphQLField("suite", type: .scalar(String.self)),
       GraphQLField("building", type: .scalar(String.self)),
-      GraphQLField("streetAddress", type: .nonNull(.scalar(String.self))),
-      GraphQLField("street", type: .nonNull(.scalar(String.self))),
-      GraphQLField("postalcode", type: .nonNull(.scalar(String.self))),
+      GraphQLField("streetAddress", type: .scalar(String.self)),
+      GraphQLField("street", type: .scalar(String.self)),
+      GraphQLField("postalcode", type: .scalar(String.self)),
       GraphQLField("city", type: .nonNull(.scalar(String.self))),
       GraphQLField("state", type: .nonNull(.scalar(String.self))),
       GraphQLField("country", type: .nonNull(.scalar(String.self))),
@@ -4120,7 +4122,7 @@ public struct OfferLocationItem: GraphQLFragment {
       self.resultMap = unsafeResultMap
     }
 
-    public init(id: GraphQLID, suite: String? = nil, building: String? = nil, streetAddress: String, street: String, postalcode: String, city: String, state: String, country: String, centre: [Double]) {
+    public init(id: GraphQLID, suite: String? = nil, building: String? = nil, streetAddress: String? = nil, street: String? = nil, postalcode: String? = nil, city: String, state: String, country: String, centre: [Double]) {
       self.init(unsafeResultMap: ["__typename": "Address", "id": id, "suite": suite, "building": building, "streetAddress": streetAddress, "street": street, "postalcode": postalcode, "city": city, "state": state, "country": country, "centre": centre])
     }
 
@@ -4160,27 +4162,27 @@ public struct OfferLocationItem: GraphQLFragment {
       }
     }
 
-    public var streetAddress: String {
+    public var streetAddress: String? {
       get {
-        return resultMap["streetAddress"]! as! String
+        return resultMap["streetAddress"] as? String
       }
       set {
         resultMap.updateValue(newValue, forKey: "streetAddress")
       }
     }
 
-    public var street: String {
+    public var street: String? {
       get {
-        return resultMap["street"]! as! String
+        return resultMap["street"] as? String
       }
       set {
         resultMap.updateValue(newValue, forKey: "street")
       }
     }
 
-    public var postalcode: String {
+    public var postalcode: String? {
       get {
-        return resultMap["postalcode"]! as! String
+        return resultMap["postalcode"] as? String
       }
       set {
         resultMap.updateValue(newValue, forKey: "postalcode")

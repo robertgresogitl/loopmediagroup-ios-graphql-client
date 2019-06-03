@@ -26,6 +26,7 @@ typedef void (^DADetailsRequestParamsBuildBlock)(LMGDADetailsRequestParamsBuilde
 @property (nullable, nonatomic, readonly) LMGDAPlatformId *locationId;
 @property (nullable, nonatomic, readonly) LMGDACoordinate *sortCoordinate;
 @property (nullable, nonatomic, readonly) LMGDACoordinate *originCoordinate;
+@property (nullable, nonatomic, readonly) NSArray<LMGDACoordinate *> *contentArea;
 
 @end
 
@@ -37,6 +38,7 @@ typedef void (^DADetailsRequestParamsBuildBlock)(LMGDADetailsRequestParamsBuilde
 @property (nullable, nonatomic) LMGDAPlatformId *locationId;
 @property (nullable, nonatomic) LMGDACoordinate *sortCoordinate;
 @property (nullable, nonatomic) LMGDACoordinate *originCoordinate;
+@property (nullable, nonatomic) NSArray<LMGDACoordinate *> *contentArea;
 
 - (nonnull instancetype)initWithId:(nonnull LMGDAPlatformId *)entityId NS_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithParams:(nonnull LMGDADetailsRequestParams *)params;

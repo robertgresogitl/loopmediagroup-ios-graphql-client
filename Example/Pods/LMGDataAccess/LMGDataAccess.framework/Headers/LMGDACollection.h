@@ -39,9 +39,6 @@
 
 - (nonnull instancetype)initWithId:(nonnull LMGDAPlatformId *)collectionId name:(nonnull NSString *)name shortName:(nonnull NSString *)shortName slug:(nonnull NSString *)slug NS_DESIGNATED_INITIALIZER;
 
-// TEMP for adding slug, so circleCI can compile it
-- (nonnull instancetype)initWithId:(nonnull LMGDAPlatformId *)collectionId name:(nonnull NSString *)name shortName:(nonnull NSString *)shortName NS_DESIGNATED_INITIALIZER;
-
 - (nonnull instancetype)init NS_UNAVAILABLE;
 
 - (nonnull LMGDACollection *)build;

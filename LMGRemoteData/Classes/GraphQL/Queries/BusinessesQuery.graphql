@@ -1,23 +1,23 @@
-query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!]) {
+query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!], $geoArea: [[Float!]!]) {
   business(businessId: $id) {
     ...BusinessDetails
-    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {
+    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {
       ...LocationItem
     }
   }
 }
 
 query BusinessesList($cursor: String, $q: String, $bookmarked: Boolean, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!]) {
-  businessFeed(cursor: $cursor, q: $q, bookmarkedOffersOnly: $bookmarked, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {
+  businessFeed(cursor: $cursor, q: $q, bookmarkedOffersOnly: $bookmarked, orderingGeoPoint: $orderPoint) {
     cursor {
       next
     }
     businesses {
       ...BusinessListItem
-      locations {
+      locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {
         ...LocationItem
       }
-      offers {
+      offers(contextGeoArea: $geoArea) {
         ...OfferListItem
       }
     }
@@ -26,16 +26,16 @@ query BusinessesList($cursor: String, $q: String, $bookmarked: Boolean, $geoArea
 
 query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $limit: Int) {
   collection(collectionId: $id) {
-    businessFeed(cursor: $cursor, contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, limit: $limit) {
+    businessFeed(cursor: $cursor, orderingGeoPoint: $orderPoint, limit: $limit) {
       cursor {
         next
       }
       businesses {
         ...BusinessListItem
-        locations {
+        locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {
             ...LocationItem
         }
-        offers {
+        offers(contextGeoArea: $geoArea) {
             ...OfferListItem
         }
       }
