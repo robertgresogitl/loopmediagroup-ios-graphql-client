@@ -1378,31 +1378,33 @@ public final class RedeemOfferMutation: GraphQLMutation {
 
 public final class LocationsListQuery: GraphQLQuery {
   public let operationDefinition =
-    "query LocationsList($geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $cursor: String) {\n  locationFeed(contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, cursor: $cursor) {\n    __typename\n    cursor {\n      __typename\n      next\n    }\n    locations {\n      __typename\n      ...LocationItem\n      business {\n        __typename\n        ...BusinessListItem\n      }\n    }\n  }\n}"
+    "query LocationsList($geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: [Float!], $limit: Int, $cursor: String) {\n  locationFeed(contextGeoArea: $geoArea, orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, limit: $limit, cursor: $cursor) {\n    __typename\n    cursor {\n      __typename\n      next\n    }\n    locations {\n      __typename\n      ...LocationItem\n      business {\n        __typename\n        ...BusinessListItem\n      }\n    }\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(LocationItem.fragmentDefinition).appending(BusinessListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition) }
 
   public var geoArea: [[Double]]?
   public var orderPoint: [Double]?
   public var originPoint: [Double]?
+  public var limit: Int?
   public var cursor: String?
 
-  public init(geoArea: [[Double]]?, orderPoint: [Double]?, originPoint: [Double]?, cursor: String? = nil) {
+  public init(geoArea: [[Double]]?, orderPoint: [Double]?, originPoint: [Double]?, limit: Int? = nil, cursor: String? = nil) {
     self.geoArea = geoArea
     self.orderPoint = orderPoint
     self.originPoint = originPoint
+    self.limit = limit
     self.cursor = cursor
   }
 
   public var variables: GraphQLMap? {
-    return ["geoArea": geoArea, "orderPoint": orderPoint, "originPoint": originPoint, "cursor": cursor]
+    return ["geoArea": geoArea, "orderPoint": orderPoint, "originPoint": originPoint, "limit": limit, "cursor": cursor]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("locationFeed", arguments: ["contextGeoArea": GraphQLVariable("geoArea"), "orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "cursor": GraphQLVariable("cursor")], type: .nonNull(.object(LocationFeed.selections))),
+      GraphQLField("locationFeed", arguments: ["contextGeoArea": GraphQLVariable("geoArea"), "orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "limit": GraphQLVariable("limit"), "cursor": GraphQLVariable("cursor")], type: .nonNull(.object(LocationFeed.selections))),
     ]
 
     public private(set) var resultMap: ResultMap
