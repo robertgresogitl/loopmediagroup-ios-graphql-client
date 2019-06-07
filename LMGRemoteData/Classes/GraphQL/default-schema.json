@@ -35,6 +35,36 @@
         {
           "args": [
             {
+              "defaultValue": "60",
+              "description": "Number of occurrences allowed over duration.",
+              "name": "limit",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            {
+              "defaultValue": "60",
+              "description": "Number of seconds before limit is reset.",
+              "name": "duration",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            }
+          ],
+          "description": "Controls the rate of traffic.",
+          "locations": [
+            "OBJECT",
+            "FIELD_DEFINITION"
+          ],
+          "name": "rateLimit"
+        },
+        {
+          "args": [
+            {
               "defaultValue": null,
               "description": "",
               "name": "maxAge",
@@ -615,6 +645,23 @@
                 "ofType": {
                   "kind": "SCALAR",
                   "name": "ID",
+                  "ofType": null
+                }
+              }
+            },
+            {
+              "args": [
+              ],
+              "deprecationReason": null,
+              "description": "",
+              "isDeprecated": false,
+              "name": "slug",
+              "type": {
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String",
                   "ofType": null
                 }
               }
@@ -1240,6 +1287,32 @@
             },
             {
               "args": [
+                {
+                  "defaultValue": null,
+                  "description": "",
+                  "name": "contextGeoArea",
+                  "type": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "LIST",
+                        "name": null,
+                        "ofType": {
+                          "kind": "NON_NULL",
+                          "name": null,
+                          "ofType": {
+                            "kind": "SCALAR",
+                            "name": "Float",
+                            "ofType": null
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
                 {
                   "defaultValue": null,
                   "description": "",

@@ -26,7 +26,7 @@ public final class LMGRDLocationRemoteSource: NSObject, LMGDALocationRemoteSourc
     public func getWith(_ params: LMGDALocationsMapRequestParams, session: LMGDASession) throws -> LMGDAPagedResult<LMGDALocation> {
         client.session = session
         
-        let data = try client.syncFetch(query: LocationsListQuery(geoArea: params.contentArea?.map { $0.toRemoteData() }, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData(), cursor: params.nextPage), queue: queue)
+        let data = try client.syncFetch(query: LocationsListQuery(geoArea: params.contentArea?.map { $0.toRemoteData() }, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData(), limit: Int(params.limit), cursor: params.nextPage), queue: queue)
         let locations = data.locationFeed.locations.compactMap { location -> LMGDALocation in
             let business = location.business.fragments.businessListItem.toDataAccess(locations: nil, offers: nil)
             return location.fragments.locationItem.toDataAccess(business: business)
