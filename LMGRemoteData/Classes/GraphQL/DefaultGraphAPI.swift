@@ -4,22 +4,24 @@ import Apollo
 
 public final class OfferDetailsQuery: GraphQLQuery {
   public let operationDefinition =
-    "query OfferDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!]) {\n  offer(offerId: $id) {\n    __typename\n    ...OfferDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {\n      __typename\n      ...OfferLocationItem\n    }\n  }\n}"
+    "query OfferDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!], $geoArea: [[Float!]!]) {\n  offer(offerId: $id) {\n    __typename\n    ...OfferDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {\n      __typename\n      ...OfferLocationItem\n    }\n  }\n}"
 
   public var queryDocument: String { return operationDefinition.appending(OfferDetails.fragmentDefinition).appending(BusinessListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(OfferLocationItem.fragmentDefinition) }
 
   public var id: GraphQLID
   public var orderPoint: [Double]?
   public var originPoint: [Double]?
+  public var geoArea: [[Double]]?
 
-  public init(id: GraphQLID, orderPoint: [Double]?, originPoint: [Double]?) {
+  public init(id: GraphQLID, orderPoint: [Double]?, originPoint: [Double]?, geoArea: [[Double]]?) {
     self.id = id
     self.orderPoint = orderPoint
     self.originPoint = originPoint
+    self.geoArea = geoArea
   }
 
   public var variables: GraphQLMap? {
-    return ["id": id, "orderPoint": orderPoint, "originPoint": originPoint]
+    return ["id": id, "orderPoint": orderPoint, "originPoint": originPoint, "geoArea": geoArea]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -54,7 +56,7 @@ public final class OfferDetailsQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLFragmentSpread(OfferDetails.self),
-        GraphQLField("locations", arguments: ["orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint")], type: .nonNull(.list(.nonNull(.object(Location.selections))))),
+        GraphQLField("locations", arguments: ["orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Location.selections))))),
       ]
 
       public private(set) var resultMap: ResultMap

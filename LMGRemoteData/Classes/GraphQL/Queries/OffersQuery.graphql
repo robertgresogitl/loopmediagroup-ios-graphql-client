@@ -1,7 +1,7 @@
-query OfferDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!]) {
+query OfferDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!], $geoArea: [[Float!]!]) {
   offer(offerId: $id) {
     ...OfferDetails
-    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint) {
+    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {
         ...OfferLocationItem
     }
   }

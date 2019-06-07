@@ -26,7 +26,7 @@ public final class LMGRDOfferRemoteSource: NSObject, LMGDAOfferRemoteSource {
     public func getWithDetailParams(_ params: LMGDADetailsRequestParams, session: LMGDASession) throws -> LMGDAOffer {
         client.session = session
         
-        let data = try client.syncFetch(query: OfferDetailsQuery(id: params.entityId, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData()), queue: queue)
+        let data = try client.syncFetch(query: OfferDetailsQuery(id: params.entityId, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData(), geoArea: params.contentArea?.map { $0.toRemoteData() }), queue: queue)
         let locations = data.offer.locations.compactMap { $0.fragments.offerLocationItem.toDataAccess(business: nil) }
         return data.offer.fragments.offerDetails.toDataAccess(locations: locations)
     }
