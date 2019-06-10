@@ -52,7 +52,8 @@ public final class LMGRDBusinessRemoteSource: NSObject, LMGDABusinessRemoteSourc
         
         let data = try client.syncFetch(query: BusinessDetailsQuery(id: params.entityId, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData(), geoArea: params.contentArea?.map { $0.toRemoteData() }), queue: queue)
         let locations = data.business.locations.compactMap { $0.fragments.locationItem.toDataAccess(business: nil) }
-        return data.business.fragments.businessDetails.toDataAccess(locations: locations)
+        let offers = data.business.offers.compactMap { $0.fragments.offerListItem.toDataAccess(business: data.business.fragments.businessDetails.toDataAccess(locations: nil, offers: nil)) }
+        return data.business.fragments.businessDetails.toDataAccess(locations: locations, offers: offers)
     }
 }
 

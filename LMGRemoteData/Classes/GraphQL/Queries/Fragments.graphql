@@ -94,9 +94,6 @@ fragment BusinessDetails on Business {
     heroStandardImages {
         url
     }
-    offers {
-        ...OfferListItem
-    }
     categories {
         ...CategoryItem
     }
