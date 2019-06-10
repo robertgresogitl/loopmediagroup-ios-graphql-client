@@ -164,9 +164,9 @@ public final class OfferDetailsQuery: GraphQLQuery {
 
 public final class BusinessDetailsQuery: GraphQLQuery {
   public let operationDefinition =
-    "query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!], $geoArea: [[Float!]!]) {\n  business(businessId: $id) {\n    __typename\n    ...BusinessDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {\n      __typename\n      ...LocationItem\n    }\n  }\n}"
+    "query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!], $geoArea: [[Float!]!]) {\n  business(businessId: $id) {\n    __typename\n    ...BusinessDetails\n    locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {\n      __typename\n      ...LocationItem\n    }\n    offers(contextGeoArea: $geoArea) {\n      __typename\n      ...OfferListItem\n    }\n  }\n}"
 
-  public var queryDocument: String { return operationDefinition.appending(BusinessDetails.fragmentDefinition).appending(OfferListItem.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(LocationItem.fragmentDefinition) }
+  public var queryDocument: String { return operationDefinition.appending(BusinessDetails.fragmentDefinition).appending(CategoryItem.fragmentDefinition).appending(LocationItem.fragmentDefinition).appending(OfferListItem.fragmentDefinition) }
 
   public var id: GraphQLID
   public var orderPoint: [Double]?
@@ -217,6 +217,7 @@ public final class BusinessDetailsQuery: GraphQLQuery {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLFragmentSpread(BusinessDetails.self),
         GraphQLField("locations", arguments: ["orderingGeoPoint": GraphQLVariable("orderPoint"), "originGeoPoint": GraphQLVariable("originPoint"), "contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Location.selections))))),
+        GraphQLField("offers", arguments: ["contextGeoArea": GraphQLVariable("geoArea")], type: .nonNull(.list(.nonNull(.object(Offer.selections))))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -240,6 +241,15 @@ public final class BusinessDetailsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue.map { (value: Location) -> ResultMap in value.resultMap }, forKey: "locations")
+        }
+      }
+
+      public var offers: [Offer] {
+        get {
+          return (resultMap["offers"] as! [ResultMap]).map { (value: ResultMap) -> Offer in Offer(unsafeResultMap: value) }
+        }
+        set {
+          resultMap.updateValue(newValue.map { (value: Offer) -> ResultMap in value.resultMap }, forKey: "offers")
         }
       }
 
@@ -311,6 +321,56 @@ public final class BusinessDetailsQuery: GraphQLQuery {
           public var locationItem: LocationItem {
             get {
               return LocationItem(unsafeResultMap: resultMap)
+            }
+            set {
+              resultMap += newValue.resultMap
+            }
+          }
+        }
+      }
+
+      public struct Offer: GraphQLSelectionSet {
+        public static let possibleTypes = ["Offer"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLFragmentSpread(OfferListItem.self),
+        ]
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var fragments: Fragments {
+          get {
+            return Fragments(unsafeResultMap: resultMap)
+          }
+          set {
+            resultMap += newValue.resultMap
+          }
+        }
+
+        public struct Fragments {
+          public private(set) var resultMap: ResultMap
+
+          public init(unsafeResultMap: ResultMap) {
+            self.resultMap = unsafeResultMap
+          }
+
+          public var offerListItem: OfferListItem {
+            get {
+              return OfferListItem(unsafeResultMap: resultMap)
             }
             set {
               resultMap += newValue.resultMap
@@ -2997,7 +3057,7 @@ public struct OfferDetailStatus: GraphQLFragment {
 
 public struct BusinessDetails: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment BusinessDetails on Business {\n  __typename\n  id\n  name\n  shortName\n  slogan\n  desc\n  url\n  phone\n  profileImages {\n    __typename\n    url\n  }\n  heroStandardImages {\n    __typename\n    url\n  }\n  offers {\n    __typename\n    ...OfferListItem\n  }\n  categories {\n    __typename\n    ...CategoryItem\n  }\n}"
+    "fragment BusinessDetails on Business {\n  __typename\n  id\n  name\n  shortName\n  slogan\n  desc\n  url\n  phone\n  profileImages {\n    __typename\n    url\n  }\n  heroStandardImages {\n    __typename\n    url\n  }\n  categories {\n    __typename\n    ...CategoryItem\n  }\n}"
 
   public static let possibleTypes = ["Business"]
 
@@ -3012,7 +3072,6 @@ public struct BusinessDetails: GraphQLFragment {
     GraphQLField("phone", type: .scalar(String.self)),
     GraphQLField("profileImages", type: .nonNull(.list(.nonNull(.object(ProfileImage.selections))))),
     GraphQLField("heroStandardImages", type: .nonNull(.list(.nonNull(.object(HeroStandardImage.selections))))),
-    GraphQLField("offers", type: .nonNull(.list(.nonNull(.object(Offer.selections))))),
     GraphQLField("categories", type: .nonNull(.list(.nonNull(.object(Category.selections))))),
   ]
 
@@ -3022,8 +3081,8 @@ public struct BusinessDetails: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, name: String, shortName: String, slogan: String? = nil, desc: String? = nil, url: String? = nil, phone: String? = nil, profileImages: [ProfileImage], heroStandardImages: [HeroStandardImage], offers: [Offer], categories: [Category]) {
-    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "shortName": shortName, "slogan": slogan, "desc": desc, "url": url, "phone": phone, "profileImages": profileImages.map { (value: ProfileImage) -> ResultMap in value.resultMap }, "heroStandardImages": heroStandardImages.map { (value: HeroStandardImage) -> ResultMap in value.resultMap }, "offers": offers.map { (value: Offer) -> ResultMap in value.resultMap }, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
+  public init(id: GraphQLID, name: String, shortName: String, slogan: String? = nil, desc: String? = nil, url: String? = nil, phone: String? = nil, profileImages: [ProfileImage], heroStandardImages: [HeroStandardImage], categories: [Category]) {
+    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "shortName": shortName, "slogan": slogan, "desc": desc, "url": url, "phone": phone, "profileImages": profileImages.map { (value: ProfileImage) -> ResultMap in value.resultMap }, "heroStandardImages": heroStandardImages.map { (value: HeroStandardImage) -> ResultMap in value.resultMap }, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -3116,15 +3175,6 @@ public struct BusinessDetails: GraphQLFragment {
     }
   }
 
-  public var offers: [Offer] {
-    get {
-      return (resultMap["offers"] as! [ResultMap]).map { (value: ResultMap) -> Offer in Offer(unsafeResultMap: value) }
-    }
-    set {
-      resultMap.updateValue(newValue.map { (value: Offer) -> ResultMap in value.resultMap }, forKey: "offers")
-    }
-  }
-
   public var categories: [Category] {
     get {
       return (resultMap["categories"] as! [ResultMap]).map { (value: ResultMap) -> Category in Category(unsafeResultMap: value) }
@@ -3204,56 +3254,6 @@ public struct BusinessDetails: GraphQLFragment {
       }
       set {
         resultMap.updateValue(newValue, forKey: "url")
-      }
-    }
-  }
-
-  public struct Offer: GraphQLSelectionSet {
-    public static let possibleTypes = ["Offer"]
-
-    public static let selections: [GraphQLSelection] = [
-      GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-      GraphQLFragmentSpread(OfferListItem.self),
-    ]
-
-    public private(set) var resultMap: ResultMap
-
-    public init(unsafeResultMap: ResultMap) {
-      self.resultMap = unsafeResultMap
-    }
-
-    public var __typename: String {
-      get {
-        return resultMap["__typename"]! as! String
-      }
-      set {
-        resultMap.updateValue(newValue, forKey: "__typename")
-      }
-    }
-
-    public var fragments: Fragments {
-      get {
-        return Fragments(unsafeResultMap: resultMap)
-      }
-      set {
-        resultMap += newValue.resultMap
-      }
-    }
-
-    public struct Fragments {
-      public private(set) var resultMap: ResultMap
-
-      public init(unsafeResultMap: ResultMap) {
-        self.resultMap = unsafeResultMap
-      }
-
-      public var offerListItem: OfferListItem {
-        get {
-          return OfferListItem(unsafeResultMap: resultMap)
-        }
-        set {
-          resultMap += newValue.resultMap
-        }
       }
     }
   }

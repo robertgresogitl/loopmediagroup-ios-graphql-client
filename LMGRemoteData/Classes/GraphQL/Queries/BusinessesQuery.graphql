@@ -4,6 +4,9 @@ query BusinessDetails($id: ID!, $orderPoint: [Float!], $originPoint: [Float!], $
     locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {
       ...LocationItem
     }
+    offers(contextGeoArea: $geoArea) {
+      ...OfferListItem
+    }
   }
 }
 

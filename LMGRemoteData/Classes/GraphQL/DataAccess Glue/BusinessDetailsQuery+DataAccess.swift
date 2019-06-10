@@ -10,14 +10,14 @@ import LMGDataAccess
 
 extension BusinessDetails {
 
-    func toDataAccess(locations: [LMGDALocation]) -> LMGDABusiness {
+    func toDataAccess(locations: [LMGDALocation]?, offers: [LMGDAOffer]?) -> LMGDABusiness {
         let builder = LMGDABusinessBuilder(id: id, name: name, shortName: shortName)
         builder.slogan = slogan
         builder.details = desc
         builder.url = url
         builder.phone = phone
-        builder.offers = offers.compactMap { $0.fragments.offerListItem.toDataAccess(business: builder.build()) }
-        builder.locations = locations
+        builder.offers = offers ?? []
+        builder.locations = locations ?? []
         builder.categories = categories.compactMap { $0.fragments.categoryItem.toDataAccess() }
         builder.images = heroStandardImages.map { $0.url }
         builder.logo = profileImages.first?.url
