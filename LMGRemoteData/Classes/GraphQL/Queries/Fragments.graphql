@@ -4,8 +4,6 @@ fragment OfferListItem on Offer {
     subhead
     flags
     isBookmarked
-    shareUrl
-    schedules
     heroImages {
         url
     }
@@ -108,17 +106,26 @@ fragment BusinessListItem on Business {
     id
     name
     shortName
-    phone
-    url
-    slogan
-    desc
     profileImages {
         url
     }
+}
+
+fragment LocationsBusinessListItem on Business {
+    id
+    shortName
     categories {
-        ...CategoryItem
+        ...BusinessListCategoryItem
     }
 }
+
+fragment BusinessListCategoryItem on Category {
+    id
+    iconSmallImages {
+        url
+    }
+}
+
 
 fragment CategoryItem on Category{
     id
@@ -159,6 +166,29 @@ fragment LocationItem on Location {
       city
       state
       country
+      centre
+    }
+}
+
+fragment CollectionLocationItem on Location {
+    id
+    name
+    distance
+    address {
+      id
+      city
+      state
+      centre
+    }
+}
+
+fragment LocationsLocationItem on Location {
+    id
+    name
+    address {
+      id
+      city
+      state
       centre
     }
 }

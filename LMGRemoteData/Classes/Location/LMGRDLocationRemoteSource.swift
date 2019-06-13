@@ -28,8 +28,8 @@ public final class LMGRDLocationRemoteSource: NSObject, LMGDALocationRemoteSourc
         
         let data = try client.syncFetch(query: LocationsListQuery(geoArea: params.contentArea?.map { $0.toRemoteData() }, orderPoint: params.sortCoordinate?.toRemoteData(), originPoint: params.originCoordinate?.toRemoteData(), limit: Int(params.limit), cursor: params.nextPage), queue: queue)
         let locations = data.locationFeed.locations.compactMap { location -> LMGDALocation in
-            let business = location.business.fragments.businessListItem.toDataAccess(locations: nil, offers: nil)
-            return location.fragments.locationItem.toDataAccess(business: business)
+            let business = location.business.fragments.locationsBusinessListItem.toDataAccess(locations: nil, offers: nil)
+            return location.fragments.locationsLocationItem.toDataAccess(business: business)
         }
         return LMGDAPagedResult(result: locations, nextPageCursor: data.locationFeed.cursor.next)
     }
