@@ -57,8 +57,6 @@ extension OfferListItem {
         let builder = LMGDAOfferBuilder(id, headline: headline, subHeadline: subhead)
         builder.images = heroImages.compactMap { $0.url }
         builder.business = business
-        builder.redemptionSchedule = LMGDASchedule(schedule: schedules)
-        builder.shareUrl = URL.init(string: shareUrl)
         for rawFlag in flags {
             if let flag = LMGDAFlagType(string: rawFlag) {
                 builder.flag = flag
