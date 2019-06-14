@@ -33,7 +33,7 @@ query CollectionBusinessesList($id: ID!, $cursor: String, $geoArea: [[Float!]!],
       businesses {
         ...BusinessListItem
         locations(orderingGeoPoint: $orderPoint, originGeoPoint: $originPoint, contextGeoArea: $geoArea) {
-            ...LocationItem
+            ...CollectionLocationItem
         }
         offers(contextGeoArea: $geoArea) {
             ...OfferListItem

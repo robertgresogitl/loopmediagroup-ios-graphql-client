@@ -4,9 +4,9 @@ query LocationsList($geoArea: [[Float!]!], $orderPoint: [Float!], $originPoint: 
       next
     }
     locations {
-      ...LocationItem
+      ...LocationsLocationItem
       business {
-        ...BusinessListItem
+        ...LocationsBusinessListItem
       }
     }
   }
