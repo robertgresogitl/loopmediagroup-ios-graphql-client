@@ -46,7 +46,7 @@ extension LocationsLocationItem.Address {
         let coordinateBuider = LMGDACoordinateBuilder()
         coordinateBuider.longitude = centre.first!
         coordinateBuider.latitude = centre.last!
-        return LMGDAAddress(id: id, streetAddress: nil, postalCode: nil, city: city, province: state, country: nil, coordinate: coordinateBuider.build(), suite: nil, building: nil)
+        return LMGDAAddress(id: id, streetAddress: streetAddress, postalCode: nil, city: city, province: state, country: nil, coordinate: coordinateBuider.build(), suite: nil, building: building)
     }
 }
 
@@ -100,7 +100,7 @@ extension OfferLocationItem.Address {
 extension LocationsBusinessListItem {
     
     func toDataAccess(locations: [LMGDALocation]?, offers: [LMGDAOffer]?) -> LMGDABusiness {
-        let builder = LMGDABusinessBuilder(id: id, name: nil, shortName: shortName)
+        let builder = LMGDABusinessBuilder(id: id, name: name, shortName: shortName)
         builder.offers = []
         builder.locations = []
         builder.categories = categories.compactMap { $0.fragments.businessListCategoryItem.toDataAccess() }

@@ -110,6 +110,7 @@ fragment BusinessListItem on Business {
 
 fragment LocationsBusinessListItem on Business {
     id
+    name
     shortName
     categories {
         ...BusinessListCategoryItem
@@ -187,6 +188,8 @@ fragment LocationsLocationItem on Location {
       city
       state
       centre
+      building
+      streetAddress
     }
 }
 
