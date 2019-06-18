@@ -3398,13 +3398,14 @@ public struct BusinessListItem: GraphQLFragment {
 
 public struct LocationsBusinessListItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment LocationsBusinessListItem on Business {\n  __typename\n  id\n  shortName\n  categories {\n    __typename\n    ...BusinessListCategoryItem\n  }\n}"
+    "fragment LocationsBusinessListItem on Business {\n  __typename\n  id\n  name\n  shortName\n  categories {\n    __typename\n    ...BusinessListCategoryItem\n  }\n}"
 
   public static let possibleTypes = ["Business"]
 
   public static let selections: [GraphQLSelection] = [
     GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
     GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+    GraphQLField("name", type: .nonNull(.scalar(String.self))),
     GraphQLField("shortName", type: .nonNull(.scalar(String.self))),
     GraphQLField("categories", type: .nonNull(.list(.nonNull(.object(Category.selections))))),
   ]
@@ -3415,8 +3416,8 @@ public struct LocationsBusinessListItem: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, shortName: String, categories: [Category]) {
-    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "shortName": shortName, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
+  public init(id: GraphQLID, name: String, shortName: String, categories: [Category]) {
+    self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "shortName": shortName, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }])
   }
 
   public var __typename: String {
@@ -3434,6 +3435,15 @@ public struct LocationsBusinessListItem: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: String {
+    get {
+      return resultMap["name"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "name")
     }
   }
 
@@ -4230,7 +4240,7 @@ public struct CollectionLocationItem: GraphQLFragment {
 
 public struct LocationsLocationItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment LocationsLocationItem on Location {\n  __typename\n  id\n  name\n  address {\n    __typename\n    id\n    city\n    state\n    centre\n  }\n}"
+    "fragment LocationsLocationItem on Location {\n  __typename\n  id\n  name\n  address {\n    __typename\n    id\n    city\n    state\n    centre\n    building\n    streetAddress\n  }\n}"
 
   public static let possibleTypes = ["Location"]
 
@@ -4296,6 +4306,8 @@ public struct LocationsLocationItem: GraphQLFragment {
       GraphQLField("city", type: .nonNull(.scalar(String.self))),
       GraphQLField("state", type: .nonNull(.scalar(String.self))),
       GraphQLField("centre", type: .nonNull(.list(.nonNull(.scalar(Double.self))))),
+      GraphQLField("building", type: .scalar(String.self)),
+      GraphQLField("streetAddress", type: .scalar(String.self)),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -4304,8 +4316,8 @@ public struct LocationsLocationItem: GraphQLFragment {
       self.resultMap = unsafeResultMap
     }
 
-    public init(id: GraphQLID, city: String, state: String, centre: [Double]) {
-      self.init(unsafeResultMap: ["__typename": "Address", "id": id, "city": city, "state": state, "centre": centre])
+    public init(id: GraphQLID, city: String, state: String, centre: [Double], building: String? = nil, streetAddress: String? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Address", "id": id, "city": city, "state": state, "centre": centre, "building": building, "streetAddress": streetAddress])
     }
 
     public var __typename: String {
@@ -4350,6 +4362,24 @@ public struct LocationsLocationItem: GraphQLFragment {
       }
       set {
         resultMap.updateValue(newValue, forKey: "centre")
+      }
+    }
+
+    public var building: String? {
+      get {
+        return resultMap["building"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "building")
+      }
+    }
+
+    public var streetAddress: String? {
+      get {
+        return resultMap["streetAddress"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "streetAddress")
       }
     }
   }
