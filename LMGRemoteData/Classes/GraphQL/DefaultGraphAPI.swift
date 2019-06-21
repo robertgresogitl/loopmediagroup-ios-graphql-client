@@ -4240,7 +4240,7 @@ public struct CollectionLocationItem: GraphQLFragment {
 
 public struct LocationsLocationItem: GraphQLFragment {
   public static let fragmentDefinition =
-    "fragment LocationsLocationItem on Location {\n  __typename\n  id\n  name\n  address {\n    __typename\n    id\n    city\n    state\n    centre\n    building\n    streetAddress\n  }\n}"
+    "fragment LocationsLocationItem on Location {\n  __typename\n  id\n  name\n  address {\n    __typename\n    id\n    city\n    state\n    centre\n    building\n    streetAddress\n    street\n  }\n}"
 
   public static let possibleTypes = ["Location"]
 
@@ -4308,6 +4308,7 @@ public struct LocationsLocationItem: GraphQLFragment {
       GraphQLField("centre", type: .nonNull(.list(.nonNull(.scalar(Double.self))))),
       GraphQLField("building", type: .scalar(String.self)),
       GraphQLField("streetAddress", type: .scalar(String.self)),
+      GraphQLField("street", type: .scalar(String.self)),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -4316,8 +4317,8 @@ public struct LocationsLocationItem: GraphQLFragment {
       self.resultMap = unsafeResultMap
     }
 
-    public init(id: GraphQLID, city: String, state: String, centre: [Double], building: String? = nil, streetAddress: String? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Address", "id": id, "city": city, "state": state, "centre": centre, "building": building, "streetAddress": streetAddress])
+    public init(id: GraphQLID, city: String, state: String, centre: [Double], building: String? = nil, streetAddress: String? = nil, street: String? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Address", "id": id, "city": city, "state": state, "centre": centre, "building": building, "streetAddress": streetAddress, "street": street])
     }
 
     public var __typename: String {
@@ -4380,6 +4381,15 @@ public struct LocationsLocationItem: GraphQLFragment {
       }
       set {
         resultMap.updateValue(newValue, forKey: "streetAddress")
+      }
+    }
+
+    public var street: String? {
+      get {
+        return resultMap["street"] as? String
+      }
+      set {
+        resultMap.updateValue(newValue, forKey: "street")
       }
     }
   }

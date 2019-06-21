@@ -190,6 +190,7 @@ fragment LocationsLocationItem on Location {
       centre
       building
       streetAddress
+      street
     }
 }
 
