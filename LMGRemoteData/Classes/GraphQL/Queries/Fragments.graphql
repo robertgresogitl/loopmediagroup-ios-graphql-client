@@ -106,6 +106,9 @@ fragment BusinessListItem on Business {
     profileImages {
         url
     }
+    categories {
+	...BusinessListCategoryItem
+    }
 }
 
 fragment LocationsBusinessListItem on Business {
@@ -190,6 +193,7 @@ fragment LocationsLocationItem on Location {
       centre
       building
       streetAddress
+      street
     }
 }
 
