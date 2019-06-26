@@ -103,6 +103,9 @@ fragment BusinessListItem on Business {
     id
     name
     shortName
+    categories {
+        ...BusinessListCategoryItem
+    }
     profileImages {
         url
     }
