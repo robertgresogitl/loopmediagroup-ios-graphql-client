@@ -15,6 +15,7 @@ extension BusinessListItem {
         builder.offers = offers ?? []
         builder.locations = locations ?? []
         builder.logo = profileImages.first?.url
+        builder.categories = categories.compactMap { $0.fragments.businessListCategoryItem.toDataAccess() }
         return builder.build()
     }
 }

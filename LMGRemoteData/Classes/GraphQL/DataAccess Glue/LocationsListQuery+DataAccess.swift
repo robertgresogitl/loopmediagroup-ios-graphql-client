@@ -46,7 +46,7 @@ extension LocationsLocationItem.Address {
         let coordinateBuider = LMGDACoordinateBuilder()
         coordinateBuider.longitude = centre.first!
         coordinateBuider.latitude = centre.last!
-        return LMGDAAddress(id: id, streetAddress: streetAddress, postalCode: nil, city: city, province: state, country: nil, coordinate: coordinateBuider.build(), suite: nil, building: building)
+        return LMGDAAddress(id: id, streetAddress: street, postalCode: nil, city: city, province: state, country: nil, coordinate: coordinateBuider.build(), suite: nil, building: streetAddress)
     }
 }
 
