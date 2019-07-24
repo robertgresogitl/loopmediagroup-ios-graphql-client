@@ -46,7 +46,14 @@ extension OfferDetails {
         }
         builder.business = business.fragments.businessListItem.toDataAccess(locations: nil, offers: nil)
         builder.images = heroImages.compactMap { $0.url }
-        builder.locations = locations
+        
+        builder.locations = locations.map({
+            let locationBuilder = LMGDALocationBuilder($0)
+            locationBuilder.business = builder.business
+            
+            return locationBuilder.build()
+        })
+        
         return builder.build()
     }
 }
